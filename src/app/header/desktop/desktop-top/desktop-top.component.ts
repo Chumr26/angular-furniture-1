@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 interface Svg {
   name: string;
@@ -10,6 +10,7 @@ interface Svg {
   imports: [],
   templateUrl: './desktop-top.component.html',
   styleUrl: './desktop-top.component.css',
+  encapsulation: ViewEncapsulation.None, // Disable encapsulation
 })
 export class DesktopTopComponent {
   networks: Svg[] = [

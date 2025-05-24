@@ -706,10 +706,7 @@ div#brands_a_z a.top {
     --theme-box-shadow: none;
 }
 
-[data-header*="type-1"] .ct-header [data-row*="top"]>div {
-    --theme-border-top: none;
-    --theme-border-bottom: none;
-}
+
 
 [data-header*="type-1"] .ct-header [data-sticky*="yes"] [data-row*="top"] {
     background-color: var(--theme-palette-color-4);
@@ -738,15 +735,6 @@ div#brands_a_z a.top {
 
 [data-header*="type-1"] [data-id="divider"] {
     --divider-style: 1px solid rgba(44, 62, 80, 0.2);
-}
-
-[data-header*="type-1"] .ct-header [data-id="menu-tertiary"]>ul>li>a {
-    --theme-font-weight: 400;
-    --theme-text-transform: capitalize;
-    --theme-font-size: 13px;
-    --theme-line-height: 1.3;
-    --theme-link-initial-color: rgba(228, 238, 240, 0.58);
-    --theme-link-hover-color: #ffffff;
 }
 
 [data-header*="type-1"] .ct-header [data-id="menu-tertiary"] .sub-menu .ct-menu-link {
