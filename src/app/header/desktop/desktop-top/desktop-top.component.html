@@ -1,0 +1,63 @@
+<div data-column="start" data-placements="1">
+  <div data-items="primary">
+    <nav
+      id="header-menu-3"
+      class="header-menu-3 menu-container"
+      data-id="menu-tertiary"
+      data-interaction="hover"
+      data-menu="type-1"
+      data-dropdown="type-1:simple"
+      data-responsive="yes"
+      itemscope=""
+      itemtype="https://schema.org/SiteNavigationElement"
+      aria-label="Header Secondary Menu"
+    >
+      <ul id="menu-header-secondary-menu" class="menu">
+        <li
+          id="menu-item-535"
+          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-535"
+        >
+          <a href="#" class="ct-menu-link">Showrooms</a>
+        </li>
+        <li
+          id="menu-item-536"
+          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-536"
+        >
+          <a href="#" class="ct-menu-link">Custom Work</a>
+        </li>
+        <li
+          id="menu-item-537"
+          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-537"
+        >
+          <a href="#" class="ct-menu-link">Gift Cards</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div data-column="end" data-placements="1">
+  <div data-items="primary">
+    <div class="ct-header-socials" data-id="socials">
+      <div
+        class="ct-social-box"
+        data-color="custom"
+        data-icon-size="custom"
+        data-icons-type="simple"
+      >
+        @for (network of networks; track $index) {
+        <a
+          href="#"
+          [attr.data-network]="network.name"
+          [attr.aria-label]="network.label"
+        >
+          <span class="ct-icon-container">
+            <svg width="20px" height="20px" aria-hidden="true">
+              <use [attr.href]="'/icons/icons.svg#icon-' + network.name"></use>
+            </svg>
+          </span>
+        </a>
+        }
+      </div>
+    </div>
+  </div>
+</div>
