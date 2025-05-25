@@ -1,0 +1,32 @@
+[data-header*="type-1"] .ct-header [data-row*="bottom"] {
+    --height: 70px;
+    background-color: var(--theme-palette-color-8);
+    background-image: none;
+    --theme-border-top: none;
+    --theme-border-bottom: none;
+    --theme-box-shadow: none;
+}
+[data-header*="type-1"] .ct-header [data-row*="bottom"]>div {
+    --theme-border-top: none;
+    --theme-border-bottom: none;
+}
+[data-header*="type-1"] .ct-header [data-id="menu-secondary"] {
+    --menu-items-gap: 10px;
+}
+[data-header*="type-1"] .ct-header [data-id="menu-secondary"]>ul>li>a {
+    --theme-font-weight: 500;
+    --theme-text-transform: capitalize;
+    --theme-font-size: 15px;
+    --theme-line-height: 1.3;
+    --theme-link-initial-color: var(--theme-text-color);
+}
+[data-header*="type-1"] .ct-header [data-id="contacts"] {
+    --items-spacing: 30px;
+    --theme-font-size: 13px;
+    --theme-line-height: 1.4;
+    --background-color: rgba(218, 222, 228, 0.5);
+    --background-hover-color: rgba(218, 222, 228, 0.7);
+}
+#header [data-row*=bottom] {
+    z-index: 1
+}
