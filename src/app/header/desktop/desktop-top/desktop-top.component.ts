@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-interface Svg {
+export interface Svg {
   name: string;
   label: string;
 }

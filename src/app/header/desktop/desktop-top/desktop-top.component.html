@@ -52,7 +52,9 @@
         >
           <span class="ct-icon-container">
             <svg width="20px" height="20px" aria-hidden="true">
-              <use [attr.href]="'/icons/icons.svg#icon-' + network.name"></use>
+              <use
+                [attr.href]="'/icons/icons.svg#' + network.name + '-icon'"
+              ></use>
             </svg>
           </span>
         </a>
