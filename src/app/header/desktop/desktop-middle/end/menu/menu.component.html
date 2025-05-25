@@ -5,8 +5,12 @@
   [ngClass]="{
     'current-menu-item page_item current_page_item':
       currentRoute() === item.route,
-    'menu-item-has-children animated-submenu-block': item.subMenu
+    'menu-item-has-children animated-submenu-block': item.subMenu,
+    'ct-active': hoveredIndex === $index
   }"
+  [attr.data-submenu]="item.subMenu ? 'right' : null"
+  (mouseenter)="onHover($index)"
+  (mouseleave)="onHover(-1)"
   [attr.data-submenu]="item.subMenu ? 'right' : null"
 >
   @if(item.subMenu) {
@@ -22,11 +26,15 @@
   </a>
   <button
     class="ct-toggle-dropdown-desktop-ghost"
-    aria-label="Expand dropdown menu"
+    [attr.aria-label]="
+      hoveredIndex === $index
+        ? 'Collapse dropdown menu'
+        : 'Expand dropdown menu'
+    "
     aria-haspopup="true"
-    aria-expanded="false"
+    [attr.aria-expanded]="hoveredIndex === $index ? 'true' : 'false'"
   ></button>
-  <!-- <ul class="sub-menu">
+  <ul class="sub-menu">
     @for (subItem of item.subMenu; track $index) {
     <li class="menu-item">
       <a class="ct-menu-link" [routerLink]="subItem.route">{{
@@ -34,7 +42,7 @@
       }}</a>
     </li>
     }
-  </ul> -->
+  </ul>
   } @else {
   <a class="ct-menu-link" [routerLink]="item.route">{{ item.label }}</a
   >}

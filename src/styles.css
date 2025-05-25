@@ -1487,11 +1487,11 @@ form textarea {
     --has-wide: var(--true);
 }
 
-.menu-item-29 .ct-menu-link .ct-icon-container {
+.menu-item .ct-menu-link .ct-icon-container {
     --theme-icon-size: 20px;
 }
 
-.menu-item-28 .ct-menu-link .ct-icon-container {
+/* .menu-item-28 .ct-menu-link .ct-icon-container {
     --theme-icon-size: 20px;
 }
 
@@ -1513,7 +1513,7 @@ form textarea {
 
 .menu-item-380 .ct-menu-link .ct-icon-container {
     --theme-icon-size: 20px;
-}
+} */
 
 .ct-woo-badge-new {
     --badge-text-color: #ffffff;

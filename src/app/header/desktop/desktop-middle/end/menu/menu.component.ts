@@ -34,10 +34,16 @@ export class MenuComponent {
     { label: 'Contact Us', route: '/contact-us' },
   ];
 
+  hoveredIndex: number = -1;
+
   constructor(private router: Router) {}
 
   currentRoute(): string {
     // Get the current route from the router
     return this.router.url; // Remove the leading slash
+  }
+
+  onHover(index: number): void {
+    this.hoveredIndex = index;
   }
 }
