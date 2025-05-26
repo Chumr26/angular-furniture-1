@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { HighlightComponent } from './highlight/highlight.component';
 
 @Component({
   selector: '[home]',
-  imports: [],
+  imports: [HighlightComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
