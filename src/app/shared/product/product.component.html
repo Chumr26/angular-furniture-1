@@ -1,0 +1,78 @@
+<figure>
+  <div cart-buttons class="ct-woo-card-extra" data-type="type-1"></div>
+  <a
+    class="ct-media-container has-hover-effect"
+    routerLink="/product/{{ slug }}/"
+    [attr.aria-label]="productData.name"
+    ><img
+      decoding="async"
+      width="500"
+      height="500"
+      src="/imgs/product-{{ productData.id }}-500x500.webp"
+      loading="lazy"
+      srcset="
+        /imgs/product-{{ productData.id }}-500x500.webp    500w,
+        /imgs/product-{{ productData.id }}-300x300.webp    300w,
+        /imgs/product-{{ productData.id }}-800x800.webp    800w,
+        /imgs/product-{{ productData.id }}-1024x1024.webp 1024w,
+        /imgs/product-{{ productData.id }}-150x150.webp    150w,
+        /imgs/product-{{ productData.id }}-768x768.webp    768w,
+        /imgs/product-{{ productData.id }}.webp           1240w
+      "
+      sizes="auto, (max-width: 500px) 100vw, 500px"
+      itemprop="image"
+      class="wp-post-image"
+      style="aspect-ratio: 1/1"
+      title="product-{{ productData.id }}"
+      alt="{{ productData.name }}"
+  /></a>
+</figure>
+<h2 class="woocommerce-loop-product__title">
+  <a
+    class="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+    routerLink="/product/{{ slug }}/"
+    target="_self"
+    >{{ productData.name }}</a
+  >
+</h2>
+<ul class="entry-meta" data-type="simple:none" data-id="bZK3QLBYckA-98i8Z0nKe">
+  <li
+    *ngFor="let item of productData.category"
+    class="meta-categories"
+    data-type="simple"
+  >
+    <a
+      routerLink="/product-category/{{ item.toLocaleLowerCase() }}/"
+      rel="tag"
+      class="ct-term-40"
+      >{{ item }}</a
+    >
+  </li>
+</ul>
+<div class="ct-woo-card-actions" data-add-to-cart="auto-hide">
+  <span class="price"
+    ><span class="woocommerce-Price-amount amount"
+      ><bdi
+        ><span class="woocommerce-Price-currencySymbol">$</span
+        >{{ productData.price }}</bdi
+      ></span
+    ></span
+  >
+  <a
+    href="https://startersites.io/blocksy/furniture/?add-to-cart=353"
+    aria-describedby="woocommerce_loop_add_to_cart_link_describedby_353"
+    data-quantity="1"
+    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+    data-product_id="353"
+    data-product_sku=""
+    aria-label="Add to cart: “Aliquam Blandit”"
+    rel="nofollow"
+    data-success_message="“Aliquam Blandit” has been added to your cart"
+    >Add to cart</a
+  >
+  <span
+    id="woocommerce_loop_add_to_cart_link_describedby_353"
+    class="screen-reader-text"
+  >
+  </span>
+</div>

@@ -1,0 +1,265 @@
+[
+    {
+        "id": "1",
+        "name": "Tempor Commodo",
+        "price": "125.00",
+        "category": [
+            "Armchairs"
+        ],
+        "brand": "Magnolia",
+        "color": [
+            "White"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Tempor Commodo là chiếc ghế thư giãn hiện đại, bọc vải trắng sang trọng, cho phép người dùng xoay 360° linh hoạt nhờ phần chân kim loại mảnh mai. Thiết kế uốn cong nhẹ nhàng ôm trọn lưng và hông, kết hợp đệm mút mật độ cao cho cảm giác êm ái nhưng vẫn đảm bảo độ đàn hồi tối ưu. Sản phẩm thích hợp đặt trong phòng khách, góc đọc sách hay văn phòng làm việc, góp phần tạo điểm nhấn tinh tế và không gian thư thái. Khung thép chắc chắn và vải chống bám bẩn giúp ghế bền lâu, dễ vệ sinh và luôn giữ được vẻ sáng mới sau thời gian dài sử dụng.",
+        "long_description": "Chiếc ghế Tempor Commodo của Magnolia hòa quyện giữa phong cách hiện đại và tính năng tiện nghi tối ưu cho người dùng. Phần lưng hơi ngả êm ái, kết hợp đường viền bo cong ôm sát cơ thể, tạo tư thế ngồi thả lỏng và giảm áp lực vùng lưng. Chân ghế làm từ thép sơn tĩnh điện cao cấp, chịu lực tốt, cho phép xoay 360° mà không phát ra tiếng ồn. Toàn bộ bề mặt ghế được bọc vải trắng mềm mại, dày dặn, chống nhăn và chống bám bụi; bên trong là lớp đệm mút PU mật độ cao, giữ form lâu dài. Thiết kế tối giản, không chi tiết rườm rà, nhưng vẫn toát lên vẻ thanh lịch, dễ dàng kết hợp với nhiều phong cách nội thất. Tempor Commodo phù hợp cho không gian sống hiện đại, phòng làm việc cá nhân hay sảnh tiếp khách, mang lại trải nghiệm thư giãn đích thực mà không chiếm quá nhiều diện tích.",
+        "dimensions": "W 75 cm x D 80 cm x H 85 cm",
+        "features": [
+            "Chân xoay 360°",
+            "Khung thép chịu lực",
+            "Đệm mút mật độ cao"
+        ],
+        "care_instructions": "Vệ sinh bề mặt vải bằng khăn ẩm, tránh ngâm nước",
+        "quantity": 27,
+        "discount_percentage": 0
+    },
+    {
+        "id": "2",
+        "name": "Quis Commodo",
+        "price": "120.00",
+        "category": [
+            "Armchairs"
+        ],
+        "brand": "Komplex",
+        "color": [
+            "Brown"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Quis Commodo là chiếc ghế bành bọc vải nâu ấm cúng, nổi bật với những đường may trang trí tinh xảo, tôn lên vẻ hiện đại mà ấm áp. Phần tựa lưng và đệm ngồi được gia cố bằng mút đàn hồi cao, hỗ trợ tư thế thoải mái ngay cả khi ngồi lâu. Khung gỗ tự nhiên chắc chắn kết hợp chân gỗ sồi sơn tối màu, tạo điểm nhấn tương phản đầy tinh tế. Thiết kế tay vịn ôm sát, bo tròn mềm mại, thích hợp trong phòng khách, phòng đọc sách hoặc góc thư giãn trong không gian làm việc. Quis Commodo không chỉ là nơi nghỉ ngơi mà còn là mảnh ghép trang trí đầy phong cách cho bất cứ căn phòng nào.",
+        "long_description": "Quis Commodo của Komplex mang đến trải nghiệm ngồi thư giãn vượt trội nhờ kết cấu đệm mút đàn hồi cao, phủ lớp vải nâu dệt chắc, tạo cảm giác ấm áp và dễ chịu. Tựa lưng hơi ngả kết hợp tay vịn ôm sát, hỗ trợ khung xương và vai gáy, giảm căng thẳng khi ngồi lâu. Khung ghế làm từ gỗ tự nhiên đã qua xử lý chống cong vênh, đảm bảo độ bền vững và chịu lực tốt. Chân gỗ sồi sơn màu tối mang vẻ đẹp trang nhã, dễ phối hợp với nhiều phong cách nội thất từ Scandinavian tối giản đến Industrial đương đại. Với kích thước vừa phải, Quis Commodo phù hợp đặt ở góc phòng khách, cạnh cửa sổ hay góc làm việc tại nhà, tạo góc thư giãn lý tưởng để đọc sách, thưởng trà hay trò chuyện cùng bạn bè. Chất liệu vải dễ vệ sinh, chỉ cần hút bụi định kỳ và dùng dung dịch làm sạch vải chuyên dụng để giữ ghế luôn như mới.",
+        "dimensions": "W 70 cm x D 75 cm x H 80 cm",
+        "features": [
+            "Khung gỗ tự nhiên chắc chắn",
+            "Đệm mút đàn hồi cao",
+            "Chân gỗ sồi sơn màu tối"
+        ],
+        "care_instructions": "Hút bụi định kỳ, làm sạch vết bẩn bằng dung dịch vải nhẹ",
+        "quantity": 12,
+        "discount_percentage": 0
+    },
+    {
+        "id": "3",
+        "name": "Bibendum Arcu",
+        "price": "65.00",
+        "category": [
+            "Chairs"
+        ],
+        "brand": "Boltshift",
+        "color": [
+            "Gray"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Bibendum Arcu là chiếc ghế đơn nhỏ gọn, bọc vải xám chịu mài mòn, thích hợp cho không gian làm việc hoặc phòng đọc sách cá nhân. Đệm ngồi và lưng tách rời, dễ tháo lắp vệ sinh. Khung và chân gỗ thông chắc chắn, thiết kế lưng hơi cong tạo đường nét duyên dáng, đồng thời ôm sát cơ thể, mang lại tư thế ngồi thoải mái, giảm mỏi lưng. Sản phẩm phù hợp với phong cách nội thất tối giản, Scandinavian hay hiện đại, dễ dàng kết hợp cùng bàn làm việc hoặc kệ sách.",
+        "long_description": "Giải pháp tối ưu cho góc làm việc nhỏ gọn, Bibendum Arcu của Boltshift kết hợp hài hòa giữa tính năng và thẩm mỹ. Phần tựa lưng được uốn cong nhẹ, nâng đỡ phần lưng dưới, hỗ trợ dáng ngồi thẳng, hạn chế tư thế khom lưng. Vải bọc xám chất lượng cao, chống bám bẩn và mài mòn, dễ làm sạch. Đệm ngồi mút mật độ trung bình êm ái, vừa đủ độ cứng để ngồi lâu mà không bị võng. Toàn bộ khung ghế làm từ gỗ thông đã qua xử lý chống ẩm, chống mục, mang đến tuổi thọ sử dụng lâu dài. Khung chân có độ vững chắc tối ưu, chịu lực lên tới 120 kg. Thiết kế đơn giản, không chi tiết thừa, phù hợp với phong cách nội thất hiện đại, Bắc Âu hoặc công nghiệp nhẹ. Bibendum Arcu là lựa chọn lý tưởng để bổ sung cho góc đọc sách, phòng làm việc tại nhà hay phòng họp nhỏ.",
+        "dimensions": "W 60 cm x D 65 cm x H 78 cm",
+        "features": [
+            "Lưng ghế cong ôm sát",
+            "Chân gỗ thông chắc chắn",
+            "Đệm tựa và đệm ngồi rời"
+        ],
+        "care_instructions": "Lau sạch vết bẩn ngay khi xuất hiện, không dùng chất tẩy mạnh",
+        "quantity": 8,
+        "discount_percentage": 0
+    },
+    {
+        "id": "4",
+        "name": "Elito Viverra",
+        "price": "850.00",
+        "category": [
+            "Sofas"
+        ],
+        "brand": "Asgardia",
+        "color": [
+            "Gray"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Elito Viverra là mẫu sofa ba chỗ bọc vải xám trung tính, mang phong cách tối giản hiện đại. Đệm ngồi dày và tựa lưng cao, hỗ trợ lưng và hông, tạo cảm giác thoải mái khi tiếp khách hoặc nghỉ ngơi. Khung gỗ keo chắc chắn, chịu lực tốt, kết hợp chân gỗ sơn đen mờ mang đến nét sang trọng. Thiết kế bo tròn ở tay vịn và đệm, giảm nét góc cạnh, mang lại sự mềm mại bắt mắt. Thích hợp cho phòng khách tinh tế, văn phòng làm việc hoặc không gian chung trong gia đình.",
+        "long_description": "Sofa Elito Viverra của Asgardia hướng đến sự cân bằng giữa vẻ ngoài thanh lịch và chất lượng sử dụng lâu dài. Bộ khung làm từ gỗ keo chịu lực đã qua xử lý chống cong vênh và mối mọt, đảm bảo độ bền vững theo thời gian. Phần đệm ngồi được sử dụng lớp mút mật độ cao, giữ form tốt và mang lại độ êm ái hoàn hảo khi ngồi hoặc nghỉ chân. Tựa lưng cao với các đường may tinh xảo, hỗ trợ cột sống và giảm lực ép lên hông, giúp người dùng duy trì tư thế thoải mái lâu dài. Lớp vải bọc xám trung tính dễ phối màu, chống nhăn và chống bám bụi, vệ sinh đơn giản chỉ với khăn ẩm. Chân gỗ sơn đen mờ thiết kế thấp, tạo cảm giác sofa như đang nổi nhẹ trên nền sàn, mang lại hiệu ứng mở rộng không gian. Với kích thước rộng 210 cm, sâu 90 cm và cao 85 cm, Elito Viverra phù hợp với cả những phòng khách rộng rãi hay không gian văn phòng cao cấp, góp phần tạo nên điểm nhấn nội thất sang trọng và hiện đại.",
+        "dimensions": "W 210 cm x D 90 cm x H 85 cm",
+        "features": [
+            "Đệm mút êm ái mật độ cao",
+            "Khung gỗ keo chịu lực",
+            "Chân gỗ sơn đen mờ"
+        ],
+        "care_instructions": "Tháo vệ sinh vỏ bọc theo hướng dẫn, không giặt máy",
+        "quantity": 45,
+        "discount_percentage": 0
+    },
+    {
+        "id": "5",
+        "name": "Viverra Auctor",
+        "price": "120.00",
+        "category": [
+            "Chairs"
+        ],
+        "brand": "Goldline",
+        "color": [
+            "Gray"
+        ],
+        "material": [
+            "Fabric",
+            "Metal"
+        ],
+        "short_description": "Viverra Auctor là ghế lounge bọc vải xám, đệm may nhăn tự nhiên tạo vẻ mềm mại, êm ái. Phần tựa rộng cùng đệm ngồi sâu đem lại không gian thư giãn, nghỉ ngơi lý tưởng. Đế xoay kim loại sơn đen mờ cho phép xoay linh hoạt, khung kim loại chắc chắn chịu lực tốt. Thiết kế đơn giản nhưng đầy tính nghệ thuật, dễ dàng kết hợp với nhiều phong cách nội thất hiện đại, từ tối giản đến công nghiệp nhẹ, phù hợp phòng khách, góc đọc sách hoặc phòng ngủ.",
+        "long_description": "Chiếc ghế Viverra Auctor của Goldline mang đậm phong cách lounge hiện đại với lớp vải bọc xám dày, may nhăn thủ công, tôn lên nét riêng biệt và sang trọng. Phần đệm mút bên trong có mật độ vừa phải, mang lại cảm giác ôm nhẹ và đàn hồi tốt khi ngồi. Khung ghế và chân đế xoay làm từ thép sơn tĩnh điện, chịu lực lên đến 120 kg, đồng thời chống gỉ sét và ăn mòn. Đế xoay 360 độ cho phép bạn thay đổi hướng ngồi mà không cần phải rời khỏi ghế. Kích thước vừa phải, W 75 cm x D 80 cm x H 85 cm, dễ dàng bố trí trong nhiều không gian như phòng khách, phòng ngủ hay góc làm việc tại nhà. Viverra Auctor không chỉ là nơi để ngồi, mà còn là điểm nhấn nghệ thuật nhẹ nhàng, nâng tầm thẩm mỹ cho căn phòng.",
+        "dimensions": "W 75 cm x D 80 cm x H 85 cm",
+        "features": [
+            "Đệm nhồi bông mềm mại",
+            "Đế xoay và cố định",
+            "Khung kim loại bền bỉ"
+        ],
+        "care_instructions": "Lau khô bề mặt kim loại, hút bụi định kỳ",
+        "quantity": 33,
+        "discount_percentage": 0
+    },
+    {
+        "id": "6",
+        "name": "Malesuada Fames",
+        "price": "790.00",
+        "category": [
+            "Sofas"
+        ],
+        "brand": "Magnolia",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Malesuada Fames là sofa hai chỗ bọc vải beige trung tính, với kích thước vừa phải, phù hợp cho không gian nhỏ. Thiết kế bo cong mềm mại ở tay vịn và lưng, kết hợp đệm mút mật độ cao êm ái, mang đến cảm giác thoải mái khi ngồi lâu. Chân gỗ tối màu tạo điểm nhấn tương phản nhẹ nhàng. Sản phẩm dễ dàng kết hợp cùng bàn trà, kệ trang trí hoặc thảm lót sàn, góp phần tạo nên góc tiếp khách ấm cúng và sang trọng trong phòng khách, phòng làm việc tại nhà hoặc sảnh đón khách.",
+        "long_description": "Sofa Malesuada Fames của Magnolia hội tụ đầy đủ yếu tố tinh tế và chất lượng cao cấp. Bộ khung làm từ gỗ keo đã qua xử lý chống cong vênh và mục nát, đảm bảo độ bền lâu dài. Vải bọc màu beige trung tính, dày dặn, chống nhăn và chịu mài mòn, dễ vệ sinh với khăn ẩm hoặc dung dịch làm sạch chuyên dụng. Đệm mút PU mật độ cao bên trong giữ form lâu, đồng thời tạo độ êm ái tối ưu cho vùng ngồi và tựa lưng. Tay vịn bo tròn nhẹ nhàng, không góc cạnh, mang lại cảm giác an toàn và mềm mại. Chân gỗ sơn màu tối hiện đại, chịu lực tốt và chống trượt. Với kích thước W 160 cm x D 85 cm x H 80 cm, Malesuada Fames phù hợp cho cả không gian căn hộ nhỏ, văn phòng hoặc phòng đọc sách. Thiết kế tối giản, dễ dàng phối hợp cùng các đồ décor khác như gối tựa, thảm trải và bàn trà, góp phần hoàn thiện bộ mặt nội thất đồng điệu và đẳng cấp.",
+        "dimensions": "W 160 cm x D 85 cm x H 80 cm",
+        "features": [
+            "Đệm mút định hình",
+            "Khung gỗ keo chịu lực",
+            "Phù hợp cho không gian nhỏ"
+        ],
+        "care_instructions": "Làm sạch vỏ bọc định kỳ, tránh ánh nắng trực tiếp",
+        "quantity": 10,
+        "discount_percentage": 0
+    },
+    {
+        "id": "7",
+        "name": "Diam Arcu",
+        "price": "450.00",
+        "category": [
+            "Sofas"
+        ],
+        "brand": "Contrast",
+        "color": [
+            "Gray"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Diam Arcu là sofa hai chỗ vải xám với phong cách Scandinavian tối giản, nổi bật nhờ đường nét góc cạnh rõ ràng và đệm rời dễ tháo lắp. Đệm ngồi và tựa lưng được bọc vải bền màu, giữ form tốt, mang lại cảm giác thoải mái, đồng thời dễ dàng vệ sinh khi cần. Chân gỗ thấp sơn đen tạo hiệu ứng “trôi” nhẹ nhàng trên sàn, tiết kiệm diện tích và phù hợp cho phòng khách, phòng chờ hoặc văn phòng làm việc. Thiết kế không tay vịn, linh hoạt khi kết hợp cùng bàn trà hoặc thảm trải sàn.",
+        "long_description": "Sofa Diam Arcu của Contrast được thiết kế dành cho không gian sống hiện đại với triết lý tối giản nhưng vẫn đảm bảo tính công năng cao. Khung ghế làm từ gỗ hỗn hợp đã qua xử lý kỹ thuật, tối ưu độ bền và khả năng chịu lực, kết hợp đệm mút mật độ cao cho cảm giác ngồi chắc chắn nhưng không cứng. Vải bọc màu xám trung tính, có khả năng chống nhăn và chống thấm nhẹ, dễ vệ sinh với khăn ẩm. Đệm rời bao gồm hai phần: phần tựa lưng cao 40 cm hỗ trợ cột sống và phần ngồi sâu 60 cm cho tư thế nghỉ ngơi thoải mái. Thiết kế không tay vịn giúp tiết kiệm không gian, phù hợp với căn hộ nhỏ hoặc văn phòng. Chân gỗ thấp sơn đen mờ, chịu lực lên đến 150 kg, tạo điểm nhấn đương đại và hiệu ứng nhẹ nhàng. Kích thước W 170 cm x D 80 cm x H 82 cm giúp Diam Arcu dễ dàng di chuyển và sắp xếp trong nhiều bố cục nội thất khác nhau. Với kiểu dáng hiện đại, chất liệu bền bỉ, Diam Arcu là lựa chọn lý tưởng cho không gian cần sự đơn giản mà vẫn mang nét sang trọng.",
+        "dimensions": "W 170 cm x D 80 cm x H 82 cm",
+        "features": [
+            "Đệm rời dễ vệ sinh",
+            "Khung gỗ hỗn hợp",
+            "Kiểu dáng tối giản Scandinavian"
+        ],
+        "care_instructions": "Tháo vỏ bọc giặt tay, phơi nơi thoáng gió",
+        "quantity": 10,
+        "discount_percentage": 0
+    },
+    {
+        "id": "8",
+        "name": "Velit Sedum",
+        "price": "750.00",
+        "category": [
+            "Sofas"
+        ],
+        "brand": "Komplex",
+        "color": [
+            "Gray"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "short_description": "Velit Sedum là sofa ba chỗ modular với ba tấm đệm rời, cho phép người dùng thay đổi bố cục linh hoạt. Vải xám sẫm chống nhăn, dễ vệ sinh và chịu ma sát tốt. Khung ghế và chân gỗ sơn tối màu mang vẻ vững chắc. Thiết kế tối giản, không tay vịn, phù hợp với nhiều phong cách nội thất từ hiện đại đến công nghiệp. Sản phẩm lý tưởng cho phòng khách, phòng sinh hoạt chung hoặc không gian làm việc sáng tạo, mang đến trải nghiệm ngồi êm ái, dễ kết hợp cùng bàn trà, kệ sách và phụ kiện décor.",
+        "long_description": "Sofa Velit Sedum của Komplex nổi bật với khả năng tùy biến linh hoạt nhờ thiết kế modular, bao gồm ba tấm đệm ngồi rời và hai tựa lưng di động. Người dùng có thể sắp xếp thành sofa ba chỗ, ghế dài đơn hoặc tách rời thành hai ghế đôi tùy nhu cầu. Phần khung làm từ gỗ keo chịu lực, đã qua xử lý chống cong vênh, đảm bảo độ bền theo thời gian. Đệm mút PU mật độ cao bọc vải polyester xám sẫm, đem lại độ êm ái vừa phải và khả năng hồi form tốt. Thiết kế không tay vịn tạo cảm giác thoáng đãng, tiết kiệm diện tích. Chân gỗ thấp sơn tối màu, chịu lực tốt, kết hợp với đệm rời dễ tháo lắp, giúp vệ sinh, bảo trì đơn giản. Với kích thước tổng thể W 200 cm x D 90 cm x H 85 cm, Velit Sedum phù hợp cho căn hộ hiện đại, studio sáng tạo hoặc không gian làm việc chung, tạo điểm nhấn nội thất đẹp mắt và đầy tính ứng dụng.",
+        "dimensions": "W 200 cm x D 90 cm x H 85 cm",
+        "features": [
+            "Modular dễ điều chỉnh",
+            "Đệm mút đàn hồi cao",
+            "Khung gỗ keo chịu lực"
+        ],
+        "care_instructions": "Làm sạch bụi bằng máy hút, giặt vỏ bọc chuyên dụng",
+        "quantity": 10,
+        "discount_percentage": 0
+    },
+    {
+        "id": "9",
+        "name": "Laoreet Aliquet",
+        "price": "120.00",
+        "category": [
+            "Chairs"
+        ],
+        "brand": "Asgardia",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Fabric",
+            "Wood"
+        ],
+        "short_description": "Laoreet Aliquet là ghế papasan thư giãn với đệm vải beige dày êm ái, khung gỗ uốn cong tinh tế. Thiết kế ôm tròn xung quanh, mang lại tư thế ngồi thoải mái và cảm giác thư thái hoàn hảo. Khung mây tự nhiên chịu lực tốt, dễ di chuyển. Phù hợp cho góc đọc sách, hiên nhà hay phòng khách nhỏ. Phụ kiện gối tựa có thể tháo rời, dễ vệ sinh và thay đổi họa tiết theo mùa trang trí.",
+        "long_description": "Ghế Laoreet Aliquet của Asgardia được chế tác dựa trên truyền thống papasan Nhật Bản, kết hợp với phong cách hiện đại để tạo nên sản phẩm vừa đẹp mắt vừa tiện dụng. Đệm vải dày 30 cm với lớp bông polyester cao cấp, mang lại độ êm mềm hoàn hảo, đồng thời giữ form tốt sau thời gian dài sử dụng. Vải bọc chống nhăn, dễ tháo ra vệ sinh hoặc thay mới. Khung ghế làm từ mây tự nhiên đã qua xử lý chống ẩm, chống mối mọt, bền bỉ theo thời gian. Thiết kế vòng tròn bao bọc xung quanh cơ thể, phân tán đều lực, giảm áp lực lên cột sống và hông. Kích thước đường kính 100 cm, chiều cao 85 cm, phù hợp cho cả người lớn và trẻ em. Laoreet Aliquet không chỉ là nơi thư giãn mà còn là điểm nhấn trang trí đầy phong cách cho ban công, phòng khách hoặc góc làm việc, mang đến cảm giác nghỉ dưỡng tại gia.",
+        "dimensions": "Ø 100 cm x H 85 cm",
+        "features": [
+            "Đệm dày êm ái",
+            "Khung mây tự nhiên",
+            "Dễ lắp đặt và di chuyển"
+        ],
+        "care_instructions": "Giữ nơi khô ráo, tháo vỏ bọc giặt tay",
+        "quantity": 10,
+        "discount_percentage": 0
+    },
+    {
+        "id": "10",
+        "name": "Augue Mauris",
+        "price": "85.00",
+        "category": [
+            "Chairs"
+        ],
+        "brand": "Komplex",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Fabric",
+            "Wood"
+        ],
+        "short_description": "Augue Mauris là ghế đơn bọc vải beige mềm mại, khung và chân làm từ gỗ tự nhiên chắc chắn. Tựa lưng hơi ngả, kết hợp đệm mút mật độ trung bình đem lại sự thoải mái khi ngồi đọc sách hoặc làm việc tại nhà. Thiết kế tối giản, không tay vịn, giúp tiết kiệm không gian và dễ dàng phối cảnh với bàn làm việc, kệ sách hay bàn trà. Đệm rời có thể tháo giặt, giữ ghế luôn sạch sẽ và tươi mới theo thời gian.",
+        "long_description": "Chiếc ghế Augue Mauris của Komplex mang đến giải pháp nội thất tiện dụng cho không gian nhỏ và phong cách sống hiện đại. Phần khung ghế và chân gỗ tự nhiên đã được xử lý chống cong vênh, mục nát, đảm bảo độ bền lâu dài. Đệm mút bên trong có mật độ trung bình, giữ form và cung cấp độ êm ái vừa phải, giảm căng thẳng vùng hông và lưng khi ngồi lâu. Vải bọc beige dễ chịu, chống nhăn và bám bụi nhẹ, dễ dàng làm sạch với khăn ẩm hoặc giặt tay vỏ bọc khi cần. Tựa lưng hơi ngả 5–7° so với phương thẳng đứng, tối ưu tư thế ngồi và giữ thăng bằng cho cơ thể. Kích thước W 60 cm x D 65 cm x H 78 cm phù hợp đặt trong góc phòng khách, phòng làm việc hoặc phòng ngủ, tạo nên góc thư giãn lý tưởng. Thiết kế không tay vịn giúp ghế trông gọn gàng, thích hợp với nhiều phong cách nội thất từ tối giản đến Scandinavian.",
+        "dimensions": "W 60 cm x D 65 cm x H 78 cm",
+        "features": [
+            "Khung gỗ chịu lực",
+            "Đệm mút mật độ trung bình",
+            "Thiết kế tối giản dễ phối cảnh"
+        ],
+        "care_instructions": "Lau sạch bằng vải khô, tránh ánh sáng mặt trời trực tiếp",
+        "quantity": 10,
+        "discount_percentage": 0
+    }
+]
