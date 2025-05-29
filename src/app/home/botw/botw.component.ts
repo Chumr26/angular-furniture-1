@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ProductComponent } from '../../shared/product/product.component';
 import { Product } from '../../models/app.model';
 import { ProductService } from '../../services/product.service';
@@ -8,6 +8,7 @@ import { ProductService } from '../../services/product.service';
   imports: [ProductComponent],
   templateUrl: './botw.component.html',
   styleUrl: './botw.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class BotwComponent {
   botwIds = ['1', '2', '3', '4', '5', '6', '7', '8'];
