@@ -21,6 +21,9 @@ export class ProductService {
   }
 
   getProductsByIds(ids: string[]): Product[] {
-    return this.products.filter((product) => ids.includes(product.id));
+    // return products that match the given ids and the order of ids
+    return ids
+      .map((id) => this.products.find((product) => product.id === id))
+      .filter((product) => product !== undefined) as Product[];
   }
 }

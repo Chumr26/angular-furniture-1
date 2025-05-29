@@ -11,7 +11,7 @@ import { ProductService } from '../../services/product.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class BotwComponent {
-  botwIds = ['1', '2', '3', '4', '5', '6', '7', '8'];
+  botwIds = ['1', '2', '10', '3', '5', '7', '25', '8'];
   botwProducts: Product[];
   constructor(private productService: ProductService) {
     this.botwProducts = this.productService.getProductsByIds(this.botwIds);
