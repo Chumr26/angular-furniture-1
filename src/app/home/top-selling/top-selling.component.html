@@ -1,1 +1,23 @@
-<p>top-selling works!</p>
+<h3
+  id="gspb_heading-id-gsbp-a0eb918"
+  class="gspb_heading gspb_heading-id-gsbp-a0eb918"
+>
+  Top selling furniture
+</h3>
+
+<div id="gspb_text-id-gsbp-461fbc6" class="gspb_text gspb_text-id-gsbp-461fbc6">
+  Quam elementum pulvinar etiam non quam. Faucibus nisl tincidunt eget nullam
+  non nisi elementum sagittis vitae et leo duis ut diam quam.
+</div>
+
+<div class="woocommerce columns-4">
+  <ul class="products columns-4" data-products="type-2" data-hover="zoom-in">
+    @for (item of topSellingProducts; track $index) {
+    <li
+      product
+      [productData]="item"
+      class="product type-product status-publish first instock product_cat-tables has-post-thumbnail shipping-taxable purchasable product-type-simple"
+    ></li>
+    }
+  </ul>
+</div>

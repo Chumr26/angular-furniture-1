@@ -265,7 +265,7 @@
     {
         "id": "11",
         "name": "Edget Dolor",
-        "price": "$45.00",
+        "price": "45.00",
         "category": [
             "Chairs"
         ],
@@ -292,7 +292,7 @@
     {
         "id": "12",
         "name": "Pretium Elite",
-        "price": "$130.00",
+        "price": "130.00",
         "category": [
             "Chairs"
         ],
@@ -319,7 +319,7 @@
     {
         "id": "13",
         "name": "Justo Quam",
-        "price": "$89.00",
+        "price": "89.00",
         "category": [
             "Storage"
         ],
@@ -345,7 +345,7 @@
     {
         "id": "14",
         "name": "Pharetra Nunc",
-        "price": "$45.00",
+        "price": "45.00",
         "category": [
             "Storage"
         ],
@@ -371,7 +371,7 @@
     {
         "id": "15",
         "name": "Odio Donec",
-        "price": "$1,200.00",
+        "price": "1,200.00",
         "category": [
             "Sofas"
         ],
@@ -397,7 +397,7 @@
     {
         "id": "16",
         "name": "Turpis Cursus",
-        "price": "$320.00",
+        "price": "320.00",
         "category": [
             "Armchairs"
         ],
@@ -424,7 +424,7 @@
     {
         "id": "17",
         "name": "Eleifend Donec",
-        "price": "$580.00",
+        "price": "580.00",
         "category": [
             "Armchairs"
         ],
@@ -450,7 +450,7 @@
     {
         "id": "18",
         "name": "Natoque Penatibus",
-        "price": "$250.00",
+        "price": "250.00",
         "category": [
             "Decor"
         ],
@@ -478,7 +478,7 @@
     {
         "id": "19",
         "name": "Hendrerit Porta",
-        "price": "$120.00",
+        "price": "120.00",
         "category": [
             "Decor"
         ],
@@ -505,7 +505,7 @@
     {
         "id": "20",
         "name": "Volutpat Odio",
-        "price": "$85.00",
+        "price": "85.00",
         "category": [
             "Decor"
         ],
@@ -531,7 +531,7 @@
     {
         "id": "21",
         "name": "Semper Auctor",
-        "price": "$950.00",
+        "price": "950.00",
         "category": [
             "Armchairs"
         ],
@@ -560,7 +560,7 @@
     {
         "id": "22",
         "name": "Purus Semper",
-        "price": "$75.00",
+        "price": "75.00",
         "category": [
             "Decor"
         ],
@@ -586,7 +586,7 @@
     {
         "id": "23",
         "name": "Malesuada Fames",
-        "price": "$480.00",
+        "price": "480.00",
         "category": [
             "Decor"
         ],
@@ -612,7 +612,7 @@
     {
         "id": "24",
         "name": "Porta Non",
-        "price": "$75.00",
+        "price": "75.00",
         "category": [
             "Decor"
         ],
@@ -640,7 +640,7 @@
     {
         "id": "25",
         "name": "Diam Volutpat",
-        "price": "$250.00",
+        "price": "250.00",
         "category": [
             "Decor"
         ],
@@ -666,7 +666,7 @@
     {
         "id": "26",
         "name": "Porttitor Massa",
-        "price": "$145.00",
+        "price": "145.00",
         "category": [
             "Decor"
         ],
@@ -693,7 +693,7 @@
     {
         "id": "27",
         "name": "Senectus Netus",
-        "price": "$450.00",
+        "price": "450.00",
         "category": [
             "Storage"
         ],
@@ -719,7 +719,7 @@
     {
         "id": "28",
         "name": "Libero Nunc",
-        "price": "$580.00",
+        "price": "580.00",
         "category": [
             "Storage"
         ],
@@ -746,7 +746,7 @@
     {
         "id": "29",
         "name": "Mollis Nunc",
-        "price": "$750.00",
+        "price": "750.00",
         "category": [
             "Storage"
         ],
@@ -773,7 +773,7 @@
     {
         "id": "30",
         "name": "Sem Integer",
-        "price": "$280.00",
+        "price": "280.00",
         "category": [
             "Storage"
         ],
