@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'philosophy',
+  selector: '[philosophy]',
   imports: [],
   templateUrl: './philosophy.component.html',
-  styleUrl: './philosophy.component.css'
+  styleUrl: './philosophy.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class PhilosophyComponent {
 
