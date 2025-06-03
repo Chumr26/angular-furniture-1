@@ -1,0 +1,92 @@
+<div class="gspb_row__content">
+  <div
+    class="wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_row__col--xs-12 gspb_col-id-gsbp-7878ec3"
+    id="gspb_col-id-gsbp-7878ec3"
+  >
+    <div
+      class="wp-block-greenshift-blocks-image gspb_image gspb_image-id-gsbp-5942efa"
+      id="gspb_image-id-gsbp-5942efa"
+    >
+      <img
+        decoding="async"
+        src="imgs/subscribe-section-image.webp"
+        data-src=""
+        alt=""
+        loading="lazy"
+        width="60"
+        height="192"
+      />
+    </div>
+
+    <div
+      class="wp-block-greenshift-blocks-container gspb_container gspb_container-gsbp-caf7120"
+      id="gspb_container-id-gsbp-caf7120"
+    >
+      <h3
+        id="gspb_heading-id-gsbp-eb18828"
+        class="gspb_heading gspb_heading-id-gsbp-eb18828"
+      >
+        Important updates waiting for you!
+      </h3>
+
+      <div
+        id="gspb_text-id-gsbp-153861e"
+        class="gspb_text gspb_text-id-gsbp-153861e"
+      >
+        Subscribe and grab 20% OFF!
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_row__col--xs-12 gspb_col-id-gsbp-2abc868"
+    id="gspb_col-id-gsbp-2abc868"
+  >
+    <div class="ct-block-wrapper">
+      <div class="ct-newsletter-subscribe-block">
+        @if (isSubmitted) {
+        <div class="ct-newsletter-subscribe-message">
+          Thank you for subscribing to our newsletter!
+        </div>
+        } @else {
+        <form
+          (submit)="onSubmit($event)"
+          class="ct-newsletter-subscribe-form"
+          data-provider="demo:demolist"
+          style="
+            --theme-form-text-initial-color: var(
+              --wp--preset--color--palette-color-5
+            );
+            --theme-form-text-focus-color: var(
+              --wp--preset--color--palette-color-5
+            );
+            --theme-form-field-border-initial-color: var(
+              --wp--preset--color--palette-color-1
+            );
+            --theme-form-field-border-focus-color: var(
+              --wp--preset--color--palette-color-2
+            );
+          "
+        >
+          <div
+            class="ct-newsletter-subscribe-form-elements"
+            data-columns="2"
+            data-container="boxed"
+          >
+            <input
+              type="email"
+              name="EMAIL"
+              placeholder="Your email *"
+              title="Email address"
+              aria-label="Email address"
+              required=""
+            />
+
+            <button class="wp-element-button">Subscribe</button>
+          </div>
+        </form>
+        }
+      </div>
+    </div>
+  </div>
+</div>
