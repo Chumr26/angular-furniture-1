@@ -1,0 +1,63 @@
+<div class="ct-block-wrapper">
+  <h3
+    class="wp-block-heading widget-title"
+    id="filter-by-price"
+    style="font-size: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.156), 16px)"
+  >
+    Filter by price
+  </h3>
+
+  <div class="ct-filter-widget-wrapper">
+    <div class="ct-price-filter">
+      <div class="ct-price-filter-slider">
+        <div
+          class="ct-price-filter-range-track"
+          [style.--start]="
+            ((currentminPrice - minPrice) / (maxPrice - minPrice)) * 100 + '%'
+          "
+          [style.--end]="
+            ((currentmaxPrice - minPrice) / (maxPrice - minPrice)) * 100 + '%'
+          "
+        ></div>
+        <input
+          type="range"
+          [(ngModel)]="currentminPrice"
+          [min]="minPrice"
+          [max]="maxPrice"
+          step="1"
+          name="min_price"
+        />
+        <span
+          class="ct-price-filter-range-handle-min"
+          [style.insetInlineStart]="
+            ((currentminPrice - minPrice) / (maxPrice - minPrice)) * 100 + '%'
+          "
+        >
+          <span class="ct-tooltip">${{ currentminPrice }}</span>
+        </span>
+        <input
+          type="range"
+          [(ngModel)]="currentmaxPrice"
+          [min]="minPrice"
+          [max]="maxPrice"
+          step="1"
+          name="max_price"
+        />
+        <span
+          class="ct-price-filter-range-handle-max"
+          [style.insetInlineStart]="
+            ((currentmaxPrice - minPrice) / (maxPrice - minPrice)) * 100 + '%'
+          "
+        >
+          <span class="ct-tooltip">${{ currentmaxPrice }}</span>
+        </span>
+      </div>
+      <div class="ct-price-filter-inputs">
+        <span>Price:&nbsp;</span
+        ><span class="ct-price-filter-min">${{ currentminPrice }}</span
+        ><span>&nbsp;-&nbsp;</span
+        ><span class="ct-price-filter-max">${{ currentmaxPrice }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19169,54 +19169,15 @@ textarea {
     margin-inline-start: .5em
 }
 
-.ct-price-filter-slider {
-    --handle-size: 18px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-block: calc(var(--handle-size)/2) 25px;
-    margin-inline: calc(var(--handle-size)/2)
-}
 
-.ct-price-filter-slider .ct-price-filter-range-track {
-    position: absolute;
-    inset-inline: calc(var(--handle-size)/2*-1);
-    height: 14px;
-    padding: 6px 0;
-    background-clip: content-box;
-    cursor: pointer;
-    background-image: linear-gradient(90deg, var(--theme-form-field-border-initial-color) var(--start), var(--theme-palette-color-1) var(--start), var(--theme-palette-color-1) var(--end), var(--theme-form-field-border-initial-color) var(--end))
-}
 
-.ct-price-filter-slider [class*=ct-price-filter-range-handle] {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    width: var(--handle-size);
-    height: var(--handle-size);
-    border-radius: 100%;
-    background: #fff;
-    border: 2px solid var(--theme-palette-color-1);
-    transform: translateX(calc(var(--handle-size) / 2 * -1));
-    transition: box-shadow .1s ease
-}
 
-.ct-price-filter-slider [class*=ct-price-filter-range-handle] .ct-tooltip {
-    transform: translate3d(0px, calc(-100% - 7px), 0px)
-}
 
-.ct-price-filter-slider input[type=range] {
-    position: absolute;
-    z-index: 2;
-    opacity: 0;
-    width: calc(100% + var(--handle-size));
-    inset-inline: calc(var(--handle-size)/2*-1);
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0)
-}
+
+
+
+
+
 
 .ct-price-filter-slider input[type=range]::-webkit-slider-thumb {
     width: var(--handle-size);
@@ -19243,15 +19204,9 @@ textarea {
     transform: translate3d(0px, calc(-100% - 15px), 0px)
 }
 
-.ct-price-filter-inputs {
-    display: flex;
-    align-items: center;
-    font-size: 14px
-}
 
-.ct-price-filter-inputs [class*=ct-price-filter] {
-    font-weight: 600
-}
+
+
 
 [data-filter-criteria*=taxonomy] .ct-filter-children {
     display: flex;

@@ -2,7 +2,7 @@
     {
         "id": "1",
         "name": "Tempor Commodo",
-        "price": "125.00",
+        "price": 125,
         "category": [
             "Armchairs"
         ],
@@ -28,7 +28,7 @@
     {
         "id": "2",
         "name": "Quis Commodo",
-        "price": "120.00",
+        "price": 120,
         "category": [
             "Armchairs"
         ],
@@ -54,7 +54,7 @@
     {
         "id": "3",
         "name": "Bibendum Arcu",
-        "price": "65.00",
+        "price": 65,
         "category": [
             "Chairs"
         ],
@@ -80,7 +80,7 @@
     {
         "id": "4",
         "name": "Elito Viverra",
-        "price": "850.00",
+        "price": 850,
         "category": [
             "Sofas"
         ],
@@ -106,7 +106,7 @@
     {
         "id": "5",
         "name": "Viverra Auctor",
-        "price": "120.00",
+        "price": 120,
         "category": [
             "Chairs"
         ],
@@ -133,7 +133,7 @@
     {
         "id": "6",
         "name": "Malesuada Fames",
-        "price": "790.00",
+        "price": 790,
         "category": [
             "Sofas"
         ],
@@ -159,7 +159,7 @@
     {
         "id": "7",
         "name": "Diam Arcu",
-        "price": "450.00",
+        "price": 450,
         "category": [
             "Sofas"
         ],
@@ -185,7 +185,7 @@
     {
         "id": "8",
         "name": "Velit Sedum",
-        "price": "750.00",
+        "price": 750,
         "category": [
             "Sofas"
         ],
@@ -211,7 +211,7 @@
     {
         "id": "9",
         "name": "Laoreet Aliquet",
-        "price": "120.00",
+        "price": 120,
         "category": [
             "Chairs"
         ],
@@ -238,7 +238,7 @@
     {
         "id": "10",
         "name": "Augue Mauris",
-        "price": "85.00",
+        "price": 85,
         "category": [
             "Chairs"
         ],
@@ -265,7 +265,7 @@
     {
         "id": "11",
         "name": "Edget Dolor",
-        "price": "45.00",
+        "price": 45,
         "category": [
             "Chairs"
         ],
@@ -292,7 +292,7 @@
     {
         "id": "12",
         "name": "Pretium Elite",
-        "price": "130.00",
+        "price": 130,
         "category": [
             "Chairs"
         ],
@@ -319,7 +319,7 @@
     {
         "id": "13",
         "name": "Justo Quam",
-        "price": "89.00",
+        "price": 89,
         "category": [
             "Storage"
         ],
@@ -345,7 +345,7 @@
     {
         "id": "14",
         "name": "Pharetra Nunc",
-        "price": "45.00",
+        "price": 45,
         "category": [
             "Storage"
         ],
@@ -371,7 +371,7 @@
     {
         "id": "15",
         "name": "Odio Donec",
-        "price": "1,200.00",
+        "price": 1200,
         "category": [
             "Sofas"
         ],
@@ -397,7 +397,7 @@
     {
         "id": "16",
         "name": "Turpis Cursus",
-        "price": "320.00",
+        "price": 320,
         "category": [
             "Armchairs"
         ],
@@ -424,7 +424,7 @@
     {
         "id": "17",
         "name": "Eleifend Donec",
-        "price": "580.00",
+        "price": 580,
         "category": [
             "Armchairs"
         ],
@@ -450,7 +450,7 @@
     {
         "id": "18",
         "name": "Natoque Penatibus",
-        "price": "250.00",
+        "price": 250,
         "category": [
             "Decor"
         ],
@@ -478,7 +478,7 @@
     {
         "id": "19",
         "name": "Hendrerit Porta",
-        "price": "120.00",
+        "price": 120,
         "category": [
             "Decor"
         ],
@@ -505,7 +505,7 @@
     {
         "id": "20",
         "name": "Volutpat Odio",
-        "price": "85.00",
+        "price": 85,
         "category": [
             "Decor"
         ],
@@ -531,7 +531,7 @@
     {
         "id": "21",
         "name": "Semper Auctor",
-        "price": "950.00",
+        "price": 950,
         "category": [
             "Armchairs"
         ],
@@ -560,7 +560,7 @@
     {
         "id": "22",
         "name": "Purus Semper",
-        "price": "75.00",
+        "price": 75,
         "category": [
             "Decor"
         ],
@@ -586,7 +586,7 @@
     {
         "id": "23",
         "name": "Malesuada Fames",
-        "price": "480.00",
+        "price": 480,
         "category": [
             "Decor"
         ],
@@ -612,7 +612,7 @@
     {
         "id": "24",
         "name": "Porta Non",
-        "price": "75.00",
+        "price": 75,
         "category": [
             "Decor"
         ],
@@ -640,7 +640,7 @@
     {
         "id": "25",
         "name": "Diam Volutpat",
-        "price": "250.00",
+        "price": 250,
         "category": [
             "Decor"
         ],
@@ -666,7 +666,7 @@
     {
         "id": "26",
         "name": "Porttitor Massa",
-        "price": "145.00",
+        "price": 145,
         "category": [
             "Decor"
         ],
@@ -693,7 +693,7 @@
     {
         "id": "27",
         "name": "Senectus Netus",
-        "price": "450.00",
+        "price": 450,
         "category": [
             "Storage"
         ],
@@ -719,7 +719,7 @@
     {
         "id": "28",
         "name": "Libero Nunc",
-        "price": "580.00",
+        "price": 580,
         "category": [
             "Storage"
         ],
@@ -746,7 +746,7 @@
     {
         "id": "29",
         "name": "Mollis Nunc",
-        "price": "750.00",
+        "price": 750,
         "category": [
             "Storage"
         ],
@@ -773,7 +773,7 @@
     {
         "id": "30",
         "name": "Sem Integer",
-        "price": "280.00",
+        "price": 280,
         "category": [
             "Storage"
         ],
@@ -799,7 +799,7 @@
     {
         "id": "31",
         "name": "Lectus Proin",
-        "price": "$680.00",
+        "price": 680,
         "category": [
             "Tables"
         ],
@@ -827,7 +827,7 @@
     {
         "id": "32",
         "name": "Massa Scelerisque",
-        "price": "$790.00",
+        "price": 790,
         "category": [
             "Tables"
         ],
@@ -856,7 +856,7 @@
     {
         "id": "33",
         "name": "Pretium Malesuada",
-        "price": "$550.00",
+        "price": 550,
         "category": [
             "Tables"
         ],
@@ -883,7 +883,7 @@
     {
         "id": "34",
         "name": "Vitae Justo",
-        "price": "$470.00",
+        "price": 470,
         "category": [
             "Tables"
         ],
@@ -911,7 +911,7 @@
     {
         "id": "35",
         "name": "Aliquam Blandit",
-        "price": "$320.00",
+        "price": 320,
         "category": [
             "Tables"
         ],
@@ -939,7 +939,7 @@
     {
         "id": "36",
         "name": "Duis Diam",
-        "price": "$1,300.00",
+        "price": 1300,
         "category": [
             "Sofas"
         ],
@@ -966,7 +966,7 @@
     {
         "id": "37",
         "name": "Augue Lacus",
-        "price": "$800.00",
+        "price": 800,
         "category": [
             "Beds"
         ],
@@ -994,7 +994,7 @@
     {
         "id": "38",
         "name": "Neque Viverra",
-        "price": "$900.00",
+        "price": 900,
         "category": [
             "Beds"
         ],
@@ -1023,7 +1023,7 @@
     {
         "id": "39",
         "name": "Rutrum Quisque",
-        "price": "$1,200.00",
+        "price": 1200,
         "category": [
             "Beds"
         ],
@@ -1051,7 +1051,7 @@
     {
         "id": "40",
         "name": "Platea Enim",
-        "price": "$700.00",
+        "price": 700,
         "category": [
             "Beds"
         ],
@@ -1075,5 +1075,143 @@
             "Chân giường nghiêng hiện đại"
         ],
         "care_instructions": "Hút bụi phần vải đầu giường định kỳ, lau khung gỗ bằng khăn ẩm và lau khô ngay sau đó"
+    },
+    {
+        "id": "41",
+        "name": "Commodo Amcorper",
+        "price": 1250,
+        "category": [
+            "Beds"
+        ],
+        "brand": "Asgardia",
+        "color": [
+            "Black"
+        ],
+        "material": [
+            "Aluminium",
+            "Fabric"
+        ],
+        "long_description": "Giường Commodo Amcorper của Asgardia mang phong cách hiện đại với thiết kế sang trọng, nổi bật bởi khung nhôm màu đen bóng bẩy kết hợp cùng lớp vải bọc cao cấp. Đầu giường được bọc vải đen mềm mại, chần ô vuông đều đặn, tạo cảm giác êm ái khi tựa lưng, lý tưởng để thư giãn hoặc đọc sách trước khi ngủ. Khung nhôm được phủ sơn tĩnh điện chống gỉ, đảm bảo độ bền vượt trội và giữ được vẻ đẹp theo thời gian. Chân giường làm từ gỗ tự nhiên sơn màu sáng, thiết kế nghiêng nhẹ theo phong cách mid-century, vừa tạo điểm nhấn tinh tế vừa giúp không gian dưới gầm thoáng đãng, dễ vệ sinh. Commodo Amcorper phù hợp với các phòng ngủ hiện đại hoặc công nghiệp, dễ dàng kết hợp với nội thất tông màu tối hoặc trung tính. Với khả năng chịu tải lên tới 250kg, sản phẩm không chỉ bền bỉ mà còn mang lại giấc ngủ thoải mái và đẳng cấp cho gia đình bạn.",
+        "short_description": "Giường Commodo Amcorper từ Asgardia có khung nhôm đen bóng và đầu giường bọc vải đen chần ô vuông êm ái, mang phong cách hiện đại, sang trọng. Chân giường gỗ nghiêng nhẹ kiểu mid-century, tạo không gian thoáng đãng, dễ vệ sinh. Chịu tải 250kg, sản phẩm phù hợp với phòng ngủ hiện đại hoặc công nghiệp, mang đến sự tinh tế và thoải mái cho giấc ngủ của bạn.",
+        "quantity": 10,
+        "discount_percentage": 28,
+        "dimensions": "W 200 cm x D 210 cm x H 90 cm",
+        "features": [
+            "Khung nhôm đen bóng chống gỉ",
+            "Đầu giường bọc vải chần ô vuông",
+            "Chân giường gỗ nghiêng mid-century",
+            "Phong cách hiện đại sang trọng"
+        ],
+        "care_instructions": "Hút bụi phần vải định kỳ, lau khung nhôm bằng khăn mềm ẩm và lau khô ngay, tránh để nước đọng trên gỗ"
+    },
+    {
+        "id": "42",
+        "name": "Felis Vehicula",
+        "price": 740,
+        "category": [
+            "Beds"
+        ],
+        "brand": "Komplex",
+        "color": [
+            "Green"
+        ],
+        "material": [
+            "Leather"
+        ],
+        "long_description": "Giường Felis Vehicula của Komplex mang đến sự tươi mới và độc đáo với lớp bọc da màu xanh lá đậm, tạo điểm nhấn nổi bật cho không gian phòng ngủ. Đầu giường cao, bọc da cao cấp, được chần bông hình vuông, vừa tăng tính thẩm mỹ vừa mang lại cảm giác êm ái khi tựa lưng, phù hợp để thư giãn hoặc đọc sách. Khung giường cũng được bọc da hoàn toàn, với các đường may tỉ mỉ, đảm bảo độ bền lâu dài và dễ dàng vệ sinh. Chân giường thấp, làm từ kim loại sơn tĩnh điện màu đen, giúp giường vững chắc và tạo không gian thoáng đãng bên dưới. Felis Vehicula phù hợp với các phòng ngủ hiện đại hoặc phá cách, dễ dàng kết hợp với nội thất tông màu trung tính hoặc sáng. Với khả năng chịu tải lên tới 200kg, sản phẩm không chỉ mang lại sự thoải mái mà còn tạo nên một không gian nghỉ ngơi đầy phong cách và tinh tế cho gia đình bạn.",
+        "short_description": "Giường Felis Vehicula từ Komplex nổi bật với lớp da bọc xanh lá đậm, đầu giường chần bông hình vuông êm ái, mang phong cách hiện đại và độc đáo. Chân giường thấp bằng kim loại sơn đen, tạo không gian thoáng đãng, dễ vệ sinh. Chịu tải 200kg, sản phẩm phù hợp với phòng ngủ phá cách, mang đến sự tinh tế và thoải mái cho giấc ngủ của bạn.",
+        "quantity": 10,
+        "discount_percentage": 37,
+        "dimensions": "W 200 cm x D 210 cm x H 100 cm",
+        "features": [
+            "Lớp da bọc xanh lá đậm",
+            "Đầu giường chần bông hình vuông",
+            "Chân giường kim loại thấp",
+            "Phong cách hiện đại độc đáo"
+        ],
+        "care_instructions": "Lau sạch da bằng khăn mềm ẩm và dung dịch chuyên dụng, tránh tiếp xúc trực tiếp với ánh nắng"
+    },
+    {
+        "id": "43",
+        "name": "Dolore Magna",
+        "price": 1000,
+        "category": [
+            "Beds"
+        ],
+        "brand": "Asgardia",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Leather",
+            "Wood"
+        ],
+        "long_description": "Giường Dolore Magna của Asgardia mang vẻ đẹp thanh lịch và ấm áp với khung gỗ tự nhiên màu beige kết hợp cùng lớp bọc da cao cấp cùng tông. Đầu giường bọc da, thiết kế phẳng với các đường may ngang tinh tế, tạo cảm giác êm ái khi tựa lưng và tăng thêm sự sang trọng cho sản phẩm. Khung gỗ sồi được xử lý chống mối mọt, giữ nguyên các đường vân tự nhiên, mang lại cảm giác gần gũi và hài hòa. Chân giường ngắn, hơi nghiêng, giúp giường vững chắc và tạo không gian thoáng đãng phía dưới, thuận tiện cho việc vệ sinh. Dolore Magna phù hợp với các phòng ngủ phong cách Scandinavian hoặc hiện đại, dễ dàng kết hợp với chăn ga gối tông màu sáng hoặc trung tính. Với khả năng chịu tải lên tới 230kg, sản phẩm không chỉ bền bỉ mà còn mang lại giấc ngủ thoải mái, tạo nên một không gian nghỉ ngơi tinh tế và tiện nghi cho gia đình bạn.",
+        "short_description": "Giường Dolore Magna từ Asgardia có khung gỗ sồi beige tự nhiên và đầu giường bọc da phẳng êm ái, mang phong cách thanh lịch, hiện đại. Chân giường ngắn nghiêng tạo không gian thoáng đãng, dễ vệ sinh. Chịu tải 230kg, sản phẩm phù hợp với phòng ngủ Scandinavian, mang đến sự ấm áp và thoải mái cho giấc ngủ của bạn.",
+        "quantity": 10,
+        "discount_percentage": 42,
+        "dimensions": "W 200 cm x D 210 cm x H 85 cm",
+        "features": [
+            "Khung gỗ sồi beige tự nhiên",
+            "Đầu giường bọc da phẳng",
+            "Chân giường ngắn nghiêng",
+            "Phong cách Scandinavian ấm áp"
+        ],
+        "care_instructions": "Lau da bằng khăn mềm và dung dịch chuyên dụng, lau khung gỗ bằng khăn ẩm và lau khô ngay"
+    },
+    {
+        "id": "44",
+        "name": "Hendre Quisque",
+        "price": 850,
+        "category": [
+            "Beds"
+        ],
+        "brand": "Boltshift",
+        "color": [
+            "Brown"
+        ],
+        "material": [
+            "Wood"
+        ],
+        "long_description": "Giường Hendre Quisque của Boltshift mang phong cách tối giản với khung gỗ màu nâu nhạt tự nhiên, tạo cảm giác ấm áp và gần gũi cho không gian phòng ngủ. Đầu giường thấp, làm từ gỗ liền mạch, giữ nguyên các đường vân tự nhiên, mang lại vẻ đẹp mộc mạc nhưng vẫn hiện đại và tinh tế. Khung giường được gia công tỉ mỉ, với các cạnh bo tròn nhẹ nhàng, đảm bảo an toàn khi sử dụng và tăng tính thẩm mỹ. Chân giường ngắn, hơi nghiêng, giúp giường vững chắc và tạo không gian thoáng đãng bên dưới, dễ dàng vệ sinh. Hendre Quisque phù hợp với các phòng ngủ phong cách Scandinavian hoặc tối giản, dễ dàng kết hợp với chăn ga gối màu trung tính như trắng, xám hoặc beige. Với khả năng chịu tải lên tới 210kg, sản phẩm không chỉ bền bỉ mà còn mang lại sự thoải mái, tạo nên một không gian nghỉ ngơi tiện nghi và hài hòa cho gia đình bạn.",
+        "short_description": "Giường Hendre Quisque từ Boltshift có khung gỗ nâu nhạt tự nhiên, đầu giường thấp mộc mạc, mang phong cách tối giản hiện đại. Chân giường ngắn nghiêng tạo không gian thoáng đãng, dễ vệ sinh. Chịu tải 210kg, sản phẩm phù hợp với phòng ngủ Scandinavian, mang lại sự ấm áp và tiện nghi cho giấc ngủ của bạn.",
+        "quantity": 10,
+        "discount_percentage": 46,
+        "dimensions": "W 200 cm x D 210 cm x H 75 cm",
+        "features": [
+            "Khung gỗ nâu nhạt tự nhiên",
+            "Đầu giường thấp mộc mạc",
+            "Chân giường ngắn nghiêng",
+            "Phong cách tối giản Scandinavian"
+        ],
+        "care_instructions": "Lau khung gỗ bằng khăn ẩm và lau khô ngay sau đó, tránh để gỗ tiếp xúc lâu với nước"
+    },
+    {
+        "id": "45",
+        "name": "Tellus Convallis",
+        "price": 1350,
+        "category": [
+            "Beds"
+        ],
+        "brand": "Boltshift",
+        "color": [
+            "Brown",
+            "Gray"
+        ],
+        "material": [
+            "Leather"
+        ],
+        "long_description": "Giường Tellus Convallis của Boltshift mang phong cách hiện đại với đầu giường bọc da màu nâu đậm sang trọng, kết hợp cùng lớp vải xám mềm mại, tạo sự hài hòa và tinh tế cho không gian phòng ngủ. Đầu giường vuông vức, bọc da cao cấp, mang lại cảm giác êm ái khi tựa lưng, phù hợp để đọc sách hoặc thư giãn trước khi ngủ. Khung giường được bọc da hoàn toàn, với các đường may chắc chắn, đảm bảo độ bền và thẩm mỹ vượt trội. Chân giường thấp, thiết kế hình khối, giúp giường trông vững chãi và không gian bên dưới dễ dàng vệ sinh. Tellus Convallis phù hợp với các phòng ngủ hiện đại, diện tích vừa và lớn, dễ dàng kết hợp với chăn ga gối tông màu trung tính hoặc tối. Với khả năng chịu tải lên tới 240kg, sản phẩm không chỉ mang lại giấc ngủ thoải mái mà còn tạo điểm nhấn sang trọng, đẳng cấp cho không gian nghỉ ngơi của gia đình bạn.",
+        "short_description": "Giường Tellus Convallis từ Boltshift có đầu giường bọc da nâu đậm và vải xám mềm mại, mang phong cách hiện đại, sang trọng. Đầu giường vuông vức êm ái, chân giường thấp hình khối tạo không gian thoáng đãng. Chịu tải 240kg, sản phẩm phù hợp với phòng ngủ hiện đại, diện tích vừa và lớn, mang lại sự tinh tế và thoải mái cho giấc ngủ.",
+        "quantity": 29,
+        "discount_percentage": 34,
+        "dimensions": "W 200 cm x D 210 cm x H 90 cm",
+        "features": [
+            "Đầu giường bọc da nâu đậm",
+            "Vải xám mềm mại",
+            "Chân giường thấp hình khối",
+            "Phong cách hiện đại sang trọng"
+        ],
+        "care_instructions": "Lau da bằng khăn mềm và dung dịch chuyên dụng, hút bụi phần vải định kỳ để giữ sạch"
     }
 ]
