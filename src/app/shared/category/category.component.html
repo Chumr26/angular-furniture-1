@@ -1,0 +1,110 @@
+<div class="ct-container-full" data-content="normal">
+  <article id="post-702" class="post-702">
+    <div class="entry-content is-layout-constrained">
+      <div
+        data-id="d27d7623"
+        class="wp-block-blocksy-tax-query"
+        style="margin-top: 50px"
+      >
+        <div class="ct-query-template-grid">
+          @for (category of categories; track $index) {
+          <div class="wp-block-term is-layout-flow">
+            <div
+              class="wp-block-greenshift-blocks-row gspb_row gspb_row-id-gsbp-47c7fa3 gspb_row--gutter-custom-0"
+              id="gspb_row-id-gsbp-47c7fa3"
+            >
+              <div class="gspb_row__content">
+                <div
+                  class="wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-e99a84e"
+                  id="gspb_col-id-gsbp-e99a84e"
+                >
+                  <a
+                    class="ct-dynamic-media wp-elements-bf520d1329e61bb3112580ab023a463d"
+                    href="https://startersites.io/blocksy/furniture/product-category/armchairs/"
+                    ><span
+                      data-hover="zoom-in"
+                      class="ct-dynamic-media-inner"
+                      style="border-radius: 100px"
+                      ><img
+                        width="1943"
+                        height="525"
+                        src="imgs/{{ category }}-category-hero-image.webp"
+                        class="attachment-full size-full"
+                        alt=""
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          aspect-ratio: 1;
+                        "
+                        decoding="async"
+                        srcset="
+                          imgs/{{category}}-category-hero-image.webp          1943w,
+                          imgs/{{category}}-category-hero-image-800x216.webp   800w,
+                          imgs/{{category}}-category-hero-image-500x135.webp   500w,
+                          imgs/{{category}}-category-hero-image-300x81.webp    300w,
+                          imgs/{{category}}-category-hero-image-1024x277.webp 1024w,
+                          imgs/{{category}}-category-hero-image-768x208.webp   768w,
+                          imgs/{{category}}-category-hero-image-1536x415.webp 1536w
+                        "
+                        sizes="(max-width: 1943px) 100vw, 1943px" /></span
+                  ></a>
+                </div>
+
+                <div
+                  class="wp-block-greenshift-blocks-row-column gspb_row__col--6 gspb_col-id-gsbp-aa0c6e9"
+                  id="gspb_col-id-gsbp-aa0c6e9"
+                >
+                  <h5
+                    style="
+                      font-size: clamp(
+                        14px,
+                        0.875rem + ((1vw - 3.2px) * 0.234),
+                        17px
+                      );
+                      margin-bottom: 0px;
+                    "
+                    class="ct-dynamic-data wp-elements-0066e65d51c36bb3cbca5aaeab42cc85"
+                  >
+                    <a href="/product-category/{{ category }}/">{{
+                      category | titlecase
+                    }}</a>
+                  </h5>
+
+                  <div
+                    style="
+                      font-size: clamp(
+                        14px,
+                        0.875rem + ((1vw - 3.2px) * 0.078),
+                        15px
+                      );
+                    "
+                    class="ct-dynamic-data wp-elements-5f853a8c1e5fee30c69eca74914e36ed"
+                  >
+                    {{ categoryCounts[category] }} products
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        <style>
+          [data-id="d27d7623"] {
+            --grid-columns-width: 6;
+          }
+          @media (max-width: 999.98px) {
+            [data-id="d27d7623"] {
+              --grid-columns-width: 3;
+            }
+          }
+          @media (max-width: 689.98px) {
+            [data-id="d27d7623"] {
+              --grid-columns-width: 2;
+            }
+          }
+        </style>
+      </div>
+    </div>
+  </article>
+</div>

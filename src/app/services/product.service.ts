@@ -26,4 +26,12 @@ export class ProductService {
       .map((id) => this.products.find((product) => product.id === id))
       .filter((product) => product !== undefined) as Product[];
   }
+
+  getProductsByCategory(category: string): Product[] {
+    return this.products.filter((product) =>
+      product.category
+        .map((cat) => cat.toLowerCase())
+        .includes(category.toLowerCase())
+    );
+  }
 }
