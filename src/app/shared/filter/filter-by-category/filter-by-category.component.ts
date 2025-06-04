@@ -1,16 +1,15 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { CategoryService } from '../../services/category.service';
+import { Component } from '@angular/core';
+import { CategoryService } from '../../../services/category.service';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 
 @Component({
-  selector: '[category]',
+  selector: '[filter-by-category]',
   imports: [CommonModule],
   providers: [TitleCasePipe],
-  templateUrl: './category.component.html',
-  styleUrl: './category.component.css',
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './filter-by-category.component.html',
+  styleUrl: './filter-by-category.component.css',
 })
-export class CategoryComponent {
+export class FilterByCategoryComponent {
   categories: string[] = [];
   categoryCounts: { [category: string]: number } = {};
   constructor(private categoryService: CategoryService) {
