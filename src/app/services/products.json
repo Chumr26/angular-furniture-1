@@ -795,5 +795,285 @@
             "Thiết kế kệ mở nhỏ gọn"
         ],
         "care_instructions": "Lau sạch bằng vải khô, tránh nước và hóa chất"
+    },
+    {
+        "id": "31",
+        "name": "Lectus Proin",
+        "price": "$680.00",
+        "category": [
+            "Tables"
+        ],
+        "brand": "Asgardia",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Glass",
+            "Wood"
+        ],
+        "long_description": "Bàn Lectus Proin của Asgardia là sự kết hợp tinh tế giữa mặt kính trong suốt và khung gỗ màu beige ấm áp, mang đến phong cách hiện đại nhưng vẫn giữ nét gần gũi tự nhiên. Mặt kính cường lực dày dặn không chỉ tạo cảm giác nhẹ nhàng, thanh thoát mà còn vô cùng bền chắc, chịu được va đập nhẹ trong quá trình sử dụng hàng ngày. Khung gỗ sồi màu nâu nhạt được gia công tỉ mỉ, với bệ gỗ bên dưới tạo thành kệ lưu trữ tiện lợi dành cho sách báo, tạp chí hoặc những vật dụng trang trí nhỏ gọn. Thiết kế chân nghiêng tạo nên sự vững chãi và điểm nhấn thẩm mỹ, đồng thời tăng khả năng chịu lực tối ưu. Lectus Proin phù hợp đặt ở phòng khách, phòng đọc sách hoặc không gian thư giãn chung, giúp căn phòng thêm phần sang trọng và gọn gàng. Với khả năng chịu tải lên tới 50kg và kệ dưới chịu tải tối đa 20kg, sản phẩm là lựa chọn lý tưởng cho những ai yêu thích vẻ đẹp đơn giản, thanh lịch và tính tiện dụng.",
+        "short_description": "Bàn Lectus Proin từ Asgardia kết hợp mặt kính cường lực và khung gỗ beige, tạo vẻ thanh thoát và bền chắc. Thiết kế có kệ gỗ bên dưới để lưu trữ sách báo hoặc đồ trang trí nhỏ, phù hợp cho phòng khách hoặc phòng đọc. Chân bàn nghiêng vững chãi, chịu tải đến 50kg, mang lại sự tiện dụng và tính thẩm mỹ cao.",
+        "quantity": 10,
+        "discount_percentage": 2,
+        "dimensions": "W 120 cm x D 60 cm x H 45 cm",
+        "features": [
+            "Mặt kính cường lực trong suốt",
+            "Khung gỗ sồi chắc chắn",
+            "Kệ gỗ dưới để lưu trữ",
+            "Chân bàn nghiêng tạo điểm nhấn"
+        ],
+        "care_instructions": "Dùng khăn mềm lau sạch mặt kính, lau khung gỗ bằng khăn ẩm và tránh để nước đọng lâu"
+    },
+    {
+        "id": "32",
+        "name": "Massa Scelerisque",
+        "price": "$790.00",
+        "category": [
+            "Tables"
+        ],
+        "brand": "Komplex",
+        "color": [
+            "Black",
+            "Brown"
+        ],
+        "material": [
+            "Marble",
+            "Wood"
+        ],
+        "long_description": "Bàn Massa Scelerisque của Komplex là một minh chứng cho phong cách hiện đại táo bạo, với mặt đá cẩm thạch đen ve vẩy trắng độc đáo và khung gỗ màu nâu ấm áp. Mặt đá dày dặn có các đường vân tự nhiên chạy ngẫu nhiên, mỗi sản phẩm trở nên duy nhất và mang đậm dấu ấn nghệ thuật. Khung gỗ rắn chắc được chế tác cẩn thận, liên kết bền bỉ với mặt đá, đảm bảo tính ổn định và chịu lực cao. Thiết kế chân thẳng cùng thanh giằng ở phía dưới không chỉ gia tăng khả năng chịu tải mà còn tạo nên vẻ cứng cáp, khỏe khoắn cho bàn. Massa Scelerisque thích hợp đặt ở phòng khách, phòng ăn hoặc không gian trưng bày, khi vừa đóng vai trò là vật dụng tiện ích vừa là tác phẩm trang trí đẳng cấp. Với khả năng chịu tải đến 70kg, bàn luôn giữ được hình thức sang trọng qua thời gian dài sử dụng, đồng thời dễ dàng kết hợp với nhiều phong cách nội thất từ công nghiệp đến đương đại.",
+        "short_description": "Bàn Massa Scelerisque của Komplex có mặt đá cẩm thạch đen ve vẩy trắng và khung gỗ nâu chắc chắn. Thiết kế chân thẳng cùng thanh giằng dưới tăng cường ổn định, chịu tải lên đến 70kg. Sản phẩm vừa là bàn tiện ích vừa là điểm nhấn nghệ thuật cho phòng khách hoặc phòng ăn, mang lại phong cách hiện đại và tính bền bỉ ấn tượng.",
+        "quantity": 10,
+        "discount_percentage": 47,
+        "dimensions": "W 130 cm x D 50 cm x H 50 cm",
+        "features": [
+            "Mặt đá cẩm thạch đen độc đáo",
+            "Khung gỗ bền vững",
+            "Chân thẳng có thanh giằng tăng cường",
+            "Phong cách hiện đại táo bạo"
+        ],
+        "care_instructions": "Lau mặt đá cẩm thạch bằng khăn mềm ẩm, tránh dùng chất tẩy mạnh. Lau khung gỗ bằng khăn ẩm và lau khô ngay sau đó"
+    },
+    {
+        "id": "33",
+        "name": "Pretium Malesuada",
+        "price": "$550.00",
+        "category": [
+            "Tables"
+        ],
+        "brand": "Goldline",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Wood"
+        ],
+        "long_description": "Bàn Pretium Malesuada của Goldline gây ấn tượng với mặt bàn vân gỗ giả thạch anh rừng màu beige trang nhã, kết hợp hoàn hảo cùng chân bàn hình chữ X vững chãi. Mặt bàn dày dặn, bề mặt được xử lý mịn màng, giữ nguyên độ tự nhiên của vân gỗ tạo cảm giác hoài cổ nhưng vẫn rất hiện đại. Bốn chân gỗ hình chữ X dưới bàn không chỉ gia tăng vẻ đẹp kiến trúc mà còn hỗ trợ phân bổ lực đều, giúp bàn chịu tải tốt và luôn đứng vững trên mọi bề mặt. Thiết kế góc cạnh mạnh mẽ nhưng vẫn toát lên sự tinh tế, Pretium Malesuada phù hợp đặt ở phòng ăn, không gian làm việc hoặc ghế sopha nhỏ, trở thành tâm điểm thu hút ánh nhìn. Với khả năng chịu tải lên đến 60kg, bàn đồng thời là sản phẩm bền bỉ và phong cách, phù hợp với những ai yêu thích nội thất tối giản nhưng không kém phần ấn tượng.",
+        "short_description": "Bàn Pretium Malesuada từ Goldline có mặt vân gỗ giả đá màu beige và chân hình chữ X vững chắc, tạo điểm nhấn kiến trúc tinh tế. Bề mặt bàn mịn, khả năng chịu tải 60kg, phù hợp cho phòng ăn hoặc không gian làm việc. Thiết kế góc cạnh hiện đại kết hợp nét hoài cổ, mang lại vẻ đẹp đơn giản nhưng thu hút.",
+        "quantity": 10,
+        "discount_percentage": 21,
+        "dimensions": "W 150 cm x D 150 cm x H 75 cm",
+        "features": [
+            "Mặt bàn vân gỗ giả thạch anh rừng",
+            "Chân gỗ chữ X vững chãi",
+            "Thiết kế góc cạnh tinh tế",
+            "Phong cách tối giản pha chút hoài cổ"
+        ],
+        "care_instructions": "Dùng khăn mềm lau sạch mặt bàn, tránh chất tẩy mạnh. Kiểm tra định kỳ ốc vít ở chân để đảm bảo độ vững chắc"
+    },
+    {
+        "id": "34",
+        "name": "Vitae Justo",
+        "price": "$470.00",
+        "category": [
+            "Tables"
+        ],
+        "brand": "Goldline",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Glass",
+            "Wood"
+        ],
+        "long_description": "Bàn Vitae Justo của Goldline thể hiện phong cách tối giản sang trọng với bề mặt kính trong suốt hoàn toàn liền mạch, kết hợp cùng khung gỗ màu beige tự nhiên. Mặt kính cường lực dày dặn cho phép bạn chiêm ngưỡng khung gỗ bên dưới và kệ lưu trữ tiện dụng mà không làm rối mắt không gian. Khung gỗ được chế tác tỉ mỉ, đường vân tự nhiên biểu hiện sự ấm áp, hài hòa khi kết hợp cùng mặt kính hiện đại. Kệ gỗ bên dưới mang đến không gian lưu trữ cho sách hoặc đồ trang trí, giúp phòng khách hay góc làm việc thêm ngăn nắp. Thiết kế góc cạnh vuông vắn nhưng vẫn giữ được sự mềm mại nhờ chất liệu kính và gỗ hòa quyện, phù hợp với các phong cách nội thất từ Bắc Âu đến đương đại. Bàn chịu tải đến 50kg, dễ dàng kê kệ bày đồ trang trí hoặc các vật dụng trang nhã, đồng thời dễ dàng lau chùi và giữ gìn.",
+        "short_description": "Bàn Vitae Justo từ Goldline có mặt kính cường lực trong suốt và khung gỗ beige, thiết kế tối giản nhưng vẫn sang trọng. Với kệ gỗ bên dưới để lưu trữ sách hoặc đồ trang trí, sản phẩm thích hợp cho phòng khách hoặc góc làm việc. Chịu tải 50kg, dễ lau chùi và giữ gìn, mang phong cách Bắc Âu đương đại.",
+        "quantity": 10,
+        "discount_percentage": 15,
+        "dimensions": "W 100 cm x D 50 cm x H 45 cm",
+        "features": [
+            "Mặt kính cường lực liền mạch",
+            "Khung gỗ màu beige tinh tế",
+            "Kệ gỗ tiện dụng bên dưới",
+            "Phong cách tối giản đương đại"
+        ],
+        "care_instructions": "Lau mặt kính bằng khăn mềm ẩm, tránh dùng chất tẩy mạnh. Lau khung gỗ bằng khăn ẩm và lau khô ngay"
+    },
+    {
+        "id": "35",
+        "name": "Aliquam Blandit",
+        "price": "$320.00",
+        "category": [
+            "Tables"
+        ],
+        "brand": "Goldline",
+        "color": [
+            "Brown"
+        ],
+        "material": [
+            "Glass",
+            "Wood"
+        ],
+        "long_description": "Bàn Aliquam Blandit của Goldline là một mẫu bàn góc vuông đa năng với bề mặt kính cường lực và khung gỗ nâu ấm áp. Mặt kính trong suốt được cắt gọt tinh xảo, giúp phô diễn phần khung gỗ vững chãi phía dưới, tạo cảm giác thanh thoát nhưng không kém phần chắc chắn. Khung gỗ được xử lý hoàn thiện mịn màng, giữ nguyên vân gỗ tự nhiên, tạo hiệu ứng thẩm mỹ hài hòa. Bên dưới mặt kính là một kệ gỗ mở có thể đựng sách, tạp chí hoặc đồ trang trí nhỏ gọn, rất tiện lợi cho không gian phòng khách hay phòng làm việc. Thiết kế độc đáo với chân gỗ thẳng, chịu tải lên đến 40kg, vừa là bàn đặt trang trí vừa là bàn phụ bên cạnh ghế sofa hoặc ghế bành. Sản phẩm mang phong cách Bắc Âu tối giản, dễ dàng kết hợp với nhiều phong cách nội thất và phù hợp với không gian nhỏ gọn.",
+        "short_description": "Bàn Aliquam Blandit từ Goldline có mặt kính cường lực vuông kết hợp khung gỗ nâu chắc chắn, kệ gỗ mở bên dưới để lưu trữ sách hoặc đồ trang trí. Thiết kế tối giản kiểu Bắc Âu, chịu tải 40kg, phù hợp làm bàn phụ bên cạnh ghế sofa hoặc trong phòng làm việc. Vừa thanh thoát vừa tiện dụng.",
+        "quantity": 10,
+        "discount_percentage": 26,
+        "dimensions": "W 50 cm x D 50 cm x H 45 cm",
+        "features": [
+            "Mặt kính cường lực vuông vắn",
+            "Khung gỗ nâu tự nhiên",
+            "Kệ gỗ mở bên dưới",
+            "Phong cách Bắc Âu tối giản"
+        ],
+        "care_instructions": "Dùng khăn mềm lau kính, lau khung gỗ bằng khăn ẩm và lau khô ngay sau đó"
+    },
+    {
+        "id": "36",
+        "name": "Duis Diam",
+        "price": "$1,300.00",
+        "category": [
+            "Sofas"
+        ],
+        "brand": "Magnolia",
+        "color": [
+            "Green"
+        ],
+        "material": [
+            "Fabric"
+        ],
+        "long_description": "Sofa Duis Diam của Magnolia là một tác phẩm nội thất nổi bật với lớp vải nhung xanh lá cây cô-ban sang trọng, điểm thêm các hàng chần bông tạo nên độ êm ái vượt trội. Thiết kế chân gỗ nhỏ gọn, hơi nghiêng giúp sofa trở nên thanh thoát hơn trên sàn nhà, trong khi bốn chân làm từ gỗ sồi chắc chắn đảm bảo độ bền lâu dài. Lớp đệm mút cao cấp bên trong mang đến cảm giác mềm mại khi ngồi nhưng vẫn giữ được form dáng đẹp. Tựa lưng chần rút sâu tạo điểm nhấn thị giác tinh tế, đồng thời hỗ trợ tối ưu cho vùng lưng và thắt lưng, phù hợp cho những buổi thư giãn dài hoặc trò chuyện cùng bạn bè. Duis Diam có thể kê ở phòng khách, phòng giải trí hoặc góc đọc sách, mang đến vẻ đẹp vừa cổ điển vừa hiện đại. Với kích thước vừa phải và khả năng chịu tải đến 200kg, sản phẩm phù hợp cho gia đình hoặc không gian văn phòng nhỏ, thể hiện gu thẩm mỹ cao và chất lượng vượt trội.",
+        "short_description": "Sofa Duis Diam từ Magnolia bọc vải nhung xanh lá cây cô-ban, chần bông tinh xảo, mang đến cảm giác êm ái và sang trọng. Chân gỗ sồi nghiêng nhẹ tạo độ vững chắc và thanh thoát. Tựa lưng chần rút sâu hỗ trợ tốt cho lưng và thắt lưng, lý tưởng cho phòng khách hoặc góc thư giãn. Chịu tải đến 200kg, kết hợp giữa thiết kế cổ điển và hiện đại.",
+        "quantity": 10,
+        "discount_percentage": 39,
+        "dimensions": "W 200 cm x D 90 cm x H 85 cm",
+        "features": [
+            "Vải nhung xanh chần bông",
+            "Chân gỗ sồi chắc chắn",
+            "Thiết kế chần rút sâu",
+            "Khả năng chịu tải 200kg"
+        ],
+        "care_instructions": "Hút bụi định kỳ, vệ sinh vết bẩn bằng khăn ẩm nhẹ và tránh ánh nắng trực tiếp"
+    },
+    {
+        "id": "37",
+        "name": "Augue Lacus",
+        "price": "$800.00",
+        "category": [
+            "Beds"
+        ],
+        "brand": "Asgardia",
+        "color": [
+            "Beige"
+        ],
+        "material": [
+            "Leather",
+            "Wood"
+        ],
+        "long_description": "Giường Augue Lacus của Asgardia kết hợp hoàn hảo giữa khung gỗ chắc chắn và đầu giường bọc da lộn mềm mại màu beige, tạo nên vẻ thanh lịch, ấm cúng cho phòng ngủ. Đầu giường thiết kế cao, cong nhẹ về phía trong tạo điểm tựa êm ái khi ngồi đọc sách hay xem phim. Khung giường làm từ gỗ tự nhiên với bề mặt phủ sơn bảo vệ, vừa giữ được vân gỗ tự nhiên vừa đảm bảo độ bền theo thời gian. Phần nệm phía trên được thiết kế lõi mút dày, tạo cảm giác êm ái nhưng vẫn đảm bảo độ đàn hồi, hỗ trợ cột sống khi ngủ. Chân giường nhỏ gọn, hơi nghiêng mang phong cách hiện đại, giúp giường trông thanh thoát và dễ dàng vệ sinh dưới gầm. Augue Lacus thích hợp cho phòng ngủ chính hoặc phòng ngủ khách, chiều cao giường vừa phải giúp dễ lên xuống. Với khả năng chịu tải đến 250kg, sản phẩm đáp ứng yêu cầu thẩm mỹ và chất lượng cho không gian nghỉ ngơi của gia đình.",
+        "short_description": "Giường Augue Lacus từ Asgardia có khung gỗ tự nhiên và đầu giường bọc da lộn màu beige, kết hợp giữa độ bền và sự sang trọng. Đầu giường cao cong nhẹ, nệm mút dày êm ái, chân giường nghiêng nhỏ gọn mang phong cách hiện đại. Chịu tải đến 250kg, phù hợp phòng ngủ chính hoặc phòng ngủ khách, mang lại không gian nghỉ ngơi ấm cúng và thanh lịch.",
+        "quantity": 10,
+        "discount_percentage": 17,
+        "dimensions": "W 200 cm x D 210 cm x H 120 cm",
+        "features": [
+            "Đầu giường bọc da lộn",
+            "Khung gỗ tự nhiên chắc chắn",
+            "Nệm mút lõi dày êm ái",
+            "Thiết kế chân nghiêng hiện đại"
+        ],
+        "care_instructions": "Lau đầu giường bằng khăn mềm và dung dịch chuyên dụng cho da lộn, lau khung gỗ bằng khăn ẩm và lau khô"
+    },
+    {
+        "id": "38",
+        "name": "Neque Viverra",
+        "price": "$900.00",
+        "category": [
+            "Beds"
+        ],
+        "brand": "Boltshift",
+        "color": [
+            "Yellow",
+            "White"
+        ],
+        "material": [
+            "Fabric",
+            "Wood"
+        ],
+        "long_description": "Giường Neque Viverra của Boltshift mang phong cách tối giản đương đại, với khung gỗ màu nâu tự nhiên kết hợp nệm vải màu xám ấm áp. Đầu giường có thiết kế vuông vức, bọc vải dày tạo độ êm ái khi tựa lưng, phù hợp cho việc ngồi đọc sách trước khi đi ngủ. Khung giường làm từ gỗ sồi chắc chắn, xử lý bề mặt mịn màng, giữ được vân gỗ tự nhiên và chống ẩm mốc tốt. Các chi tiết góc cạnh được đục đẽo tỉ mỉ, mang lại cảm giác hiện đại, tinh tế. Chân giường thấp, giúp không gian phòng ngủ trông rộng rãi hơn và dễ dàng vệ sinh dưới gầm. Neque Viverra phù hợp với không gian phòng ngủ có diện tích vừa và nhỏ, dễ dàng kết hợp với các tông màu trung tính. Với khả năng chịu tải lên tới 220kg, sản phẩm không chỉ bền bỉ mà còn tạo nên điểm nhấn thẩm mỹ, đem đến giấc ngủ thoải mái và hài hòa cho gia đình.",
+        "short_description": "Giường Neque Viverra từ Boltshift có khung gỗ nâu và nệm vải xám hiện đại, đầu giường vuông bọc vải dày êm ái. Chân giường thấp giúp phòng ngủ trông thoáng rộng hơn. Khả năng chịu tải 220kg, phù hợp không gian vừa và nhỏ, mang phong cách tối giản, tạo điểm nhấn tinh tế và thoải mái cho phòng ngủ.",
+        "quantity": 10,
+        "discount_percentage": 23,
+        "dimensions": "W 200 cm x D 210 cm x H 80 cm",
+        "features": [
+            "Khung gỗ sồi tự nhiên",
+            "Đầu giường bọc vải xám êm ái",
+            "Chân giường thấp",
+            "Phong cách tối giản đương đại"
+        ],
+        "care_instructions": "Hút bụi định kỳ cho phần vải, lau khung gỗ bằng khăn ẩm và lau khô ngay"
+    },
+    {
+        "id": "39",
+        "name": "Rutrum Quisque",
+        "price": "$1,200.00",
+        "category": [
+            "Beds"
+        ],
+        "brand": "Contrast",
+        "color": [
+            "Yellow",
+            "Beige"
+        ],
+        "material": [
+            "Wood"
+        ],
+        "long_description": "Giường Rutrum Quisque của Contrast nổi bật với đầu giường bọc vải màu vàng chanh tươi sáng, tôn lên nét năng động và hiện đại cho phòng ngủ. Phần đầu giường được chần bông tạo những ô vuông đều đặn, vừa trang trí vừa tăng độ êm ái khi tựa lưng. Khung giường làm từ gỗ tự nhiên màu beige ấm áp, với các thanh gỗ bao quanh chân giường tạo cảm giác vững vàng nhưng vẫn rất nhẹ nhàng. Nệm kê phía trên khung giường được thiết kế lõi mút kỹ thuật cao, đem lại sự hỗ trợ tối ưu cho cơ thể khi nằm. Các chân giường kiểu thon dài mang phong cách tân cổ điển, nâng cơ thể lên khỏi mặt sàn, giúp không gian phía dưới luôn thoáng đãng. Rutrum Quisque phù hợp với phòng ngủ chính hoặc phòng ngủ khách, mang đến sự tương phản độc đáo giữa màu sắc tươi mới và chất liệu gỗ tự nhiên. Với sức chịu tải lên đến 240kg, giường là sự lựa chọn lý tưởng cho những ai yêu thích sự pha trộn giữa nét cổ điển và hiện đại.",
+        "short_description": "Giường Rutrum Quisque của Contrast có đầu giường vải chần bông màu vàng chanh và khung gỗ beige ấm áp, tạo phong cách năng động và hiện đại. Nệm lõi mút kỹ thuật cao mang lại giấc ngủ êm ái. Chân giường thon dài nâng cao khung giường, giúp phòng ngủ thoáng rộng. Chịu tải 240kg, sản phẩm là sự kết hợp hoàn hảo giữa cổ điển và hiện đại.",
+        "quantity": 10,
+        "discount_percentage": 48,
+        "dimensions": "W 200 cm x D 210 cm x H 120 cm",
+        "features": [
+            "Đầu giường vải chần bông màu vàng",
+            "Khung gỗ tự nhiên màu beige",
+            "Nệm lõi mút kỹ thuật cao",
+            "Chân giường thon dài tân cổ điển"
+        ],
+        "care_instructions": "Lau đầu giường bằng khăn mềm và hút bụi, lau khung gỗ bằng khăn ẩm và lau khô ngay sau đó"
+    },
+    {
+        "id": "40",
+        "name": "Platea Enim",
+        "price": "$700.00",
+        "category": [
+            "Beds"
+        ],
+        "brand": "Contrast",
+        "color": [
+            "Brown",
+            "Gray"
+        ],
+        "material": [
+            "Wood"
+        ],
+        "long_description": "Giường Platea Enim của Contrast mang vẻ đẹp giản đơn nhưng tinh tế với khung gỗ màu nâu tự nhiên và đầu giường thấp phủ vải màu xám đậm. Đầu giường thiết kế cong nhẹ, bọc nỉ cao cấp mang lại cảm giác êm ái và vừa vặn khi tựa lưng. Khung giường làm từ gỗ được xử lý chống mối mọt và chống ẩm, giữ nguyên vân gỗ tự nhiên ấm áp. Phần thành giường thấp, tạo cảm giác gần gũi mặt nền, đồng thời dễ lên xuống cho nhiều đối tượng người dùng. Thiết kế chân giường đơn giản, hơi nghiêng, mang phong cách hiện đại, giúp căn phòng thêm phần rộng rãi và tinh tế. Platea Enim phù hợp cho phòng ngủ phong cách tối giản, Scandinavian hoặc đương đại, dễ dàng kết hợp cùng chăn ga gối màu sắc trung tính hoặc cùng tông. Với khả năng chịu tải đến 200kg, sản phẩm là lựa chọn hoàn hảo để tạo nên không gian nghỉ ngơi tiện nghi, thoải mái và thẩm mỹ.",
+        "short_description": "Giường Platea Enim từ Contrast có khung gỗ nâu tự nhiên và đầu giường bọc vải xám đậm, mang phong cách tối giản hiện đại. Đầu giường cong nhẹ êm ái, thành giường thấp thuận tiện cho việc lên xuống. Chịu tải 200kg, phù hợp với phòng ngủ phong cách Scandinavian hoặc tối giản, tạo không gian thoáng đãng và tiện nghi.",
+        "quantity": 10,
+        "discount_percentage": 0,
+        "dimensions": "W 200 cm x D 210 cm x H 80 cm",
+        "features": [
+            "Khung gỗ chống mối mọt",
+            "Đầu giường bọc nỉ xám",
+            "Thành giường thấp tối giản",
+            "Chân giường nghiêng hiện đại"
+        ],
+        "care_instructions": "Hút bụi phần vải đầu giường định kỳ, lau khung gỗ bằng khăn ẩm và lau khô ngay sau đó"
     }
 ]

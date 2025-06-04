@@ -1,0 +1,17 @@
+.ct-breadcrumbs {
+    --theme-font-weight: 600;
+    --theme-text-transform: uppercase;
+    --theme-font-size: 12px;
+}
+.ct-breadcrumbs {
+    color: var(--theme-text-color);
+    --has-link-decoration: var(--false)
+}
+.ct-breadcrumbs[data-source=default]>span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle
+}
+.ct-breadcrumbs[data-source=default]>span [class*=ct-separator] {
+    margin: 0 8px
+}
