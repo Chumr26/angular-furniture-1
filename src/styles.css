@@ -1514,9 +1514,7 @@ form textarea {
     --swatch-size: 30px;
 }
 
-.ct-filter-widget[data-swatches-type="color"] {
-    --swatch-size: 25px;
-}
+
 
 .variations_form.cart [data-swatches-type="image"] {
     --swatch-size: 35px;
@@ -11835,20 +11833,9 @@ html :where(.is-position-sticky) {
     gap: var(--swatches-gap, 10px)
 }
 
-.ct-swatch-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    border-radius: var(--swatch-border-radius)
-}
 
-.ct-swatch-container .ct-swatch {
-    position: relative;
-    cursor: pointer;
-    overflow: clip;
-    border-radius: inherit;
-    height: var(--swatch-size, 30px)
-}
+
+
 
 .ct-swatch-container.ct-hidden {
     display: none
@@ -11900,15 +11887,7 @@ html :where(.is-position-sticky) {
     transition: color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955), background .12s cubic-bezier(0.455, 0.03, 0.515, 0.955), border-color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955)
 }
 
-[data-swatches-type=color] .ct-swatch,
-[data-swatches-type=image] .ct-swatch,
-[data-swatches-type=mixed] .ct-swatch {
-    padding: 2px;
-    width: var(--swatch-size, 30px);
-    background-clip: content-box;
-    border: 2px solid var(--swatch-border-color, var(--theme-border-color));
-    transition: border-color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-}
+
 
 .ct-variation-swatches:not([data-swatches-type=select]) select {
     display: none

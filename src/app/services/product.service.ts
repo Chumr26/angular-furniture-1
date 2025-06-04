@@ -34,4 +34,10 @@ export class ProductService {
         .includes(category.toLowerCase())
     );
   }
+
+  getProductsByColor(color: string): Product[] {
+    return this.products.filter((product) =>
+      product.color.map((c) => c.toLowerCase()).includes(color.toLowerCase())
+    );
+  }
 }
