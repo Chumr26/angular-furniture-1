@@ -1,14 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { BrandService } from '../../services/brand.service';
+import { BrandService } from '../../../services/brand.service';
 
 @Component({
-  selector: '[brand]',
+  selector: '[filter-by-brand]',
   imports: [],
-  templateUrl: './brand.component.html',
-  styleUrl: './brand.component.css',
+  templateUrl: './filter-by-brand.component.html',
+  styleUrl: './filter-by-brand.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class BrandComponent {
+export class FilterByBrandComponent {
   brands: string[] = [];
 
   constructor(private brandService: BrandService) {

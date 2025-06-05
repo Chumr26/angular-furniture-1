@@ -40,4 +40,12 @@ export class ProductService {
       product.color.map((c) => c.toLowerCase()).includes(color.toLowerCase())
     );
   }
+
+  getProductsByMaterial(material: string): Product[] {
+    return this.products.filter((product) =>
+      product.material
+        .map((m) => m.toLowerCase())
+        .includes(material.toLowerCase())
+    );
+  }
 }

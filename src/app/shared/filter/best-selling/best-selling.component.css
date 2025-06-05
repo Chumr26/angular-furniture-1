@@ -1,0 +1,52 @@
+.wp-block-columns {
+    align-items: normal !important;
+    box-sizing: border-box;
+    display: flex;
+    /* flex-wrap: wrap !important */
+}
+.wp-block-columns.are-vertically-aligned-center {
+    align-items: center
+}
+.wp-block-column {
+    flex-grow: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word
+}
+.wp-block-column.is-vertically-aligned-center {
+    align-self: center
+}
+.wp-block-column.is-vertically-aligned-bottom,
+.wp-block-column.is-vertically-aligned-center,
+.wp-block-column.is-vertically-aligned-top {
+    width: 100%
+}
+body .is-layout-flex {
+    display: flex;
+}
+.is-layout-flex {
+    flex-wrap: wrap;
+    align-items: center;
+}
+h4 {
+    --theme-font-weight: 700;
+    --theme-font-size: 25px;
+    --theme-line-height: 1.5;
+}
+h4 {
+    color: var(--theme-heading-color, var(--theme-heading-4-color, var(--theme-headings-color)))
+}
+.wc-block-product-template {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    max-width: 100%;
+    padding: 0
+}
+.wc-block-product-template.wc-block-product-template {
+    background: none
+}
+.wp-container-core-columns-is-layout-c6809a2b {
+    flex-wrap: nowrap;
+    gap: 0 var(--wp--preset--spacing--40);
+}

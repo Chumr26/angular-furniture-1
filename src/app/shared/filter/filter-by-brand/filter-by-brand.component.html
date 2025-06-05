@@ -1,0 +1,47 @@
+<div class="ct-block-wrapper">
+  <h3
+    class="wp-block-heading widget-title"
+    id="filter"
+    style="font-size: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.156), 16px)"
+  >
+    Filter by brand
+  </h3>
+
+  <div class="ct-filter-widget-wrapper">
+    <ul
+      class="ct-filter-widget"
+      data-display-type="inline"
+      data-filter-criteria="taxonomy:product_brand"
+      style="--product-taxonomy-logo-size: 55px; --theme-object-fit: contain"
+      data-frame="yes"
+    >
+      @for (item of brands; track $index) {
+      <li class="ct-filter-item">
+        <div class="ct-filter-item-inner">
+          <a
+            href="https://startersites.io/blocksy/furniture/shop/?filter_tax_product_brand=51"
+            rel="nofollow"
+            [attr.aria-label]="item"
+            data-key="product_brand"
+            data-value="51"
+            ><div class="ct-media-container">
+              <img
+                decoding="async"
+                width="223"
+                height="50"
+                src="icons/brand-{{ item.toLowerCase() }}.svg"
+                loading="lazy"
+                itemprop="image"
+                class="wp-post-image"
+                style="aspect-ratio: 16/9"
+                title="brand-{{ item.toLowerCase() }}"
+                alt="Elito Viverra"
+              /><span class="ct-tooltip">{{ item }}</span>
+            </div></a
+          >
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

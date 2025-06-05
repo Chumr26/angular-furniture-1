@@ -1,0 +1,19 @@
+.ct-filter-widget[data-display-type=inline] {
+    flex-wrap: wrap
+}
+[data-filter-criteria*=taxonomy] .ct-media-container {
+    overflow: initial;
+    justify-content: center;
+    width: var(--product-taxonomy-logo-size, 40px)
+}
+[data-filter-criteria*=taxonomy] .ct-media-container .ct-tooltip {
+    top: 0;
+    transform: translate3d(0px, calc(-100% - 7px), 0px)
+}
+[data-filter-criteria*=taxonomy][data-frame=yes] .ct-media-container {
+    padding: 8px;
+    border-radius: 2px;
+    box-sizing: content-box;
+    transition: border .2s ease;
+    border: 2px solid var(--theme-border-color)
+}

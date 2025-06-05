@@ -1,0 +1,40 @@
+<div class="ct-block-wrapper">
+  <h3
+    class="wp-block-heading widget-title"
+    id="filter"
+    style="font-size: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.156), 16px)"
+  >
+    Filter by material
+  </h3>
+
+  <div class="ct-filter-widget-wrapper">
+    <ul
+      class="ct-filter-widget"
+      data-display-type="list"
+      data-swatches-type="button"
+      data-swatches-shape="round"
+    >
+      @for (material of materials; track $index) {
+      <li class="ct-filter-item">
+        <div class="ct-filter-item-inner">
+          <a
+            href="https://startersites.io/blocksy/furniture/shop/?filter_material=aluminium&amp;query_type_material=or"
+            rel="nofollow"
+            [attr.aria-label]="material.label"
+            data-key="material"
+            data-value="33"
+            ><input
+              type="checkbox"
+              class="ct-checkbox"
+              tabindex="-1"
+              name="product_attribute_33"
+              [attr.aria-label]="material.label"
+            /><span class="ct-filter-label">{{ material.label }}</span
+            ><span class="ct-filter-count">{{ material.count }}</span></a
+          >
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
