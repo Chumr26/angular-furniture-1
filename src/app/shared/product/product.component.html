@@ -1,4 +1,7 @@
 <figure>
+  @if (productData.discount_percentage > 0) {
+  <span class="onsale" data-shape="type-2">SALE</span>
+  }
   <div cart-buttons class="ct-woo-card-extra" data-type="type-1"></div>
   <a
     class="ct-media-container has-hover-effect"
@@ -50,6 +53,7 @@
   </li>
 </ul>
 <div class="ct-woo-card-actions" data-add-to-cart="auto-hide">
+  @if (productData.discount_percentage <= 0) {
   <span class="price"
     ><span class="woocommerce-Price-amount amount"
       ><bdi
@@ -58,6 +62,41 @@
       ></span
     ></span
   >
+  } @else {
+  <span class="price">
+    <span class="sale-price">
+      <del aria-hidden="true">
+        <span class="woocommerce-Price-amount amount">
+          <bdi>
+            <span class="woocommerce-Price-currencySymbol">$</span
+            >{{ productData.price }}</bdi
+          >
+        </span>
+      </del>
+      <span class="screen-reader-text"
+        >Original price was: ${{ productData.price }}.</span
+      >
+      <ins aria-hidden="true">
+        <span class="woocommerce-Price-amount amount">
+          <bdi>
+            <span class="woocommerce-Price-currencySymbol">$</span
+            >{{
+              productData.price -
+                productData.price * (productData.discount_percentage / 100)
+            }}</bdi
+          >
+        </span>
+      </ins>
+      <span class="screen-reader-text"
+        >Current price is: ${{
+          productData.price -
+            productData.price * (productData.discount_percentage / 100)
+        }}.</span
+      ></span
+    >
+  </span>
+  }
+
   <a
     href="https://startersites.io/blocksy/furniture/?add-to-cart=353"
     aria-describedby="woocommerce_loop_add_to_cart_link_describedby_353"
