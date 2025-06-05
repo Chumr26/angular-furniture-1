@@ -17,21 +17,16 @@
       @for (material of materials; track $index) {
       <li class="ct-filter-item">
         <div class="ct-filter-item-inner">
-          <a
-            href="https://startersites.io/blocksy/furniture/shop/?filter_material=aluminium&amp;query_type_material=or"
-            rel="nofollow"
+          <input
+            type="checkbox"
+            class="ct-checkbox"
+            tabindex="-1"
+            name="product_attribute_33"
             [attr.aria-label]="material.label"
-            data-key="material"
-            data-value="33"
-            ><input
-              type="checkbox"
-              class="ct-checkbox"
-              tabindex="-1"
-              name="product_attribute_33"
-              [attr.aria-label]="material.label"
-            /><span class="ct-filter-label">{{ material.label }}</span
-            ><span class="ct-filter-count">{{ material.count }}</span></a
-          >
+            [checked]="isMaterialSelected(material.label.toLocaleLowerCase())"
+            (change)="onMaterialSelect(material.label.toLocaleLowerCase())"
+          /><span class="ct-filter-label">{{ material.label }}</span
+          ><span class="ct-filter-count">{{ material.count }}</span>
         </div>
       </li>
       }

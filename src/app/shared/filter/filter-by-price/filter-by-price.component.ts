@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[filter-by-price]',
@@ -10,17 +11,26 @@ import { FormsModule } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
 })
 export class FilterByPriceComponent {
-  minPrice: number = 0;
-  maxPrice: number = 0;
+  @Input() minPrice: number = 0;
+  @Input() maxPrice: number = 0;
   currentminPrice: number = 0;
   currentmaxPrice: number = 0;
-  constructor(private productService: ProductService) {
-    const prices = this.productService
-      .getProducts()
-      .map((product) => product.price);
-    this.minPrice = Math.min(...prices);
-    this.maxPrice = Math.max(...prices);
-    this.currentmaxPrice = this.maxPrice;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
     this.currentminPrice = this.minPrice;
+    this.currentmaxPrice = this.maxPrice;
+  }
+
+  onPriceChange(): void {
+    // Update the URL with the new price range
+    this.router.navigate([], {
+      queryParams: {
+        minPrice: this.currentminPrice,
+        maxPrice: this.currentmaxPrice,
+      },
+      queryParamsHandling: 'merge', // Merge with existing query params
+    });
   }
 }

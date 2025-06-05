@@ -26,6 +26,7 @@
           [max]="maxPrice"
           step="1"
           name="min_price"
+          (change)="onPriceChange()"
         />
         <span
           class="ct-price-filter-range-handle-min"
@@ -42,6 +43,7 @@
           [max]="maxPrice"
           step="1"
           name="max_price"
+          (change)="onPriceChange()"
         />
         <span
           class="ct-price-filter-range-handle-max"

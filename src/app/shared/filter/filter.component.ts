@@ -8,6 +8,7 @@ import { BestSellingComponent } from './best-selling/best-selling.component';
 
 @Component({
   selector: '[filter]',
+  standalone: true,
   imports: [
     FilterByPriceComponent,
     FilterByCategoryComponent,

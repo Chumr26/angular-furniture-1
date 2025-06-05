@@ -15,4 +15,5 @@ import { ProductsPageComponent } from './products-page/products-page.component';
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
-export class ShopComponent {}
+export class ShopComponent {
+}
