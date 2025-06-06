@@ -1,8 +1,12 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { BrandService } from '../../../services/brand.service';
+import {
+  Component,
+  Input,
+  SimpleChanges,
+  ViewEncapsulation,
+} from '@angular/core';
 import { FilterService } from '../../../services/filter.service';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../../models/app.model';
+import { FilteredItem, Product } from '../../../models/app.model';
 
 @Component({
   selector: '[filter-by-brand]',
@@ -12,13 +16,15 @@ import { Product } from '../../../models/app.model';
   encapsulation: ViewEncapsulation.None,
 })
 export class FilterByBrandComponent {
+  @Input() filterProduct: Product[] = [];
   brands: string[] = [];
 
-  constructor(
-    private brandService: BrandService,
-    private filterService: FilterService
-  ) {
-    this.brands = this.brandService.getBrands();
+  constructor(private filterService: FilterService) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['filterProduct']) {
+      this.brands = this.filterProduct.map((product) => product.brand);
+    }
   }
 
   isBrandSelected(brand: string): boolean {

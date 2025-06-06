@@ -1,9 +1,12 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ProductService } from '../../../services/product.service';
-import { Router } from '@angular/router';
+import {
+  Component,
+  Input,
+  SimpleChanges,
+  ViewEncapsulation,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterService } from '../../../services/filter.service';
-import { Product } from '../../../models/app.model';
+import { FilteredItem, Product } from '../../../models/app.model';
 
 @Component({
   selector: '[filter-by-color]',
@@ -13,24 +16,41 @@ import { Product } from '../../../models/app.model';
   encapsulation: ViewEncapsulation.None,
 })
 export class FilterByColorComponent {
-  colors = [
-    { label: 'Beige', swatch: 'c2b5ab', count: 0 },
-    { label: 'Black', swatch: '181818', count: 0 },
-    { label: 'Blue', swatch: '0791ba', count: 0 },
-    { label: 'Brown', swatch: '662f00', count: 0 },
-    { label: 'Gray', swatch: 'c9c9c9', count: 0 },
-    { label: 'Green', swatch: '6fa800', count: 0 },
-    { label: 'Orange', swatch: 'ff8412', count: 0 },
-    { label: 'White', swatch: 'f4f4f4', count: 0 },
-    { label: 'Yellow', swatch: 'f9cd0b', count: 0 },
-  ];
-  constructor(
-    private productService: ProductService,
-    private filterService: FilterService
-  ) {
-    this.colors.forEach((color) => {
-      color.count = this.productService.getProductsByColor(color.label).length;
-    });
+  @Input() filterProduct: Product[] = [];
+  swatchs: { [key: string]: string } = {
+    Beige: 'c2b5ab',
+    Black: '181818',
+    Blue: '0791ba',
+    Brown: '662f00',
+    Gray: 'c9c9c9',
+    Green: '6fa800',
+    Orange: 'ff8412',
+    White: 'f4f4f4',
+    Yellow: 'f9cd0b',
+  };
+
+  colors: FilteredItem[] = [];
+
+  constructor(private filterService: FilterService) {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['filterProduct'] && changes['filterProduct'].currentValue) {
+      // update the colors list based on the filterProduct input
+      this.colors = this.filterProduct.reduce(
+        (acc: FilteredItem[], product) => {
+          product.color.forEach((color) => {
+            const existingColor = acc.find((c) => c.label === color);
+            if (existingColor) {
+              existingColor.count++;
+            } else {
+              acc.push({ label: color, count: 1 });
+            }
+          });
+          return acc;
+        },
+        []
+      );
+    }
   }
 
   isColorSelected(colorLabel: string): boolean {

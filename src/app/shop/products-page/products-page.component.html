@@ -45,7 +45,8 @@
     >Filter</a
   >
   <p class="woocommerce-result-count ct-hidden-sm">
-    Showing {{ startIndex + 1 }}–{{ endIndex }} of {{ totalProducts }} results
+    @if(totalProducts > 0){Showing {{ startIndex + 1 }}–{{ endIndex }} of}
+    {{ totalProducts }} results
   </p>
   <form class="woocommerce-ordering" method="get">
     <select

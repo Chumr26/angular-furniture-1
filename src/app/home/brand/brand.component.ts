@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { BrandService } from '../../services/brand.service';
 
 @Component({
   selector: '[brand]',
@@ -9,9 +8,12 @@ import { BrandService } from '../../services/brand.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class BrandComponent {
-  brands: string[] = [];
-
-  constructor(private brandService: BrandService) {
-    this.brands = this.brandService.getBrands();
-  }
+  brands = [
+    'asgardia',
+    'boltshift',
+    'contrast',
+    'goldline',
+    'komplex',
+    'magnolia',
+  ];
 }

@@ -84,6 +84,11 @@ export class FilterByPriceComponent {
   }
 
   onPriceChange(): void {
+    if (this.currentminPrice > this.currentmaxPrice) {
+      this.currentminPrice = this.currentmaxPrice;
+    } else if (this.currentmaxPrice < this.currentminPrice) {
+      this.currentmaxPrice = this.currentminPrice;
+    }
     // Update the URL with the new price range
     this.router.navigate([], {
       queryParams: {
