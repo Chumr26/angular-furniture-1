@@ -14,7 +14,7 @@ export class BreadcrumsComponent implements OnInit {
 
   ngOnInit(): void {
     this.breadcrums = this.router.url
-      .split('?')[0] // Remove query parameters
+      .split('page')[0] // Remove query parameters
       .split('/')
       .filter((segment) => segment !== '');
   }

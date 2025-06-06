@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BannerComponent } from '../shared/banner/banner.component';
 import { CategoryComponent } from '../shared/category/category.component';
 import { FilterComponent } from '../shared/filter/filter.component';
@@ -6,6 +6,8 @@ import { ProductsPageComponent } from './products-page/products-page.component';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/app.model';
 import { ActivatedRoute } from '@angular/router';
+import { SubscribeComponent } from '../shared/subscribe/subscribe.component';
+import { WelflareComponent } from './welflare/welflare.component';
 
 @Component({
   selector: '[shop]',
@@ -14,9 +16,12 @@ import { ActivatedRoute } from '@angular/router';
     CategoryComponent,
     FilterComponent,
     ProductsPageComponent,
+    SubscribeComponent,
+    WelflareComponent,
   ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class ShopComponent implements OnInit {
   allProducts: Product[] = [];
