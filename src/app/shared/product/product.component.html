@@ -95,10 +95,9 @@
       ></span
     >
   </span>
-  }
-
+  } @if (isInCart(productData.id)) {
   <a
-    href="https://startersites.io/blocksy/furniture/?add-to-cart=353"
+    routerLink="/cart/"
     aria-describedby="woocommerce_loop_add_to_cart_link_describedby_353"
     data-quantity="1"
     class="button product_type_simple add_to_cart_button ajax_add_to_cart"
@@ -107,8 +106,23 @@
     aria-label="Add to cart: “Aliquam Blandit”"
     rel="nofollow"
     data-success_message="“Aliquam Blandit” has been added to your cart"
-    >Add to cart</a
-  >
+    >View Cart
+  </a>
+  } @else {
+  <a
+    (click)="addToCart(productData.id, $event)"
+    aria-describedby="woocommerce_loop_add_to_cart_link_describedby_353"
+    data-quantity="1"
+    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+    data-product_id="353"
+    data-product_sku=""
+    aria-label="Add to cart: “Aliquam Blandit”"
+    rel="nofollow"
+    data-success_message="“Aliquam Blandit” has been added to your cart"
+    >Add to Cart
+  </a>
+
+  }
   <span
     id="woocommerce_loop_add_to_cart_link_describedby_353"
     class="screen-reader-text"

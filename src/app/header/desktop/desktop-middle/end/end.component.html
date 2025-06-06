@@ -47,7 +47,8 @@
     <span class="ct-icon-container">
       <span class="ct-dynamic-count-wishlist" data-count="2" aria-hidden="true"
         >2</span
-      ><svg
+      >
+      <svg
         class="ct-icon"
         aria-hidden="true"
         width="15"
@@ -66,77 +67,45 @@
     data-behaviour="modal"
     data-id="compare"
     data-button-state=""
-    ><span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Compare</span
-    ><span class="ct-icon-container"
-      ><span class="ct-dynamic-count-compare" data-count="0" aria-hidden="true"
+  >
+    <span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Compare</span>
+    <span class="ct-icon-container">
+      <span class="ct-dynamic-count-compare" data-count="0" aria-hidden="true"
         >0</span
-      ><svg
-        class="ct-icon"
-        aria-hidden="true"
-        width="15"
-        height="15"
-        viewBox="0 0 15 15"
       >
-        <path
-          d="M7.5 6c-.1.5-.2 1-.3 1.4 0 .6-.1 1.3-.3 2-.2.7-.5 1.4-1 1.9-.5.6-1.3.9-2.2.9H0v-1.4h3.7c.6 0 .9-.2 1.2-.5.3-.3.5-.7.7-1.3.1-.5.2-1 .3-1.6v-.3c0-.5.1-1 .3-1.5.2-.7.5-1.4 1-1.9.5-.6 1.3-.9 2.2-.9h3l-1.6-1.6 1-1L15 3.5l-3.3 3.3-1-1 1.6-1.6h-3c-.6 0-.9.2-1.2.5-.2.3-.5.7-.6 1.3zM4.9 4.7c.2-.4.4-.9.7-1.3-.5-.4-1.1-.6-1.9-.6H0v1.4h3.7c.6 0 1 .2 1.2.5zm5.8 4.5 1.6 1.6h-3c-.6 0-.9-.2-1.2-.5-.2.4-.4.9-.6 1.3.5.4 1.1.6 1.8.6h3l-1.6 1.6 1 1 3.3-3.3-3.3-3.3-1 1z"
-        ></path></svg
-      ><svg class="ct-button-loader" width="18" height="18" viewBox="0 0 24 24">
-        <circle
-          cx="12"
-          cy="12"
-          r="10"
-          opacity="0.2"
-          fill="none"
-          stroke="currentColor"
-          stroke-miterlimit="10"
-          stroke-width="2.5"
-        ></circle>
-
-        <path
-          d="m12,2c5.52,0,10,4.48,10,10"
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
-          stroke-width="2.5"
-        >
-          <animatetransform
-            attributeName="transform"
-            attributeType="XML"
-            type="rotate"
-            dur="0.5s"
-            from="0 12 12"
-            to="360 12 12"
-            repeatCount="indefinite"
-          ></animatetransform>
-        </path></svg></span
-  ></a>
+      <svg class="ct-icon" aria-hidden="true" width="15" height="15">
+        <use href="/icons/icons.svg#compare-icon"></use>
+      </svg>
+    </span>
+  </a>
   <div class="ct-header-cart" data-id="cart">
     <a
       class="ct-cart-item ct-offcanvas-trigger"
+      [class.ct-added]="bounce"
       href="https://startersites.io/blocksy/furniture/#woo-cart-panel"
       data-label="left"
     >
-      <span class="screen-reader-text">Shopping cart</span
-      ><span
+      <span class="screen-reader-text">Shopping cart</span>
+      <span
         class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg"
         data-price="yes"
-        ><span class="ct-amount"
-          ><span class="woocommerce-Price-amount amount"
-            ><bdi
-              ><span class="woocommerce-Price-currencySymbol">$</span
-              >125.00</bdi
-            ></span
-          ></span
-        ></span
       >
+        <span class="ct-amount">
+          <span class="woocommerce-Price-amount amount">
+            <bdi>
+              <span class="woocommerce-Price-currencySymbol">$</span>125.00</bdi
+            >
+          </span>
+        </span>
+      </span>
       <span class="ct-icon-container">
-        <span class="ct-dynamic-count-cart" data-count="2" aria-hidden="true"
-          >2</span
-        ><svg aria-hidden="true" width="15" height="15" viewBox="0 0 15 15">
-          <path
-            d="M14.1,1.6C14,0.7,13.3,0,12.4,0H2.7C1.7,0,1,0.7,0.9,1.6L0.1,13.1c0,0.5,0.1,1,0.5,1.3C0.9,14.8,1.3,15,1.8,15h11.4c0.5,0,0.9-0.2,1.3-0.6c0.3-0.4,0.5-0.8,0.5-1.3L14.1,1.6zM13.4,13.4c0,0-0.1,0.1-0.2,0.1H1.8c-0.1,0-0.2-0.1-0.2-0.1c0,0-0.1-0.1-0.1-0.2L2.4,1.7c0-0.1,0.1-0.2,0.2-0.2h9.7c0.1,0,0.2,0.1,0.2,0.2l0.8,11.5C13.4,13.3,13.4,13.4,13.4,13.4z M10,3.2C9.6,3.2,9.2,3.6,9.2,4v1.5c0,1-0.8,1.8-1.8,1.8S5.8,6.5,5.8,5.5V4c0-0.4-0.3-0.8-0.8-0.8S4.2,3.6,4.2,4v1.5c0,1.8,1.5,3.2,3.2,3.2s3.2-1.5,3.2-3.2V4C10.8,3.6,10.4,3.2,10,3.2z"
-          ></path>
+        @if(cartItemCount > 0){
+        <span class="ct-dynamic-count-cart" data-count="2" aria-hidden="true">{{
+          cartItemCount
+        }}</span>
+        }
+        <svg width="15" height="15">
+          <use href="/icons/icons.svg#cart-icon"></use>
         </svg>
       </span>
     </a>
