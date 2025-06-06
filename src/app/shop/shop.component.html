@@ -21,7 +21,7 @@
     data-sidebar="left"
     data-vertical-spacing="top:bottom"
   >
-    <section [allProducts]="filteredProducts" products-page></section>
+    <section products-page [allProducts]="filteredProducts"></section>
     <aside
       filter
       [filterProduct]="filteredProducts"

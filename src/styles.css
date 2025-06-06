@@ -983,9 +983,7 @@ figcaption {
     --theme-font-size: 14px;
 }
 
-.ct-sidebar .widget-title {
-    --theme-font-size: 20px;
-}
+
 
 
 
@@ -1307,9 +1305,7 @@ form textarea {
     --theme-form-field-height: 170px;
 }
 
-.ct-sidebar {
-    --theme-link-initial-color: var(--theme-text-color);
-}
+
 
 [data-prefix="single_blog_post"] .ct-share-box .ct-module-title {
     --theme-font-weight: 600;
@@ -1431,9 +1427,7 @@ form textarea {
     background-color: rgba(18, 21, 25, 0.8);
 }
 
-#woo-filters-panel .ct-sidebar {
-    --theme-link-initial-color: var(--theme-text-color);
-}
+#woo-filters-panel 
 
 #woo-filters-panel[data-behaviour*="side"] {
     --side-panel-width: 500px;
@@ -3053,11 +3047,7 @@ footer.ct-footer [data-link=underline] a {
     margin-inline-start: .7em
 }
 
-.ct-tooltip {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden
-}
+
 
 select,
 textarea,
@@ -6555,24 +6545,7 @@ figure.wp-block-pullquote blockquote cite {
     background-size: var(--has-link-decoration, 100% 100%)
 }
 
-.ct-tooltip {
-    display: flex;
-    align-items: center;
-    z-index: 200;
-    width: auto;
-    height: 28px;
-    padding: 0 10px;
-    font-size: 12px;
-    font-weight: normal;
-    color: #fff;
-    -webkit-user-select: none;
-    user-select: none;
-    white-space: nowrap;
-    border-radius: 3px;
-    pointer-events: none;
-    background: #363f42;
-    transition: opacity .2s cubic-bezier(0.455, 0.03, 0.515, 0.955), transform .2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility .2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-}
+
 
 .ct-tooltip:before,
 .ct-tooltip:after {
@@ -11735,9 +11708,7 @@ html :where(.is-position-sticky) {
     transform: translate3d(0px, calc(-100% - 12px), 0px)
 }
 
-[data-swatches-shape=round] {
-    --swatch-border-radius: 200px
-}
+
 
 [data-swatches-shape=square] {
     --swatch-border-radius: 3px
@@ -18806,60 +18777,25 @@ textarea {
     zoom: 1
 }
 
-.ct-filter-widget-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 15px
-}
+
 
 .ct-filter-widget-wrapper.ct-active .ct-filter-widget:not(.ct-filter-search-results) {
     display: none
 }
 
-.ct-filter-widget {
-    display: flex;
-    gap: 10px 15px;
-    font-size: 15px;
-    --theme-link-initial-color: var(--theme-text-color)
-}
 
 
 
-.ct-filter-widget[data-display-type=list] {
-    flex-direction: column
-}
 
-.ct-filter-widget .ct-filter-item-inner {
-    display: flex;
-    align-items: center;
-    gap: 10px
-}
 
-.ct-filter-widget .ct-filter-item-inner a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1
-}
 
-.ct-filter-widget .ct-filter-item-inner a .ct-checkbox {
-    top: 0;
-    margin: 0
-}
 
-.ct-filter-widget .ct-filter-item-inner a>.ct-filter-count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    min-width: 30px;
-    height: 22px;
-    padding: 0 5px;
-    margin-inline-start: auto;
-    border-radius: 50px;
-    border: 1px solid var(--theme-border-color);
-    transition: color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955), background .12s cubic-bezier(0.455, 0.03, 0.515, 0.955), border-color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-}
+
+
+
+
+
+
 
 .ct-filter-widget .ct-filter-item-inner a:hover>.ct-filter-count {
     color: #fff;
@@ -19472,9 +19408,7 @@ textarea {
     grid-row-gap: 50px
 }
 
-[data-sidebar]>aside {
-    order: var(--sidebar-order)
-}
+
 
 @media(min-width: 1000px) {
     [data-sidebar=right] {
@@ -19496,14 +19430,9 @@ textarea {
     --has-boxed-structure: var(--false)
 }
 
-.ct-sidebar {
-    position: relative;
-    z-index: 1
-}
 
-.ct-sidebar .ct-widget {
-    color: var(--theme-text-color)
-}
+
+
 
 .ct-sidebar .ct-widget:not(:last-child) {
     margin-bottom: var(--sidebar-widgets-spacing, 40px)

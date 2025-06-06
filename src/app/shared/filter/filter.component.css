@@ -1,0 +1,84 @@
+.ct-sidebar .widget-title {
+    --theme-font-size: 20px;
+}
+.ct-sidebar {
+    --theme-link-initial-color: var(--theme-text-color);
+}
+.ct-sidebar {
+    position: relative;
+    z-index: 1
+}
+.ct-tooltip {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden
+}
+.ct-tooltip {
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    width: auto;
+    height: 28px;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    pointer-events: none;
+    background: #363f42;
+    transition: opacity .2s cubic-bezier(0.455, 0.03, 0.515, 0.955), transform .2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility .2s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+}
+[data-swatches-shape=round] {
+    --swatch-border-radius: 200px
+}
+.ct-filter-widget-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+.ct-filter-widget {
+    display: flex;
+    gap: 10px 15px;
+    font-size: 15px;
+    --theme-link-initial-color: var(--theme-text-color)
+}
+.ct-filter-widget[data-display-type=list] {
+    flex-direction: column
+}
+.ct-filter-widget .ct-filter-item-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+.ct-filter-widget .ct-filter-item-inner a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1
+}
+.ct-filter-widget .ct-filter-item-inner a .ct-checkbox {
+    top: 0;
+    margin: 0
+}
+.ct-filter-widget .ct-filter-item-inner a>.ct-filter-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    min-width: 30px;
+    height: 22px;
+    padding: 0 5px;
+    margin-inline-start: auto;
+    border-radius: 50px;
+    border: 1px solid var(--theme-border-color);
+    transition: color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955), background .12s cubic-bezier(0.455, 0.03, 0.515, 0.955), border-color .12s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+}
+[data-sidebar]>aside {
+    order: var(--sidebar-order)
+}
+.ct-sidebar .ct-widget {
+    color: var(--theme-text-color)
+}

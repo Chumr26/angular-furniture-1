@@ -56,14 +56,6 @@ export class ProductsPageComponent implements OnChanges {
         this.currentPage = page;
         this.scrollToTop();
       }
-
-      this.route.queryParams.subscribe((queryParams) => {
-        const sort = queryParams['orderby'];
-        if (sort) {
-          this.applySort(sort);
-        }
-        this.loadProducts();
-      });
     });
   }
 
@@ -103,28 +95,5 @@ export class ProductsPageComponent implements OnChanges {
       queryParams: { orderby: sortValue },
       queryParamsHandling: 'merge',
     });
-  }
-
-  applySort(sortValue: string): void {
-    switch (sortValue) {
-      case 'price':
-        this.allProducts.sort(
-          (a, b) =>
-            a.price -
-            (a.discount_percentage / 100) * a.price -
-            (b.price - (b.discount_percentage / 100) * b.price)
-        );
-        break;
-      case 'price-desc':
-        this.allProducts.sort(
-          (a, b) =>
-            b.price -
-            (b.discount_percentage / 100) * b.price -
-            (a.price - (a.discount_percentage / 100) * a.price)
-        );
-        break;
-      default:
-        break;
-    }
   }
 }

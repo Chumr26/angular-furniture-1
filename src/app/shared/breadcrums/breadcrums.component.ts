@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[breadcrums]',
@@ -10,10 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class BreadcrumsComponent implements OnInit {
   breadcrums: string[] = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.breadcrums = this.router.url
+      .split('?')[0] // Remove query parameters
       .split('/')
       .filter((segment) => segment !== '');
   }

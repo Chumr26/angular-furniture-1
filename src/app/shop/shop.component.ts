@@ -91,6 +91,31 @@ export class ShopComponent implements OnInit {
       );
     }
 
+    // Sort products if 'orderby' exists
+    if (params['orderby']) {
+      const orderBy = params['orderby'];
+      switch (orderBy) {
+        case 'price':
+          filtered.sort(
+            (a, b) =>
+              a.price -
+              (a.discount_percentage / 100) * a.price -
+              (b.price - (b.discount_percentage / 100) * b.price)
+          );
+          break;
+        case 'price-desc':
+          filtered.sort(
+            (a, b) =>
+              b.price -
+              (b.discount_percentage / 100) * b.price -
+              (a.price - (a.discount_percentage / 100) * a.price)
+          );
+          break;
+        default:
+          break;
+      }
+    }
+
     this.filteredProducts = filtered;
   }
 }
