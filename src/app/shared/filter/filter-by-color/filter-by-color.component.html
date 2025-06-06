@@ -15,12 +15,15 @@
       data-swatches-shape="round"
     >
       @for (color of colors; track $index) {
-      <li class="ct-filter-item">
+      <li
+        class="ct-filter-item"
+        [ngClass]="{ active: isColorSelected(color.label.toLocaleLowerCase()) }"
+      >
         <div class="ct-filter-item-inner">
           <a
-            href="https://startersites.io/blocksy/furniture/shop/?filter_color=beige&amp;query_type_color=or"
             rel="nofollow"
             [attr.aria-label]="color.label"
+            (click)="onColorSelect(color.label.toLocaleLowerCase(), $event)"
             data-key="color"
             data-value="38"
           >

@@ -16,25 +16,23 @@
       data-frame="no"
     >
       @for (category of categories; track $index) {
-      <li class="ct-filter-item">
+      <li
+        class="ct-filter-item"
+        [ngClass]="{
+          active: isCategorySelected(category.label.toLocaleLowerCase())
+        }"
+        (click)="onCategorySelect(category.label.toLocaleLowerCase())"
+      >
         <div class="ct-filter-item-inner">
-          <a
-            href="shop/?filter_tax_product_cat=15"
-            rel="nofollow"
-            [attr.aria-label]="category | titlecase"
-            data-key="product_cat"
-            data-value="15"
-            ><input
-              type="checkbox"
-              class="ct-checkbox"
-              tabindex="-1"
-              name="product_cat_15"
-              [attr.aria-label]="category | titlecase"
-            /><span class="ct-filter-label">{{ category | titlecase }}</span
-            ><span class="ct-filter-count">{{
-              categoryCounts[category]
-            }}</span></a
-          >
+          <input
+            [checked]="isCategorySelected(category.label.toLocaleLowerCase())"
+            type="checkbox"
+            class="ct-checkbox"
+            tabindex="-1"
+            name="product_cat_15"
+            [attr.aria-label]="category.label | titlecase"
+          /><span class="ct-filter-label">{{ category.label | titlecase }}</span
+          ><span class="ct-filter-count">{{ category.count }}</span>
         </div>
       </li>
       }

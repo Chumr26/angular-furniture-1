@@ -16,10 +16,13 @@
       data-frame="yes"
     >
       @for (item of brands; track $index) {
-      <li class="ct-filter-item">
+      <li
+        class="ct-filter-item"
+        [ngClass]="{ active: isBrandSelected(item.toLocaleLowerCase()) }"
+      >
         <div class="ct-filter-item-inner">
           <a
-            href="https://startersites.io/blocksy/furniture/shop/?filter_tax_product_brand=51"
+            (click)="onBrandSelect(item, $event)"
             rel="nofollow"
             [attr.aria-label]="item"
             data-key="product_brand"

@@ -1,14 +1,23 @@
 <div class="ct-sidebar" data-sticky="sidebar">
   <div
     filter-by-price
-    [minPrice]="50"
-    [maxPrice]="1000"
+    [filterProduct]="filterProduct"
     class="ct-widget widget_block"
     id="block-15"
   ></div>
-  <div filter-by-category class="ct-widget widget_block" id="block-7"></div>
+  <div
+    filter-by-category
+    [filterProduct]="filterProduct"
+    class="ct-widget widget_block"
+    id="block-7"
+  ></div>
   <div filter-by-color class="ct-widget widget_block" id="block-13"></div>
-  <div filter-by-material class="ct-widget widget_block" id="block-14"></div>
+  <div
+    filter-by-material
+    [filterProduct]="filterProduct"
+    class="ct-widget widget_block"
+    id="block-14"
+  ></div>
   <div filter-by-brand class="ct-widget widget_block" id="block-21"></div>
   <div best-selling class="ct-widget widget_block" id="block-19"></div>
 </div>

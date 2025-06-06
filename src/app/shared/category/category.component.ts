@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CategoryService } from '../../services/category.service';
+// import { CategoryService } from '../../services/category.service';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 
 @Component({
@@ -13,8 +13,8 @@ import { CommonModule, TitleCasePipe } from '@angular/common';
 export class CategoryComponent {
   categories: string[] = [];
   categoryCounts: { [category: string]: number } = {};
-  constructor(private categoryService: CategoryService) {
-    this.categories = this.categoryService.getCategories();
-    this.categoryCounts = this.categoryService.getCategoryProductCounts();
-  }
+//   constructor(private categoryService: CategoryService) {
+//     this.categories = this.categoryService.getCategories();
+//     this.categoryCounts = this.categoryService.getCategoryProductCounts();
+//   }
 }

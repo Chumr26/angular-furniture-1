@@ -15,7 +15,13 @@
       data-swatches-shape="round"
     >
       @for (material of materials; track $index) {
-      <li class="ct-filter-item">
+      <li
+        class="ct-filter-item"
+        [ngClass]="{
+          active: isMaterialSelected(material.label.toLocaleLowerCase())
+        }"
+        (click)="onMaterialSelect(material.label.toLocaleLowerCase())"
+      >
         <div class="ct-filter-item-inner">
           <input
             type="checkbox"
@@ -24,7 +30,6 @@
             name="product_attribute_33"
             [attr.aria-label]="material.label"
             [checked]="isMaterialSelected(material.label.toLocaleLowerCase())"
-            (change)="onMaterialSelect(material.label.toLocaleLowerCase())"
           /><span class="ct-filter-label">{{ material.label }}</span
           ><span class="ct-filter-count">{{ material.count }}</span>
         </div>

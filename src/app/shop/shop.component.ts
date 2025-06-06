@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BannerComponent } from '../shared/banner/banner.component';
 import { CategoryComponent } from '../shared/category/category.component';
 import { FilterComponent } from '../shared/filter/filter.component';
 import { ProductsPageComponent } from './products-page/products-page.component';
+import { ProductService } from '../services/product.service';
+import { Product } from '../models/app.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: '[shop]',
@@ -15,5 +18,79 @@ import { ProductsPageComponent } from './products-page/products-page.component';
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
-export class ShopComponent {
+export class ShopComponent implements OnInit {
+  allProducts: Product[] = [];
+  filteredProducts: Product[] = [];
+
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    // Load all products initially
+    this.allProducts = this.productService.getProducts();
+    this.filteredProducts = [...this.allProducts];
+
+    // Listen for query parameter changes
+    this.route.queryParams.subscribe((params) => {
+      this.applyFilters(params);
+    });
+  }
+
+  private applyFilters(params: { [key: string]: string }): void {
+    let filtered = [...this.allProducts];
+
+    // Filter by category if 'filter_category' exists
+    if (params['filter_category']) {
+      const categories = decodeURIComponent(params['filter_category']).split(
+        ','
+      );
+      filtered = filtered.filter((product) =>
+        product.category.some((cat) =>
+          categories.includes(cat.toLocaleLowerCase())
+        )
+      );
+    }
+
+    // Filter by color if 'filter_color' exists
+    if (params['filter_color']) {
+      const colors = decodeURIComponent(params['filter_color']).split(',');
+      filtered = filtered.filter((product) =>
+        product.color.some((color) =>
+          colors.includes(color.toLocaleLowerCase())
+        )
+      );
+    }
+
+    // Filter by price if 'minPrice' and 'maxPrice' exists
+    if (params['minPrice'] && params['maxPrice']) {
+      const minPrice = parseInt(params['minPrice']);
+      const maxPrice = parseInt(params['maxPrice']);
+      filtered = filtered.filter(
+        (product) => product.price >= minPrice && product.price <= maxPrice
+      );
+    }
+    // Filter by material if 'filter_material' exists
+    if (params['filter_material']) {
+      const materials = decodeURIComponent(params['filter_material']).split(
+        ','
+      );
+      filtered = filtered.filter((product) =>
+        product.material.some((mat) =>
+          materials.includes(mat.toLocaleLowerCase())
+        )
+      );
+    }
+
+    // Filter by brand if 'filter_brand' exists
+    if (params['filter_brand']) {
+      const brands = decodeURIComponent(params['filter_brand']).split(',');
+      filtered = filtered.filter((product) =>
+        brands.includes(product.brand.toLocaleLowerCase())
+      );
+    }
+
+    this.filteredProducts = filtered;
+  }
 }

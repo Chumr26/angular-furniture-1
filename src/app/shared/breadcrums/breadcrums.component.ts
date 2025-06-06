@@ -16,6 +16,5 @@ export class BreadcrumsComponent implements OnInit {
     this.breadcrums = this.router.url
       .split('/')
       .filter((segment) => segment !== '');
-    console.log('Current URL:', this.breadcrums);
   }
 }

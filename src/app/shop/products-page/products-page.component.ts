@@ -1,10 +1,15 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Product } from '../../models/app.model';
-import { ProductService } from '../../services/product.service';
 import { ProductComponent } from '../../shared/product/product.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ViewportScroller } from '@angular/common'; // Import ViewportScroller
-import { Router } from '@angular/router'; // Import Router
+import { ViewportScroller } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[products-page]',
@@ -13,22 +18,21 @@ import { Router } from '@angular/router'; // Import Router
   styleUrl: './products-page.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class ProductsPageComponent {
+export class ProductsPageComponent implements OnChanges {
+  @Input() allProducts: Product[] = []; // Input property for products
   pageLen = 12;
   pages: number[] = [];
   currentPage = 1;
   startIndex = 0;
   endIndex = 0;
   totalProducts = 0;
-  allProducts: Product[] = [];
   currentProducts: Product[] = [];
   loading = false;
 
   constructor(
-    private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router, // Inject Router
-    private viewportScroller: ViewportScroller // Inject ViewportScroller
+    private router: Router,
+    private viewportScroller: ViewportScroller
   ) {}
 
   // Public getter to expose queryParams
@@ -36,21 +40,21 @@ export class ProductsPageComponent {
     return this.route.snapshot.queryParams['orderby'] || 'menu_order';
   }
 
-  ngOnInit(): void {
-    this.allProducts = this.productService.getProducts();
-    this.pages = Array.from(
-      { length: Math.ceil(this.allProducts.length / this.pageLen) },
-      (_, i) => i + 1
-    );
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['allProducts'] && changes['allProducts'].currentValue) {
+      this.initializePagination();
+    }
+  }
 
+  ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const page = parseInt(params['page'], 10);
 
       if (isNaN(page) || page < 1 || page > this.pages.length) {
-        this.currentPage = 1; // Default to page 1 if no valid page is provided
+        this.currentPage = 1;
       } else {
         this.currentPage = page;
-        this.scrollToTop(); // Scroll to the top of the page
+        this.scrollToTop();
       }
 
       this.route.queryParams.subscribe((queryParams) => {
@@ -58,9 +62,17 @@ export class ProductsPageComponent {
         if (sort) {
           this.applySort(sort);
         }
-        this.loadProducts(); // Reload products based on the new page and sort
+        this.loadProducts();
       });
     });
+  }
+
+  initializePagination(): void {
+    this.pages = Array.from(
+      { length: Math.ceil(this.allProducts.length / this.pageLen) },
+      (_, i) => i + 1
+    );
+    this.loadProducts();
   }
 
   loadProducts(): void {
@@ -79,7 +91,6 @@ export class ProductsPageComponent {
   }
 
   scrollToTop(): void {
-    // Scroll to the element with the ID or anchor name
     this.viewportScroller.setOffset([0, 200]);
     this.viewportScroller.scrollToAnchor('anchor');
   }
@@ -87,27 +98,15 @@ export class ProductsPageComponent {
   onSortChange(event: Event): void {
     const sortValue = (event.target as HTMLSelectElement).value;
 
-    // Update query parameters with the new sort value
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { orderby: sortValue},
-      queryParamsHandling: 'merge', // Merge with existing query params
+      queryParams: { orderby: sortValue },
+      queryParamsHandling: 'merge',
     });
   }
 
   applySort(sortValue: string): void {
     switch (sortValue) {
-      //   case 'popularity':
-      //     this.allProducts.sort((a, b) => b.popularity - a.popularity);
-      //     break;
-      //   case 'rating':
-      //     this.allProducts.sort((a, b) => b.rating - a.rating);
-      //     break;
-      //   case 'date':
-      //     this.allProducts.sort(
-      //       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      //     );
-      //     break;
       case 'price':
         this.allProducts.sort(
           (a, b) =>
@@ -125,7 +124,6 @@ export class ProductsPageComponent {
         );
         break;
       default:
-        // Default sorting logic if needed
         break;
     }
   }

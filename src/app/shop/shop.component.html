@@ -21,9 +21,10 @@
     data-sidebar="left"
     data-vertical-spacing="top:bottom"
   >
-    <section products-page></section>
+    <section [allProducts]="filteredProducts" products-page></section>
     <aside
       filter
+      [filterProduct]="filteredProducts"
       class="ct-hidden-sm ct-hidden-md"
       data-type="type-1"
       id="sidebar"

@@ -14,3 +14,8 @@ export interface Product {
   quantity: number;
   discount_percentage: number;
 }
+
+export interface FilteredItem {
+  label: string;
+  count: number;
+}

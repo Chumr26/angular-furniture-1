@@ -1,9 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FilterService } from '../../../services/filter.service';
+import { Product } from '../../../models/app.model';
 
 @Component({
   selector: '[filter-by-color]',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './filter-by-color.component.html',
   styleUrl: './filter-by-color.component.css',
   encapsulation: ViewEncapsulation.None,
@@ -20,9 +24,21 @@ export class FilterByColorComponent {
     { label: 'White', swatch: 'f4f4f4', count: 0 },
     { label: 'Yellow', swatch: 'f9cd0b', count: 0 },
   ];
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private filterService: FilterService
+  ) {
     this.colors.forEach((color) => {
       color.count = this.productService.getProductsByColor(color.label).length;
     });
+  }
+
+  isColorSelected(colorLabel: string): boolean {
+    return this.filterService.isFilterSelected(colorLabel, 'color');
+  }
+
+  onColorSelect(colorLabel: string, event: Event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    this.filterService.onFilterSelect(colorLabel, 'color');
   }
 }
