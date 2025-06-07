@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+a {
+    cursor: pointer;
+}
+
 /* Content from brands.css */
 .tax-product_brand .brand-description {
     overflow: hidden;
@@ -19134,12 +19138,6 @@ textarea {
     margin: var(--margin);
     --theme-link-initial-color: var(--theme-text-color)
 }
-
-
-
-
-
-
 
 .ct-toggle-filter-panel:hover,
 .ct-toggle-filter-panel:active {

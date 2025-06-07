@@ -10,14 +10,21 @@ export interface CartItem {
   providedIn: 'root',
 })
 export class CartService {
-  private cartItems: CartItem[] = [];
+  cartItems: CartItem[] = [];
   private cartItemsSubject = new BehaviorSubject<CartItem[]>(this.cartItems);
-
+  private isActiveSubject = new BehaviorSubject<boolean>(false);
+  private showEmptyCartAlert = new BehaviorSubject<boolean>(false);
   constructor() {}
 
   // Observable for components to subscribe to
   getCartItems() {
     return this.cartItemsSubject.asObservable();
+  }
+  getIsActive() {
+    return this.isActiveSubject.asObservable();
+  }
+  toggleIsActive() {
+    this.isActiveSubject.next(!this.isActiveSubject.value);
   }
 
   // Add or update a product in the cart
@@ -27,20 +34,27 @@ export class CartService {
     this.cartItemsSubject.next([...this.cartItems]); // Notify subscribers
   }
 
-  updateProduct(productId: string, quantity: number) {
-    const index = this.cartItems.findIndex(
-      (item) => item.productId === productId
-    );
+  // Increment product count in the cart
+  incrementProduct(index: number) {
+    this.cartItems[index].productCount += 1;
+    this.cartItemsSubject.next([...this.cartItems]);
+  }
+
+  // Decrement product count in the cart
+  decrementProduct(index: number) {
+    this.cartItems[index].productCount -= 1;
+    this.cartItemsSubject.next([...this.cartItems]);
+  }
+
+  updateProduct(index: number, quantity: number) {
     // Update product count
-    this.cartItems[index].productCount += quantity;
+    this.cartItems[index].productCount = quantity;
     this.cartItemsSubject.next([...this.cartItems]); // Notify subscribers
   }
 
   // Remove a product from the cart
-  removeProduct(productId: string) {
-    this.cartItems = this.cartItems.filter(
-      (item) => item.productId !== productId
-    );
+  removeProduct(index: number) {
+    this.cartItems = this.cartItems.filter((item, i) => i !== index);
     this.cartItemsSubject.next([...this.cartItems]); // Notify subscribers
   }
 
@@ -48,5 +62,13 @@ export class CartService {
   clearCart() {
     this.cartItems = [];
     this.cartItemsSubject.next([...this.cartItems]); // Notify subscribers
+  }
+
+  setShowEmptyCartAlert(value: boolean) {
+    this.showEmptyCartAlert.next(value);
+  }
+
+  getShowEmptyCartAlert() {
+    return this.showEmptyCartAlert.asObservable();
   }
 }

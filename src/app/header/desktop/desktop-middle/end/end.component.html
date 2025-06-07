@@ -1,4 +1,4 @@
-<div data-items="primary">
+<div data-items="primary"> 
   <nav
     id="header-menu-1"
     class="header-menu-1 menu-container"
@@ -82,8 +82,8 @@
     <a
       class="ct-cart-item ct-offcanvas-trigger"
       [class.ct-added]="bounce"
-      href="https://startersites.io/blocksy/furniture/#woo-cart-panel"
       data-label="left"
+      (click)="toggleCart($event)"
     >
       <span class="screen-reader-text">Shopping cart</span>
       <span

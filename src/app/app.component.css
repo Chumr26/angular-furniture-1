@@ -1,0 +1,5 @@
+.cart-active {
+    --scrollbar-width: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}

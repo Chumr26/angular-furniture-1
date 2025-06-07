@@ -1,0 +1,124 @@
+<div class="ct-panel-inner" (click)="$event.stopPropagation()">
+  <div class="ct-panel-actions">
+    <span class="ct-panel-heading">Shopping Cart</span>
+
+    <button
+      (click)="toggleCart()"
+      class="ct-toggle-close"
+      data-type="type-1"
+      aria-label="Close cart drawer"
+    >
+      <svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15">
+        <path
+          d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <div class="ct-panel-content">
+    <div class="ct-panel-content-inner">
+      <ul class="woocommerce-mini-cart cart_list product_list_widget">
+        @for (item of cartProducts; track $index) {
+        <li class="woocommerce-mini-cart-item mini_cart_item">
+          <a
+            (click)="removeFromCart($index, $event)"
+            class="remove remove_from_cart_button"
+            [attr.aria-label]="'Remove ' + item.name + ' from cart'"
+            data-product_id="370"
+            data-cart_item_key="d709f38ef758b5066ef31b18039b8ce5"
+            data-product_sku=""
+            [attr.data-success_message]="
+              '{{ item.name }} has been removed from your cart'
+            "
+            ><svg class="ct-icon" width="10px" height="10px">
+              <use href="icons/icons.svg#trash-icon"></use></svg></a
+          ><a
+            class="ct-media-container"
+            routerLink="product/{{
+              item.name.toLocaleLowerCase().replace(' ', '-')
+            }}"
+            ><img
+              width="300"
+              height="300"
+              src="imgs/product-{{ item.id }}-300x300.webp"
+              loading="lazy"
+              decoding="async"
+              srcset="
+                imgs/product-{{item.id}}-300x300.webp    300w,
+                imgs/product-{{item.id}}-800x800.webp    800w,
+                imgs/product-{{item.id}}-500x500.webp    500w,
+                imgs/product-{{item.id}}-1024x1024.webp 1024w,
+                imgs/product-{{item.id}}-150x150.webp    150w,
+                imgs/product-{{item.id}}-768x768.webp    768w,
+                imgs/product-{{item.id}}.webp           1240w
+              "
+              sizes="auto, (max-width: 300px) 100vw, 300px"
+              itemprop="image"
+              class="wp-post-image"
+              style="aspect-ratio: 1/1"
+              title="product-{{ item.id }}"
+              alt="{{ item.name }}"
+          /></a>
+          <div class="product-data">
+            <a href="product/commodo-amcorper/" class="product-title">
+              {{ item.name }}
+            </a>
+
+            <div class="ct-product-actions">
+              <div class="quantity" data-type="type-2">
+                <span
+                  class="ct-increase"
+                  (click)="incrementProduct($index)"
+                ></span
+                ><span
+                  class="ct-decrease"
+                  [class.disabled]="this.cartItems[$index].productCount === 1"
+                  (click)="decrementProduct($index)"
+                ></span>
+                <label class="screen-reader-text" for="quantity_684387dfd1c90"
+                  >{{ item.name }} quantity</label
+                >
+                <input
+                  type="number"
+                  id="quantity_684387dfd1c90"
+                  class="input-text qty text"
+                  name="cart[d709f38ef758b5066ef31b18039b8ce5][qty]"
+                  [(ngModel)]="cartItems[$index].productCount"
+                  aria-label="Product quantity"
+                  min="1"
+                  step="1"
+                  placeholder=""
+                  inputmode="numeric"
+                  autocomplete="off"
+                  (change)="validateQuantity($index, $event)"
+                />
+              </div>
+              <span class="ct-product-multiply-symbol">×</span
+              ><span class="woocommerce-Price-amount amount"
+                ><bdi
+                  ><span class="woocommerce-Price-currencySymbol">$</span
+                  >{{ item.price }}</bdi
+                ></span
+              >
+            </div>
+          </div>
+        </li>
+        }
+      </ul>
+
+      <p class="woocommerce-mini-cart__total total">
+        <strong>Subtotal:</strong>
+        <span class="woocommerce-Price-amount amount"
+          ><bdi
+            ><span class="woocommerce-Price-currencySymbol">$</span
+            >{{ getTotalPrice()}}</bdi
+          ></span
+        >
+      </p>
+      <p class="woocommerce-mini-cart__buttons buttons">
+        <a href="cart/" class="button wc-forward">View cart</a
+        ><a href="checkout/" class="button checkout wc-forward">Checkout</a>
+      </p>
+    </div>
+  </div>
+</div>

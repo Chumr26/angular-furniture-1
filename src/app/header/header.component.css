@@ -1,0 +1,40 @@
+/* Generic alert styles */
+.alert {
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px 15px;
+    /* Padding inside the alert */
+    margin: 10px 0;
+    /* Margin to separate from other elements */
+    /* font-family: 'Arial', sans-serif; */
+    /* Font matching the project theme */
+    font-size: 14px;
+    font-weight: bold;
+    /* Font size for readability */
+    text-align: center;
+    /* Center-align the text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    animation: fadeIn 0.5s ease-in-out;
+    /* Fade-in animation */
+}
+
+/* Warning-specific alert styles */
+.alert-warning {
+    background-color: #274C4F;
+    /* Light red background for warning */
+    color: white;
+    /* Dark red text for warning */
+    border: 1px solid #456A6D;
+    /* Border matching the theme */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

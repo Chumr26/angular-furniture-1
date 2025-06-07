@@ -22,4 +22,14 @@ export class EndComponent implements OnInit {
       setTimeout(() => (this.bounce = false), 500);
     });
   }
+
+  toggleCart($event: Event) {
+    $event.preventDefault();
+    if (this.cartItemCount === 0) {
+      this.cartService.setShowEmptyCartAlert(true);
+      setTimeout(() => this.cartService.setShowEmptyCartAlert(false), 3000); // Hide alert after 3 seconds
+    } else {
+      this.cartService.toggleIsActive();
+    }
+  }
 }
