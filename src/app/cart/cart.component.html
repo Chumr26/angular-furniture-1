@@ -1,0 +1,279 @@
+<main id="main" class="site-main hfeed">
+  <div
+    class="ct-container-full"
+    data-content="normal"
+    data-vertical-spacing="top:bottom"
+  >
+    <article id="post-8" class="post-8 page type-page status-publish hentry">
+      <div class="hero-section is-width-constrained" data-type="type-1">
+        <header class="entry-header">
+          <h1 class="page-title" title="Cart" itemprop="headline">Cart</h1>
+        </header>
+      </div>
+
+      @if(cartItems.length === 0) {
+      <div class="entry-content is-layout-constrained">
+        <div class="woocommerce">
+          <div class="woocommerce-notices-wrapper">
+            <div class="cart-empty woocommerce-info">
+              Your cart is currently empty.
+            </div>
+          </div>
+          <div class="wc-empty-cart-message"></div>
+          <p class="return-to-shop">
+            <a
+              class="button wc-backward"
+              [routerLink]="['/shop']"
+            >
+              Return to shop
+            </a>
+          </p>
+        </div>
+      </div>
+      }@else {
+      <div class="entry-content is-layout-constrained">
+        <div class="woocommerce">
+          <div class="woocommerce-notices-wrapper"></div>
+          <div class="ct-woocommerce-cart-form ct-cart-auto-update">
+            <form class="woocommerce-cart-form" action="cart/" method="post">
+              <table
+                class="shop_table cart woocommerce-cart-form__contents"
+                cellspacing="0"
+              >
+                <thead>
+                  <tr>
+                    <th class="product-name" colspan="2">Product</th>
+                    <th class="product-quantity">Quantity</th>
+                    <th class="product-subtotal">Subtotal</th>
+                    <th class="product-remove">&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of cartProducts; track $index) {
+                  <tr class="woocommerce-cart-form__cart-item cart_item">
+                    <td class="product-thumbnail">
+                      <a
+                        class="ct-media-container"
+                        [routerLink]="[
+                          '/product',
+                          item.name.toLocaleLowerCase().replace(' ', '-')
+                        ]"
+                        ><img
+                          decoding="async"
+                          width="300"
+                          height="300"
+                          src="imgs/product-{{ item.id }}-300x300.webp"
+                          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image"
+                          alt=""
+                          loading="lazy"
+                          srcset="
+                            imgs/product-{{item.id}}-300x300.webp    300w,
+                            imgs/product-{{item.id}}-800x800.webp    800w,
+                            imgs/product-{{item.id}}-500x500.webp    500w,
+                            imgs/product-{{item.id}}-1024x1024.webp 1024w,
+                            imgs/product-{{item.id}}-150x150.webp    150w,
+                            imgs/product-{{item.id}}-768x768.webp    768w,
+                            imgs/product-{{item.id}}.webp           1240w
+                          "
+                          sizes="auto, (max-width: 300px) 100vw, 300px"
+                          itemprop="image"
+                          style="aspect-ratio: 1/1"
+                      /></a>
+                    </td>
+
+                    <td class="product-name" data-title="Product">
+                      <a
+                        href="product/{{
+                          item.name.toLocaleLowerCase().replace(' ', '-')
+                        }}/"
+                        >{{ item.name }}</a
+                      >
+                      <p class="price ct-hidden-sm ct-hidden-md">
+                        <span class="woocommerce-Price-amount amount"
+                          ><bdi
+                            ><span class="woocommerce-Price-currencySymbol"
+                              >$</span
+                            >{{
+                              item.price -
+                                (item.price * item.discount_percentage) / 100
+                            }}</bdi
+                          ></span
+                        >
+                      </p>
+
+                      <div
+                        class="product-mobile-actions ct-hidden-lg product-remove"
+                      >
+                        <div class="quantity" data-type="type-2">
+                          <span
+                            class="ct-increase"
+                            (click)="incrementProduct($index)"
+                          ></span
+                          ><span
+                            class="ct-decrease"
+                            [class.disabled]="
+                              this.cartItems[$index].productCount === 1
+                            "
+                            (click)="decrementProduct($index)"
+                          ></span>
+                          <label
+                            class="screen-reader-text"
+                            for="quantity_6844552aa4422"
+                            >{{ item.name }} quantity</label
+                          >
+                          <input
+                            type="number"
+                            id="quantity_684387dfd1c90"
+                            class="input-text qty text"
+                            name="cart[d709f38ef758b5066ef31b18039b8ce5][qty]"
+                            [(ngModel)]="cartItems[$index].productCount"
+                            aria-label="Product quantity"
+                            min="1"
+                            step="1"
+                            placeholder=""
+                            inputmode="numeric"
+                            autocomplete="off"
+                            (change)="validateQuantity($index, $event)"
+                          />
+                        </div>
+
+                        <span class="ct-product-multiply-symbol">×</span>
+
+                        <span class="woocommerce-Price-amount amount"
+                          ><bdi
+                            ><span class="woocommerce-Price-currencySymbol"
+                              >$</span
+                            >{{ productSubtotal($index) }}</bdi
+                          ></span
+                        >
+                        <a
+                          (click)="removeFromCart($index, $event)"
+                          class="remove"
+                          [attr.aria-label]="
+                            'Remove ' + item.name + ' from cart'
+                          "
+                          [attr.data-product_id]="item.id"
+                          data-product_sku=""
+                        >
+                          <svg class="ct-icon" width="10px" height="10px">
+                            <use href="icons/icons.svg#trash-icon"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </td>
+
+                    <td class="product-quantity" data-title="Quantity">
+                      <div class="quantity" data-type="type-2">
+                        <span
+                          class="ct-increase"
+                          (click)="incrementProduct($index)"
+                        ></span
+                        ><span
+                          class="ct-decrease"
+                          [class.disabled]="
+                            this.cartItems[$index].productCount === 1
+                          "
+                          (click)="decrementProduct($index)"
+                        ></span>
+                        <label
+                          class="screen-reader-text"
+                          for="quantity_6844552aa463f"
+                          >{{ item.name }} quantity</label
+                        >
+                        <input
+                          type="number"
+                          id="quantity_684387dfd1c90"
+                          class="input-text qty text"
+                          name="cart[d709f38ef758b5066ef31b18039b8ce5][qty]"
+                          [(ngModel)]="cartItems[$index].productCount"
+                          aria-label="Product quantity"
+                          min="1"
+                          step="1"
+                          placeholder=""
+                          inputmode="numeric"
+                          autocomplete="off"
+                          (change)="validateQuantity($index, $event)"
+                        />
+                      </div>
+                    </td>
+
+                    <td class="product-subtotal" data-title="Subtotal">
+                      <span class="woocommerce-Price-amount amount"
+                        ><bdi
+                          ><span class="woocommerce-Price-currencySymbol"
+                            >$</span
+                          >{{ productSubtotal($index) }}</bdi
+                        ></span
+                      >
+                    </td>
+
+                    <td class="product-remove" data-title="Remove product">
+                      <a
+                        (click)="removeFromCart($index, $event)"
+                        class="remove"
+                        [attr.aria-label]="'Remove ' + item.name + ' from cart'"
+                        [attr.data-product_id]="item.id"
+                        data-product_sku=""
+                      >
+                        <svg class="ct-icon" width="10px" height="10px">
+                          <use href="icons/icons.svg#trash-icon"></use>
+                        </svg>
+                      </a>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </form>
+
+            <div class="cart_totals">
+              <h2>Cart totals</h2>
+
+              <table cellspacing="0" class="shop_table shop_table_responsive">
+                <tbody>
+                  <tr class="cart-subtotal">
+                    <th>Subtotal</th>
+                    <td data-title="Subtotal">
+                      <span class="woocommerce-Price-amount amount"
+                        ><bdi
+                          ><span class="woocommerce-Price-currencySymbol"
+                            >$</span
+                          >{{ getTotalPrice() }}</bdi
+                        ></span
+                      >
+                    </td>
+                  </tr>
+
+                  <tr class="order-total">
+                    <th>Total</th>
+                    <td data-title="Total">
+                      <strong
+                        ><span class="woocommerce-Price-amount amount"
+                          ><bdi
+                            ><span class="woocommerce-Price-currencySymbol"
+                              >$</span
+                            >{{ getTotalPrice() }}</bdi
+                          ></span
+                        ></strong
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wc-proceed-to-checkout">
+                <a
+                  href="checkout/"
+                  class="checkout-button button alt wc-forward"
+                >
+                  Proceed to checkout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </article>
+  </div>
+</main>

@@ -1,14 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { CartItem, CartService } from '../../services/cart.service';
-import { Product } from '../../models/app.model';
-import { ProductService } from '../../services/product.service';
-import { RouterLink } from '@angular/router';
+import { CartItem, CartService } from '../services/cart.service';
+import { Product } from '../models/app.model';
+import { ProductService } from '../services/product.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: '[cart]',
-  imports: [RouterLink, FormsModule, CommonModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
   encapsulation: ViewEncapsulation.None,
@@ -16,31 +15,18 @@ import { CommonModule } from '@angular/common';
 export class CartComponent {
   cartProducts: Product[] = [];
   cartItems: CartItem[] = [];
-
   constructor(
     private cartService: CartService,
     private productService: ProductService
   ) {}
-
   ngOnInit() {
-    this.cartService.getCartItems().subscribe((cartItems) => {
-      this.cartItems = cartItems;
+    console.log('object');
+    this.cartService.getCartItems().subscribe((items) => {
+      this.cartItems = items;
       this.cartProducts = this.cartItems.map(
         (item) => this.productService.getProductById(item.productId)!
       );
     });
-  }
-
-  toggleCart() {
-    this.cartService.toggleIsActive();
-  }
-
-  removeFromCart(index: number, event: Event) {
-    event.preventDefault();
-    this.cartService.removeProduct(index);
-    if (this.cartItems.length === 0) {
-      this.cartService.toggleIsActive(); // Close the cart if empty
-    }
   }
 
   incrementProduct(index: number) {
@@ -65,10 +51,28 @@ export class CartComponent {
     inputElement.value = sanitizedValue.toString(); // Update the input box value
   }
 
+  removeFromCart(index: number, event: Event) {
+    event.preventDefault();
+    this.cartService.removeProduct(index);
+  }
+
+  productSubtotal(index: number): number {
+    const product = this.cartProducts[index];
+    const item = this.cartItems[index];
+    return product
+      ? (product.price - (product.price * product.discount_percentage) / 100) *
+          item.productCount
+      : 0;
+  }
+
   getTotalPrice(): number {
     return this.cartProducts.reduce((total, product, index) => {
       const item = this.cartItems[index];
-      return total + product.price * item.productCount;
+      return (
+        total +
+        (product.price - (product.price * product.discount_percentage) / 100) *
+          item.productCount
+      );
     }, 0);
   }
 }
