@@ -3,11 +3,11 @@ import { BannerComponent } from '../shared/banner/banner.component';
 import { CategoryComponent } from '../shared/category/category.component';
 import { FilterComponent } from '../shared/filter/filter.component';
 import { ProductsPageComponent } from './products-page/products-page.component';
-import { ProductService } from '../services/product.service';
 import { Product } from '../models/app.model';
 import { ActivatedRoute } from '@angular/router';
 import { SubscribeComponent } from '../shared/subscribe/subscribe.component';
 import { WelflareComponent } from './welflare/welflare.component';
+import { FetcherService } from '../services/fetcher.service';
 
 @Component({
   selector: '[shop]',
@@ -27,15 +27,21 @@ export class ShopComponent implements OnInit {
   allProducts: Product[] = [];
   filteredProducts: Product[] = [];
 
-  constructor(
-    private productService: ProductService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private route: ActivatedRoute, private fetcher: FetcherService) {}
 
   ngOnInit(): void {
     // Load all products initially
-    this.allProducts = this.productService.getProducts();
-    this.filteredProducts = [...this.allProducts];
+    this.fetcher.get<Product[]>('products').subscribe({
+      next: (products) => {
+        this.allProducts = products;
+        this.filteredProducts = [...this.allProducts];
+      },
+      error: (error) => {
+        console.error('Error fetching products:', error);
+      },
+    });
+    // this.allProducts = this.productService.getProducts();
+    // this.filteredProducts = [...this.allProducts];
 
     // Listen for query parameter changes
     this.route.queryParams.subscribe((params) => {

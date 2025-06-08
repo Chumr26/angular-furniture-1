@@ -13,6 +13,8 @@ export class ProductService {
   }
 
   getProducts(): Product[] {
+    // fectch products from localhost:3000/products
+    
     return this.products;
   }
 
