@@ -6,11 +6,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductComponent } from './product/product.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home Page' },
   { path: 'shop', component: ShopComponent, title: 'Shop Page' },
   { path: 'shop/page/:page', component: ShopComponent, title: 'Shop Page' },
+  {
+    path: 'product/:product',
+    component: ProductComponent,
+    title: 'Product Page',
+  },
   { path: 'about-us', component: AboutUsComponent, title: 'About Us Page' },
   { path: 'news', component: NewsComponent, title: 'News Page' },
   {

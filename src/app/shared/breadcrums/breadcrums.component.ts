@@ -1,21 +1,20 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: '[breadcrums]',
+  imports: [RouterLink],
   templateUrl: './breadcrums.component.html',
   styleUrl: './breadcrums.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class BreadcrumsComponent implements OnInit {
-  breadcrums: string[] = [];
-
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    this.breadcrums = this.router.url
-      .split('page')[0] // Remove query parameters
-      .split('/')
-      .filter((segment) => segment !== '');
+export class BreadcrumsComponent {
+  @Input() breadcrumItems: string[] = []; // Receive breadcrums array as input
+  
+  convertUrl(segment: string): string {
+    if(segment === 'Home') {
+      return '/';
+    }
+    return segment.toLowerCase()
   }
 }

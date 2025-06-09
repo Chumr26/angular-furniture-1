@@ -1,14 +1,24 @@
+@for (item of breadcrumItems; track $index) {
 <span
-  class="first-item"
   itemscope=""
   itemprop="itemListElement"
   itemtype="https://schema.org/ListItem"
 >
-  <meta itemprop="position" content="1" />
-  <a href="/" itemprop="item">
-    <span itemprop="name">Home</span>
+  <meta itemprop="position" content="{{ $index + 2 }}" />
+  @if($last) {
+  <span itemprop="name">{{ item }}</span
+  >} @else {
+  <a
+    routerLink="/{{
+      $index == 2 ? 'product-category/' + convertUrl(item) : convertUrl(item)
+    }}"
+    itemprop="item"
+  >
+    <span itemprop="name">{{ item }}</span>
   </a>
-  <meta itemprop="url" content="/" />
+  }
+  <meta itemprop="url" content="/{{ item }}/" />
+  @if(!$last) {
   <svg
     class="ct-separator"
     fill="currentColor"
@@ -20,29 +30,6 @@
   >
     <path d="M2,6.9L4.8,4L2,1.1L2.6,0l4,4l-4,4L2,6.9z"></path>
   </svg>
+  }
 </span>
-@for (item of breadcrums; track $index) {
-<span
-  class="last-item"
-  aria-current="page"
-  itemscope=""
-  itemprop="itemListElement"
-  itemtype="https://schema.org/ListItem"
->
-  <meta itemprop="position" content="2" />
-  <span itemprop="name">{{ item }}</span>
-  <meta itemprop="url" content="/{{ item }}/" />
-</span>
-@if(!$last) {
-<svg
-  class="ct-separator"
-  fill="currentColor"
-  width="8"
-  height="8"
-  viewBox="0 0 8 8"
-  aria-hidden="true"
-  focusable="false"
->
-  <path d="M2,6.9L4.8,4L2,1.1L2.6,0l4,4l-4,4L2,6.9z"></path>
-</svg>
-}}
+}

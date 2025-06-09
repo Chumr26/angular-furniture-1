@@ -14027,37 +14027,37 @@ table.variations .reset_variations:hover {
     clear: both
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs {
+div.product div.woocommerce-tabs ul.tabs {
     display: flex;
     flex-wrap: wrap;
     align-items: var(--vertical-alignment, center)
 }
 
 @media(max-width: 689.98px) {
-    .woocommerce div.product div.woocommerce-tabs ul.tabs {
+    div.product div.woocommerce-tabs ul.tabs {
         flex-direction: column;
         --vertical-alignment: stretch
     }
 }
 
 @media(min-width: 690px) {
-    .woocommerce div.product div.woocommerce-tabs ul.tabs {
+    div.product div.woocommerce-tabs ul.tabs {
         justify-content: var(--horizontal-alignment, center)
     }
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs li {
+div.product div.woocommerce-tabs ul.tabs li {
     position: relative;
     display: inline-flex
 }
 
 @media(max-width: 689.98px) {
-    .woocommerce div.product div.woocommerce-tabs ul.tabs li {
+    div.product div.woocommerce-tabs ul.tabs li {
         border-top: 1px solid var(--tab-border-color, var(--theme-border-color))
     }
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs li a {
+div.product div.woocommerce-tabs ul.tabs li a {
     position: relative;
     width: 100%;
     text-align: center;
@@ -14065,11 +14065,11 @@ table.variations .reset_variations:hover {
     padding: 1.3em 1.5em
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs li.active {
+div.product div.woocommerce-tabs ul.tabs li.active {
     z-index: 1
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs li.active:before {
+div.product div.woocommerce-tabs ul.tabs li.active:before {
     position: absolute;
     content: "";
     height: 3px;
@@ -14078,11 +14078,11 @@ table.variations .reset_variations:hover {
     background: var(--tab-background, var(--theme-palette-color-1))
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs li.active a {
+div.product div.woocommerce-tabs ul.tabs li.active a {
     color: var(--theme-link-active-color, var(--theme-link-hover-color))
 }
 
-.woocommerce div.product div.woocommerce-tabs div.woocommerce-Tabs-panel.panel {
+div.product div.woocommerce-tabs div.woocommerce-Tabs-panel.panel {
     padding-top: 40px
 }
 

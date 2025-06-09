@@ -97,7 +97,9 @@
               ><span class="woocommerce-Price-amount amount"
                 ><bdi
                   ><span class="woocommerce-Price-currencySymbol">$</span
-                  >{{ item.price - item.price * item.discount_percentage }}</bdi
+                  >{{
+                    item.price - item.price * (item.discount_percentage / 100)
+                  }}</bdi
                 ></span
               >
             </div>
