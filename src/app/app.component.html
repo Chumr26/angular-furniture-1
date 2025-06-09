@@ -1,3 +1,6 @@
+@if(currentUrl.includes('dashboard')) {
+<router-outlet></router-outlet>
+} @else {
 <div class="ct-drawer-canvas" data-location="start">
   <div
     id="offcanvas"
@@ -645,3 +648,4 @@
     itemtype="https://schema.org/WPFooter"
   ></footer>
 </div>
+}

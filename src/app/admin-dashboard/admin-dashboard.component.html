@@ -1,0 +1,19 @@
+<div class="admin-dashboard">
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        @for (item of sections; track $index) {
+        <li>{{ item }}</li>
+        }
+        <li><a routerLink="/dashboard/users">Users</a></li>
+        <li><a routerLink="/dashboard/orders">Orders</a></li>
+        <li><a routerLink="/dashboard/products">Products</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <h1>Admin Dashboard</h1>
+    <p>Select a section from the sidebar to manage.</p>
+    <router-outlet></router-outlet>
+  </main>
+</div>

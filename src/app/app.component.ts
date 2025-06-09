@@ -14,6 +14,7 @@ import { CartService } from './services/cart.service';
 })
 export class AppComponent {
   isCartActive = false;
+  currentUrl = '';
   title = 'angular-furniture';
 
   constructor(private cartService: CartService, private renderer: Renderer2) {}
@@ -27,6 +28,7 @@ export class AppComponent {
       } else {
         this.renderer.removeClass(document.body, 'cart-active');
       }
+      this.currentUrl = window.location.href;
     });
   }
 
