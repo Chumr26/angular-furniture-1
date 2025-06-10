@@ -1,79 +1,162 @@
 <div class="custom-elevation">
-    <div class="custom-toolbar">
-      <span>Products</span>
-    </div>
-  
-    <!-- Form for creating or editing a product -->
-    <form class="product-form" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input id="name" type="text" [(ngModel)]="selectedProduct.name" name="name" required />
-      </div>
-      <div class="form-group">
-        <label for="brand">Brand:</label>
-        <input id="brand" type="text" [(ngModel)]="selectedProduct.brand" name="brand" required />
-      </div>
-      <div class="form-group">
-        <label for="price">Price:</label>
-        <input id="price" type="number" [(ngModel)]="selectedProduct.price" name="price" required />
-      </div>
-      <div class="form-group">
-        <label for="category">Category:</label>
-        <input id="category" type="text" [(ngModel)]="selectedProduct.category" name="category" required />
-      </div>
-      <div class="form-group">
-        <label for="color">Color:</label>
-        <input id="color" type="text" [(ngModel)]="selectedProduct.color" name="color" required />
-      </div>
-      <div class="form-group">
-        <label for="material">Material:</label>
-        <input id="material" type="text" [(ngModel)]="selectedProduct.material" name="material" required />
-      </div>
-      <div class="form-group">
-        <label for="dimensions">Dimensions:</label>
-        <input id="dimensions" type="text" [(ngModel)]="selectedProduct.dimensions" name="dimensions" required />
-      </div>
-      <div class="form-group">
-        <label for="quantity">Quantity:</label>
-        <input id="quantity" type="number" [(ngModel)]="selectedProduct.quantity" name="quantity" required />
-      </div>
-      <div class="form-group">
-        <label for="discount">Discount:</label>
-        <input id="discount" type="number" [(ngModel)]="selectedProduct.discount_percentage" name="discount" required />
-      </div>
-      <button type="submit" class="btn btn-primary">{{selectedProduct.id ? 'Update' : 'Create'}}</button>
-    </form>
-  
-    <table class="custom-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Brand</th>
-          <th>Image</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Color</th>
-          <th>Material</th>
-          <th>Dimensions</th>
-          <th>Quantity</th>
-          <th>Discount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of products" (click)="loadProductDetails(product)">
-          <td>{{ product.name }}</td>
-          <td>{{ product.brand }}</td>
-          <td>
-            <img src="imgs/product-{{ product.id }}.webp" alt="Product Image" class="product-image" />
-          </td>
-          <td>{{ product.price | currency }}</td>
-          <td>{{ product.category }}</td>
-          <td>{{ product.color.join(', ') }}</td>
-          <td>{{ product.material.join(', ') }}</td>
-          <td>{{ product.dimensions }}</td>
-          <td>{{ product.quantity }}</td>
-          <td>{{ product.discount_percentage }}%</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="custom-toolbar">
+    <span>Products</span>
   </div>
+
+  <!-- Form for creating or editing a product -->
+  <form class="product-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <div>
+        <img
+          *ngIf="selectedProduct.image"
+          src="{{ selectedProduct.image }}"
+          alt="Product Image"
+          class="product-image"
+          (click)="triggerFileInput()"
+          title="Click to update image"
+        />
+      </div>
+      <input
+        id="image"
+        type="file"
+        (change)="onImageChange($event)"
+        #fileInput
+        style="display: none"
+      />
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="selectedProduct.name"
+        name="name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="brand">Brand:</label>
+      <input
+        id="brand"
+        type="text"
+        [(ngModel)]="selectedProduct.brand"
+        name="brand"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input
+        id="price"
+        type="number"
+        [(ngModel)]="selectedProduct.price"
+        name="price"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input
+        id="category"
+        type="text"
+        [(ngModel)]="selectedProduct.category"
+        name="category"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="color">Color:</label>
+      <input
+        id="color"
+        type="text"
+        [(ngModel)]="selectedProduct.color"
+        name="color"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="material">Material:</label>
+      <input
+        id="material"
+        type="text"
+        [(ngModel)]="selectedProduct.material"
+        name="material"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="dimensions">Dimensions:</label>
+      <input
+        id="dimensions"
+        type="text"
+        [(ngModel)]="selectedProduct.dimensions"
+        name="dimensions"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input
+        id="quantity"
+        type="number"
+        [(ngModel)]="selectedProduct.quantity"
+        name="quantity"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="discount">Discount:</label>
+      <input
+        id="discount"
+        type="number"
+        [(ngModel)]="selectedProduct.discount_percentage"
+        name="discount"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">
+      {{ selectedProduct.id ? "Update" : "Create" }}
+    </button>
+  </form>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Color</th>
+        <th>Material</th>
+        <th>Dimensions</th>
+        <th>Quantity</th>
+        <th>Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let product of products"
+        (click)="loadProductDetails(product)"
+      >
+        <td>{{ product.name }}</td>
+        <td>{{ product.brand }}</td>
+        <td>
+          <img
+            src="{{ product.image }}"
+            alt="Product Image"
+            class="product-image"
+          />
+        </td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.color.join(", ") }}</td>
+        <td>{{ product.material.join(", ") }}</td>
+        <td>{{ product.dimensions }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.discount_percentage }}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

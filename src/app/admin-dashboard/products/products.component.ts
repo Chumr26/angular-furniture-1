@@ -3,6 +3,7 @@ import { Product } from '../../models/app.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FetcherService } from '../../services/fetcher.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -32,12 +33,20 @@ export class ProductsComponent implements OnInit {
   constructor(private fetcherService: FetcherService) {}
 
   ngOnInit(): void {
-    this.fetcherService.get<Product[]>('products').subscribe({
-      next: (data) => {
-        this.products = data;
+    // Fetch products and their images
+    forkJoin([
+      this.fetcherService.get<Product[]>('products'),
+      this.fetcherService.get<{ id: string; data: string }[]>('product_imgs'),
+    ]).subscribe({
+      next: ([products, images]) => {
+        // Merge products with their images
+        this.products = products.map((product) => {
+          const productImage = images.find((image) => image.id === product.id);
+          return { ...product, image: productImage?.data || undefined };
+        });
       },
       error: (error) => {
-        console.error('Failed to fetch products:', error);
+        console.error('Failed to fetch products or images:', error);
       },
     });
   }
@@ -49,26 +58,30 @@ export class ProductsComponent implements OnInit {
   onSubmit(): void {
     if (this.selectedProduct.id) {
       // Update product in the database
-      this.fetcherService
-        .put<Product>(
+      forkJoin([
+        this.fetcherService.put<Product>(
           `products/${this.selectedProduct.id}`,
           this.selectedProduct
-        )
-        .subscribe({
-          next: (updatedProduct) => {
-            // Update the product in the UI
-            const index = this.products.findIndex(
-              (p) => p.id === updatedProduct.id
-            );
-            if (index !== -1) {
-              this.products[index] = updatedProduct;
-            }
-            console.log('Product updated successfully:', updatedProduct);
-          },
-          error: (error) => {
-            console.error('Failed to update product:', error);
-          },
-        });
+        ),
+        this.fetcherService.put(
+          `product_imgs/${this.selectedProduct.id}`,
+          { id: this.selectedProduct.id, data: this.selectedProduct.image } // Assuming image is a base64 string
+        ),
+      ]).subscribe({
+        next: ([updatedProduct, img]) => {
+          // Update the product in the UI
+          const index = this.products.findIndex(
+            (p) => p.id === updatedProduct.id
+          );
+          if (index !== -1) {
+            this.products[index] = { ...updatedProduct, image: img.data }; // Update the image field with the new image data
+          }
+          console.log('Product updated successfully:', updatedProduct);
+        },
+        error: (error) => {
+          console.error('Failed to update product:', error);
+        },
+      });
     } else {
       // Create new product in the database
       this.fetcherService
@@ -85,6 +98,23 @@ export class ProductsComponent implements OnInit {
         });
     }
     this.resetForm();
+  }
+
+  onImageChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.selectedProduct.image = reader.result as string; // Update the image field with the base64 string
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  triggerFileInput(): void {
+    const fileInput = document.getElementById('image') as HTMLInputElement;
+    fileInput.click(); // Trigger the file input click programmatically
   }
 
   resetForm(): void {

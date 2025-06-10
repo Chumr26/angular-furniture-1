@@ -13,6 +13,8 @@ export interface Product {
   care_instructions: string;
   quantity: number;
   discount_percentage: number;
+  image?: string; // Add this property
+
 }
 
 export interface FilteredItem {
