@@ -115,6 +115,36 @@
         required
       />
     </div>
+    <div class="form-group">
+      <label for="short_description">Short Description:</label>
+      <textarea
+        id="short_description"
+        [(ngModel)]="selectedProduct.short_description"
+        name="short_description"
+        rows="1"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+        <label for="long_description">Long Description:</label>
+        <textarea
+          id="long_description"
+          [(ngModel)]="selectedProduct.long_description"
+          name="long_description"
+          rows="1"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="features">Features:</label>
+        <input
+          id="features"
+          type="text"
+          [(ngModel)]="selectedProduct.features"
+          name="features"
+          required
+        />
+      </div>
     <button type="submit" class="btn btn-primary">
       {{ selectedProduct.id ? "Update" : "Create" }}
     </button>

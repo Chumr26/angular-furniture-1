@@ -33,6 +33,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  textarea {
+    height: auto; /* Allow the height to adjust based on rows */
+  }
   
   .product-form label {
     font-weight: bold;
