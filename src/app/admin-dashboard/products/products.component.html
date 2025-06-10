@@ -1,90 +1,79 @@
-<div class="mat-elevation-z8">
-  <mat-toolbar color="primary">
-    <span>Products</span>
-  </mat-toolbar>
-
-  <table mat-table [dataSource]="products" class="mat-elevation-z8">
-    <!-- ID Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let product"> {{ product.id }} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let product">
-        <ng-container *ngIf="editingProductId === product.id; else viewName">
-          <mat-form-field>
-            <input matInput [(ngModel)]="product.name" />
-          </mat-form-field>
-        </ng-container>
-        <ng-template #viewName>
-          {{ product.name }}
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <!-- Brand Column -->
-    <ng-container matColumnDef="brand">
-      <th mat-header-cell *matHeaderCellDef> Brand </th>
-      <td mat-cell *matCellDef="let product">
-        <ng-container *ngIf="editingProductId === product.id; else viewBrand">
-          <mat-form-field>
-            <input matInput [(ngModel)]="product.brand" />
-          </mat-form-field>
-        </ng-container>
-        <ng-template #viewBrand>
-          {{ product.brand }}
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <!-- Image Column -->
-    <ng-container matColumnDef="img">
-      <th mat-header-cell *matHeaderCellDef> Image </th>
-      <td mat-cell *matCellDef="let product">
-        <ng-container *ngIf="editingProductId === product.id; else viewImg">
-          <mat-form-field>
-            <input matInput [(ngModel)]="product.img" placeholder="Image URL" />
-          </mat-form-field>
-        </ng-container>
-        <ng-template #viewImg>
-          <img src="imgs/product-{{ product.id }}.webp" alt="Product Image" style="max-width: 100px; max-height: 100px;" />
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <!-- Price Column -->
-    <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef> Price </th>
-      <td mat-cell *matCellDef="let product">
-        <ng-container *ngIf="editingProductId === product.id; else viewPrice">
-          <mat-form-field>
-            <input matInput type="number" [(ngModel)]="product.price" />
-          </mat-form-field>
-        </ng-container>
-        <ng-template #viewPrice>
-          {{ product.price | currency }}
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <!-- Actions Column -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <td mat-cell *matCellDef="let product">
-        <ng-container *ngIf="editingProductId === product.id; else editButton">
-          <button mat-button color="primary" (click)="saveProduct(product)">Save</button>
-          <button mat-button color="warn" (click)="cancelEditing()">Cancel</button>
-        </ng-container>
-        <ng-template #editButton>
-          <button mat-button color="accent" (click)="startEditing(product.id)">Edit</button>
-        </ng-template>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
+<div class="custom-elevation">
+    <div class="custom-toolbar">
+      <span>Products</span>
+    </div>
+  
+    <!-- Form for creating or editing a product -->
+    <form class="product-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" type="text" [(ngModel)]="selectedProduct.name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="brand">Brand:</label>
+        <input id="brand" type="text" [(ngModel)]="selectedProduct.brand" name="brand" required />
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input id="price" type="number" [(ngModel)]="selectedProduct.price" name="price" required />
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input id="category" type="text" [(ngModel)]="selectedProduct.category" name="category" required />
+      </div>
+      <div class="form-group">
+        <label for="color">Color:</label>
+        <input id="color" type="text" [(ngModel)]="selectedProduct.color" name="color" required />
+      </div>
+      <div class="form-group">
+        <label for="material">Material:</label>
+        <input id="material" type="text" [(ngModel)]="selectedProduct.material" name="material" required />
+      </div>
+      <div class="form-group">
+        <label for="dimensions">Dimensions:</label>
+        <input id="dimensions" type="text" [(ngModel)]="selectedProduct.dimensions" name="dimensions" required />
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" type="number" [(ngModel)]="selectedProduct.quantity" name="quantity" required />
+      </div>
+      <div class="form-group">
+        <label for="discount">Discount:</label>
+        <input id="discount" type="number" [(ngModel)]="selectedProduct.discount_percentage" name="discount" required />
+      </div>
+      <button type="submit" class="btn btn-primary">{{selectedProduct.id ? 'Update' : 'Create'}}</button>
+    </form>
+  
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Color</th>
+          <th>Material</th>
+          <th>Dimensions</th>
+          <th>Quantity</th>
+          <th>Discount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" (click)="loadProductDetails(product)">
+          <td>{{ product.name }}</td>
+          <td>{{ product.brand }}</td>
+          <td>
+            <img src="imgs/product-{{ product.id }}.webp" alt="Product Image" class="product-image" />
+          </td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.color.join(', ') }}</td>
+          <td>{{ product.material.join(', ') }}</td>
+          <td>{{ product.dimensions }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.discount_percentage }}%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

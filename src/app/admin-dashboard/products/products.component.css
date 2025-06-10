@@ -1,35 +1,91 @@
-.mat-toolbar {
-  font-size: 1.5rem;
-  font-weight: bold;
-  /* justify-content: center; */
-}
-
-table {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.mat-form-field {
-  width: 100%;
-}
-
-.mat-elevation-z8 {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-button {
-  margin: 0 5px;
-}
-
-td, th {
-  text-align: center;
-}
-
-tr.mat-header-row {
-  background-color: #f5f5f5;
-}
-
-tr.mat-row:hover {
-  background-color: #f0f0f0;
-}
+/* Toolbar styling */
+.custom-toolbar {
+    background-color: #274c4f;
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  
+  /* Elevation styling */
+  .custom-elevation {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  /* Form styling */
+  .product-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .product-form .form-group {
+    flex: 1 1 calc(50% - 15px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .product-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .product-form .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #274c4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .product-form .btn:hover {
+    background-color: #1e3a3d;
+  }
+  
+  /* Table styling */
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .custom-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .custom-table tr:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .product-image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }

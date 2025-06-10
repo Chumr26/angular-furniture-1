@@ -20788,5 +20788,3 @@ select option {
     --theme-icon-size: 12px;
     --theme-icon-color: currentColor
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

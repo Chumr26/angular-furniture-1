@@ -1,16 +1,20 @@
 <div class="admin-dashboard">
-  <aside class="sidebar">
-    <nav>
-      <ul>
-        @for (item of sections; track $index) {
-        <li><a routerLink="/dashboard/{{item.toLocaleLowerCase()}}">{{item}}</a></li>
-        }
-      </ul>
-    </nav>
-  </aside>
-  <main class="main-content">
-    <h1>Admin Dashboard</h1>
-    <p>Select a section from the sidebar to manage.</p>
-    <router-outlet></router-outlet>
-  </main>
-</div>
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li *ngFor="let item of sections">
+            <a routerLink="/dashboard/{{ item.toLocaleLowerCase() }}" class="sidebar-link">{{ item }}</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <p>Select a section from the sidebar to manage.</p>
+      </header>
+      <!-- <section class="dashboard-content"> -->
+        <router-outlet></router-outlet>
+      <!-- </section> -->
+    </main>
+  </div>
