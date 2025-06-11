@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CartService } from '../../../../services/cart.service';
+import { AccountService } from '../../../../services/account.service';
 
 @Component({
   selector: '[end]',
@@ -12,7 +13,10 @@ export class EndComponent implements OnInit {
   cartItemCount: number = 0;
   bounce: boolean = false;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private accountService: AccountService
+  ) {}
 
   ngOnInit() {
     // Subscribe to cart items and update the badge count
@@ -31,5 +35,9 @@ export class EndComponent implements OnInit {
     } else {
       this.cartService.toggleIsActive();
     }
+  }
+
+  toggleAccountModal() {
+    this.accountService.toggleIsActive();
   }
 }

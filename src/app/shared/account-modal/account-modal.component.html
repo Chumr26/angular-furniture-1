@@ -1,0 +1,203 @@
+<div class="ct-panel-actions">
+  <button
+    (click)="toggleAccountModal()"
+    class="ct-toggle-close"
+    data-type="type-1"
+    aria-label="Close account modal"
+  >
+    <svg class="ct-icon" width="12" height="12" viewBox="0 0 15 15">
+      <path
+        d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"
+      ></path>
+    </svg>
+  </button>
+</div>
+
+<div class="ct-panel-content">
+  <div class="ct-account-modal" (click)="$event.stopPropagation()">
+    <div class="ct-account-forms">
+      <div class="ct-login-form active">
+        <form
+          name="loginform"
+          id="loginform"
+          class="login"
+          action="#"
+          method="post"
+        >
+          <p>
+            <label for="user_login">Username or Email Address</label>
+            <input
+              type="text"
+              name="username"
+              id="user_login"
+              class="input"
+              value=""
+              size="20"
+              autocomplete="username"
+              autocapitalize="off"
+            />
+          </p>
+
+          <p>
+            <label for="user_pass">Password</label>
+            <span class="account-password-input">
+              <input
+                type="password"
+                name="pwd"
+                id="user_pass"
+                class="input"
+                value=""
+                size="20"
+                autocomplete="current-password"
+                spellcheck="false"
+              />
+              <span class="show-password-input"></span>
+            </span>
+          </p>
+
+          <p class="login-remember col-2">
+            <span>
+              <input
+                name="rememberme"
+                type="checkbox"
+                id="rememberme"
+                class="ct-checkbox"
+                value="forever"
+              />
+              <label for="rememberme">Remember Me</label>
+            </span>
+
+            <a href="#" class="ct-forgot-password"> Forgot Password? </a>
+          </p>
+
+          <p class="login-submit">
+            <button
+              class="ct-button ct-account-login-submit has-text-align-center"
+              name="wp-submit"
+            >
+              Log In
+              <svg
+                class="ct-button-loader"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  opacity="0.2"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2.5"
+                ></circle>
+
+                <path
+                  d="m12,2c5.52,0,10,4.48,10,10"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="2.5"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    dur="0.6s"
+                    from="0 12 12"
+                    to="360 12 12"
+                    repeatCount="indefinite"
+                  ></animateTransform>
+                </path>
+              </svg>
+            </button>
+          </p>
+        </form>
+      </div>
+
+      <div class="ct-forgot-password-form">
+        <form
+          name="lostpasswordform"
+          id="lostpasswordform"
+          action="#"
+          method="post"
+        >
+          <p>
+            <label for="user_login_forgot">Username or Email Address</label>
+            <input
+              type="text"
+              name="user_login"
+              id="user_login_forgot"
+              class="input"
+              value=""
+              size="20"
+              autocomplete="username"
+              autocapitalize="off"
+              required=""
+            />
+          </p>
+
+          <p>
+            <button
+              class="ct-button ct-account-lost-password-submit has-text-align-center"
+              name="wp-submit"
+            >
+              Get New Password
+              <svg
+                class="ct-button-loader"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  opacity="0.2"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="2.5"
+                ></circle>
+
+                <path
+                  d="m12,2c5.52,0,10,4.48,10,10"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="2.5"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    dur="0.6s"
+                    from="0 12 12"
+                    to="360 12 12"
+                    repeatCount="indefinite"
+                  ></animateTransform>
+                </path>
+              </svg>
+            </button>
+          </p>
+
+          <input
+            type="hidden"
+            id="blocksy-lostpassword-nonce"
+            name="blocksy-lostpassword-nonce"
+            value="efa97dd823"
+          /><input
+            type="hidden"
+            name="_wp_http_referer"
+            value="/blocksy/furniture/my-account/woo-wish-list/"
+          />
+        </form>
+
+        <a href="#" class="ct-back-to-login ct-login"> ← Back to login </a>
+      </div>
+    </div>
+  </div>
+</div>

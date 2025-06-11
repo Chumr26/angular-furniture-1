@@ -1,4 +1,4 @@
-<div data-items="primary"> 
+<div data-items="primary">
   <nav
     id="header-menu-1"
     class="header-menu-1 menu-container"
@@ -15,23 +15,17 @@
   </nav>
 
   <div class="ct-header-account" data-id="account" data-state="out">
-    <a
-      href="https://startersites.io/blocksy/furniture/#account-modal"
-      class="ct-account-item"
-      data-label="left"
-      aria-label="Login"
+    <span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Login</span>
+    <svg
+        (click)="toggleAccountModal()"
+      class="ct-icon"
+      aria-hidden="true"
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
     >
-      <span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Login</span>
-      <svg
-        class="ct-icon"
-        aria-hidden="true"
-        width="15"
-        height="15"
-        viewBox="0 0 15 15"
-      >
-        <use href="/icons/icons.svg#account-icon"></use>
-      </svg>
-    </a>
+      <use href="/icons/icons.svg#account-icon"></use>
+    </svg>
   </div>
   <a
     href="https://startersites.io/blocksy/furniture/my-account/woo-wish-list/"
