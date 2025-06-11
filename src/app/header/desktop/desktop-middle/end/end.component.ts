@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CartService } from '../../../../services/cart.service';
-import { AccountService } from '../../../../services/account.service';
+import { AccountService, User } from '../../../../services/account.service';
 
 @Component({
   selector: '[end]',
@@ -12,6 +12,7 @@ import { AccountService } from '../../../../services/account.service';
 export class EndComponent implements OnInit {
   cartItemCount: number = 0;
   bounce: boolean = false;
+  currentUser: User | null = null;
 
   constructor(
     private cartService: CartService,
@@ -24,6 +25,10 @@ export class EndComponent implements OnInit {
       this.cartItemCount = items.length;
       this.bounce = true;
       setTimeout(() => (this.bounce = false), 500);
+    });
+
+    this.accountService.getCurrentUser().subscribe((user) => {
+      this.currentUser = user;
     });
   }
 
@@ -39,5 +44,10 @@ export class EndComponent implements OnInit {
 
   toggleAccountModal() {
     this.accountService.toggleIsActive();
+  }
+
+  logout() {
+    this.accountService.logout();
+    this.cartService.clearCart();
   }
 }

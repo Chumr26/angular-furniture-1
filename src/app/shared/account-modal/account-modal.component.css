@@ -4,8 +4,8 @@
  * Copyright (c) 2025
  * Licensed GPLv2+
  */
- #account-modal {
-    background-color: rgba(18,21,25,.6)
+#account-modal {
+    background-color: rgba(18, 21, 25, .6)
 }
 
 #account-modal .ct-panel-content {
@@ -29,13 +29,13 @@
 
 @media(max-width: 479.98px) {
     .ct-account-modal {
-        max-width:88vw
+        max-width: 88vw
     }
 }
 
 @media(min-width: 480px) {
     .ct-account-modal {
-        max-width:480px
+        max-width: 480px
     }
 }
 
@@ -55,17 +55,17 @@
     text-transform: uppercase;
     letter-spacing: .03em;
     cursor: pointer;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    transition: opacity .1s ease,background .1s ease
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    transition: opacity .1s ease, background .1s ease
 }
 
 .ct-account-modal>ul li.active {
-    border-bottom-color: rgba(0,0,0,0)
+    border-bottom-color: rgba(0, 0, 0, 0)
 }
 
 .ct-account-modal>ul li:not(.active) {
     opacity: .5;
-    background: rgba(0,0,0,.04)
+    background: rgba(0, 0, 0, .04)
 }
 
 .ct-account-modal>ul li:not(.active):hover {
@@ -73,7 +73,7 @@
 }
 
 .ct-account-modal>ul li:first-child {
-    border-right: 1px solid rgba(0,0,0,.1)
+    border-right: 1px solid rgba(0, 0, 0, .1)
 }
 
 .ct-account-modal .ct-account-forms {
@@ -82,13 +82,13 @@
 
 @media(max-width: 479.98px) {
     .ct-account-modal .ct-account-forms {
-        padding:40px 30px
+        padding: 40px 30px
     }
 }
 
 @media(min-width: 480px) {
     .ct-account-modal .ct-account-forms {
-        padding:60px 70px
+        padding: 60px 70px
     }
 }
 
@@ -109,7 +109,8 @@
     font-size: 14px
 }
 
-.ct-account-modal .button,.ct-account-modal .ct-button {
+.ct-account-modal .button,
+.ct-account-modal .ct-button {
     width: 100%
 }
 
@@ -128,12 +129,13 @@
 
 @media(max-width: 689.98px) {
     .ct-account-modal .col-2 {
-        flex-direction:column;
+        flex-direction: column;
         row-gap: 10px
     }
 }
 
-.ct-account-modal #reg_passmail,.ct-account-modal .ct-back-to-login {
+.ct-account-modal #reg_passmail,
+.ct-account-modal .ct-back-to-login {
     text-align: center
 }
 
@@ -154,7 +156,7 @@
     margin-bottom: 25px;
     border-radius: 3px;
     padding: 10px 15px;
-    background: rgba(0,0,0,.04)
+    background: rgba(0, 0, 0, .04)
 }
 
 .ct-account-modal [class*=ct-form-notification] a {
@@ -167,15 +169,16 @@
     padding: 0;
     border: none;
     min-height: initial;
-    background: rgba(0,0,0,0)
+    background: rgba(0, 0, 0, 0)
 }
 
 .ct-account-modal .ct-form-notification-error {
-    color: rgba(255,255,255,.95);
-    background: rgba(218,0,28,.7)
+    color: rgba(255, 255, 255, .95);
+    background: rgba(218, 0, 28, .7)
 }
 
-.ct-account-modal [class*=ct-form-notification] a:not(:hover),.ct-account-modal .woocommerce-privacy-policy-text a:not(:hover) {
+.ct-account-modal [class*=ct-form-notification] a:not(:hover),
+.ct-account-modal .woocommerce-privacy-policy-text a:not(:hover) {
     text-decoration: underline
 }
 
@@ -189,7 +192,8 @@
     }
 }
 
-.ct-account-modal div.g-recaptcha,.ct-account-modal .anr_captcha_field {
+.ct-account-modal div.g-recaptcha,
+.ct-account-modal .anr_captcha_field {
     margin: var(--theme-content-spacing) 0 !important
 }
 
@@ -207,4 +211,15 @@
 
 .ct-account-modal [name=validate_2fa_form]+[name=loginform] {
     display: none
+}
+
+.ct-forgot-password {
+    cursor: pointer;
+}
+
+.no-visibility-toggle::-ms-reveal,
+.no-visibility-toggle::-webkit-clear-button,
+.no-visibility-toggle::-webkit-inner-spin-button,
+.no-visibility-toggle::-webkit-outer-spin-button {
+  display: none;
 }
