@@ -56,6 +56,8 @@ export class ProductsPageComponent implements OnChanges {
         this.currentPage = page;
         this.scrollToTop();
       }
+
+      this.initializePagination();
     });
   }
 

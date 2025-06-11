@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { Product } from '../../models/app.model';
 import { CartButtonsComponent } from './cart-buttons/cart-buttons.component';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CartItem, CartService } from '../../services/cart.service';
+import { FetcherService } from '../../services/fetcher.service';
 
 @Component({
   selector: '[product]',
@@ -13,17 +14,37 @@ import { CartItem, CartService } from '../../services/cart.service';
 })
 export class ProductComponent {
   @Input({ required: true }) productData!: Product;
-  slug: string = '';
   cartItems: CartItem[] = [];
+  img: string = '';
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private fetcherService: FetcherService
+  ) {}
 
   ngOnInit() {
-    this.slug = this.productData.name.toLowerCase().replace(/ /g, '-');
     this.cartService.getCartItems().subscribe((items) => {
       this.cartItems = items;
     });
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['productData'] && this.productData && this.productData.id) {
+      this.fetcherService
+        .get<{ id: string; data: string }>(
+          'product_imgs/' + this.productData.id
+        )
+        .subscribe({
+          next: (image) => {
+            this.img = image.data;
+          },
+          error: (error) => {
+            console.error('Failed to fetch product images:', error);
+          },
+        });
+    }
+  }
+
   addToCart(id: string, event: Event) {
     event.preventDefault();
     this.cartService.addProduct(id);
@@ -31,6 +52,10 @@ export class ProductComponent {
 
   isInCart(productId: string): boolean {
     return this.cartItems.some((item) => item.productId === productId);
+  }
+
+  getProductSlug(name: string): string {
+    return name.toLowerCase().replace(/ /g, '-');
   }
 
   scrollToTop() {

@@ -5,24 +5,15 @@
   <div cart-buttons class="ct-woo-card-extra" data-type="type-1"></div>
   <a
     class="ct-media-container has-hover-effect"
-    routerLink="/product/{{ slug }}/"
+    routerLink="/product/{{ getProductSlug(productData.name) }}/"
     (click)="scrollToTop()"
     [attr.aria-label]="productData.name"
     ><img
       decoding="async"
       width="500"
       height="500"
-      src="/imgs/product-{{ productData.id }}-500x500.webp"
+      src="{{ img }}"
       loading="lazy"
-      srcset="
-        /imgs/product-{{ productData.id }}-500x500.webp    500w,
-        /imgs/product-{{ productData.id }}-300x300.webp    300w,
-        /imgs/product-{{ productData.id }}-800x800.webp    800w,
-        /imgs/product-{{ productData.id }}-1024x1024.webp 1024w,
-        /imgs/product-{{ productData.id }}-150x150.webp    150w,
-        /imgs/product-{{ productData.id }}-768x768.webp    768w,
-        /imgs/product-{{ productData.id }}.webp           1240w
-      "
       sizes="auto, (max-width: 500px) 100vw, 500px"
       itemprop="image"
       class="wp-post-image"
@@ -34,7 +25,7 @@
 <h2 class="woocommerce-loop-product__title">
   <a
     class="woocommerce-LoopProduct-link woocommerce-loop-product__link"
-    routerLink="/product/{{ slug }}/"
+    routerLink="/product/{{ getProductSlug(productData.name) }}/"
     target="_self"
     >{{ productData.name }}</a
   >

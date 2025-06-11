@@ -9,8 +9,7 @@
       <label for="image">Image:</label>
       <div>
         <img
-          *ngIf="selectedProduct.image"
-          src="{{ selectedProduct.image }}"
+          src="{{ selectedProduct.image || 'https://placehold.co/100x100' }}"
           alt="Product Image"
           class="product-image"
           (click)="triggerFileInput()"
@@ -60,7 +59,7 @@
       <input
         id="category"
         type="text"
-        [(ngModel)]="selectedProduct.category"
+        [(ngModel)]="categoryString"
         name="category"
         required
       />
@@ -70,7 +69,7 @@
       <input
         id="color"
         type="text"
-        [(ngModel)]="selectedProduct.color"
+        [(ngModel)]="colorString"
         name="color"
         required
       />
@@ -80,7 +79,7 @@
       <input
         id="material"
         type="text"
-        [(ngModel)]="selectedProduct.material"
+        [(ngModel)]="materialString"
         name="material"
         required
       />
@@ -116,6 +115,26 @@
       />
     </div>
     <div class="form-group">
+      <label for="features">Features:</label>
+      <input
+        id="features"
+        type="text"
+        [(ngModel)]="featuresString"
+        name="features"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="care_instructions">Care Instructions:</label>
+      <input
+        id="care_instructions"
+        type="text"
+        [(ngModel)]="selectedProduct.care_instructions"
+        name="care_instructions"
+        required
+      />
+    </div>
+    <div class="form-group">
       <label for="short_description">Short Description:</label>
       <textarea
         id="short_description"
@@ -126,25 +145,15 @@
       ></textarea>
     </div>
     <div class="form-group">
-        <label for="long_description">Long Description:</label>
-        <textarea
-          id="long_description"
-          [(ngModel)]="selectedProduct.long_description"
-          name="long_description"
-          rows="1"
-          required
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <label for="features">Features:</label>
-        <input
-          id="features"
-          type="text"
-          [(ngModel)]="selectedProduct.features"
-          name="features"
-          required
-        />
-      </div>
+      <label for="long_description">Long Description:</label>
+      <textarea
+        id="long_description"
+        [(ngModel)]="selectedProduct.long_description"
+        name="long_description"
+        rows="1"
+        required
+      ></textarea>
+    </div>
     <button type="submit" class="btn btn-primary">
       {{ selectedProduct.id ? "Update" : "Create" }}
     </button>
@@ -186,6 +195,16 @@
         <td>{{ product.dimensions }}</td>
         <td>{{ product.quantity }}</td>
         <td>{{ product.discount_percentage }}%</td>
+        <td>
+          <svg
+            class="icon"
+            width="20"
+            height="20"
+            (click)="deleteProduct(product.id)"
+          >
+            <use href="icons/icons.svg#trash-icon"></use>
+          </svg>
+        </td>
       </tr>
     </tbody>
   </table>

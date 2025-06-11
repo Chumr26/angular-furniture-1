@@ -32,6 +32,40 @@ export class ProductsComponent implements OnInit {
 
   constructor(private fetcherService: FetcherService) {}
 
+  get colorString(): string {
+    return this.selectedProduct.color.join(', '); // Convert array to comma-separated string
+  }
+
+  set colorString(value: string) {
+    this.selectedProduct.color = value.split(',').map((color) => color.trim()); // Convert string back to array
+  }
+
+  get materialString(): string {
+    return this.selectedProduct.material.join(', '); // Convert array to comma-separated string
+  }
+
+  set materialString(value: string) {
+    this.selectedProduct.material = value
+      .split(',')
+      .map((material) => material.trim());
+  }
+  get categoryString(): string {
+    return this.selectedProduct.category.join(', '); // Convert array to comma-separated string
+  }
+  set categoryString(value: string) {
+    this.selectedProduct.category = value
+      .split(',')
+      .map((category) => category.trim());
+  }
+  get featuresString(): string {
+    return this.selectedProduct.features.join(', '); // Convert array to comma-separated string
+  }
+
+  set featuresString(value: string) {
+    this.selectedProduct.features = value
+      .split(',')
+      .map((feature) => feature.trim());
+  }
   ngOnInit(): void {
     // Fetch products and their images
     forkJoin([
@@ -52,6 +86,7 @@ export class ProductsComponent implements OnInit {
   }
 
   loadProductDetails(product: Product): void {
+    window.scrollTo(0, 0); // Scroll to the top of the page
     this.selectedProduct = { ...product };
   }
 
@@ -84,20 +119,40 @@ export class ProductsComponent implements OnInit {
       });
     } else {
       // Create new product in the database
-      this.fetcherService
-        .post<Product>('products', this.selectedProduct)
-        .subscribe({
-          next: (newProduct) => {
-            // Add the new product to the UI
-            this.products.push(newProduct);
-            console.log('Product created successfully:', newProduct);
-          },
-          error: (error) => {
-            console.error('Failed to create product:', error);
-          },
-        });
+      const { image, ...newProduct } = this.selectedProduct;
+      forkJoin([
+        this.fetcherService.post<Product>('products', {
+          ...newProduct,
+          id: this.getId(),
+        }), // Generate a new ID for the product
+        this.fetcherService.post(
+          'product_imgs',
+          { id: this.getId(), data: image } // Use the new ID for the image
+        ),
+      ]).subscribe({
+        next: ([newProduct, img]) => {
+          // Add the new product to the UI
+          this.products = [
+            ...this.products,
+            { ...newProduct, image: img.data },
+          ]; // Update the image field with the new image data
+          console.log('Product created successfully:', newProduct);
+        },
+        error: (error) => {
+          console.error('Failed to create product:', error);
+        },
+      });
     }
     this.resetForm();
+  }
+
+  getId(): string {
+    // Generate a new ID for the product
+    const max = this.products.reduce(
+      (maxId, product) => Math.max(maxId, parseInt(product.id || '0', 10)),
+      0
+    );
+    return (max + 1).toString();
   }
 
   onImageChange(event: Event): void {
@@ -134,5 +189,19 @@ export class ProductsComponent implements OnInit {
       quantity: 0,
       discount_percentage: 0,
     };
+  }
+
+  deleteProduct(productId: string): void {
+    this.fetcherService.delete(`products/${productId}`).subscribe({
+      next: () => {
+        this.products = this.products.filter(
+          (product) => product.id !== productId
+        );
+        this.products = [...this.products]; // Trigger change detection
+      },
+      error: (error) => {
+        console.error('Failed to delete product:', error);
+      },
+    });
   }
 }

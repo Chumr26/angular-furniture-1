@@ -3,6 +3,7 @@ import {
   Input,
   ViewEncapsulation,
   ChangeDetectorRef,
+  SimpleChanges,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -31,7 +32,6 @@ export class FilterByPriceComponent {
   ) {}
 
   ngOnInit(): void {
-    this.updatePriceRange();
     this.currentminPrice = this.minPrice;
     this.currentmaxPrice = this.maxPrice;
     this.prevMin = this.currentminPrice;
@@ -64,7 +64,7 @@ export class FilterByPriceComponent {
             this.currentmaxPrice = this.maxPrice;
           }
           this.cdr.detectChanges(); // Trigger change detection
-        });
+        }, 1000); // Use setTimeout to ensure filterProduct is updated
       } else {
         this.prevMax = Number(params['maxPrice']) || this.currentmaxPrice;
         this.prevMin = Number(params['minPrice']) || this.currentminPrice;
@@ -72,7 +72,14 @@ export class FilterByPriceComponent {
     });
   }
 
+//   ngOnChanges(changes: SimpleChanges): void {
+//     if (changes['filterProduct'] && changes['filterProduct'].currentValue) {
+//       this.updatePriceRange();
+//     }
+//   }
+
   private updatePriceRange(): void {
+    console.log(this.filterProduct);
     this.minPrice = this.filterProduct.reduce(
       (min, p) => Math.min(min, p.price),
       Infinity
