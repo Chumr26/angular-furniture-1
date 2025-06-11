@@ -6,11 +6,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ProductComponent } from './product/product.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { OrdersComponent } from './admin-dashboard/orders/orders.component';
 import { ProductsComponent } from './admin-dashboard/products/products.component';
+import { ProductDetailComponent } from './product/product-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home Page' },
@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'shop/page/:page', component: ShopComponent, title: 'Shop Page' },
   {
     path: 'product/:product',
-    component: ProductComponent,
+    component: ProductDetailComponent,
     title: 'Product Page',
   },
   { path: 'about-us', component: AboutUsComponent, title: 'About Us Page' },

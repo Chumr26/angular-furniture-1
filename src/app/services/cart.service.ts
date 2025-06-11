@@ -73,6 +73,10 @@ export class CartService {
     this.cartItemsSubject.next([...this.cartItems]); // Notify subscribers
   }
 
+  isInCart(productId: string): boolean {
+    return this.cartItems.some((item) => item.productId === productId);
+  }
+
   // Clear the cart
   clearCart() {
     this.cartItems = [];

@@ -1,0 +1,159 @@
+<main
+  data-rocket-location-hash="4120c4747d19301afbb8805e60c95cd3"
+  id="main"
+  class="site-main hfeed"
+  itemscope="itemscope"
+  itemtype="https://schema.org/CreativeWork"
+>
+  <div
+    class="ct-container-full"
+    data-content="normal"
+    data-vertical-spacing="top:bottom"
+  >
+    <article class="post-353">
+      <div class="woocommerce-notices-wrapper"></div>
+      <div
+        id="product-353"
+        class="product type-product post-353 status-publish first instock product_cat-tables has-post-thumbnail shipping-taxable purchasable product-type-simple ct-default-gallery ct-ajax-add-to-cart sticky-gallery"
+      >
+        <div
+          product-entry-wrapper
+          [productData]="product!"
+          [breadcrumItems]="breadcrumItems"
+          class="product-entry-wrapper is-width-constrained"
+        ></div>
+        <div class="woocommerce-tabs wc-tabs-wrapper" data-type="type-1:center">
+          <ul class="tabs wc-tabs is-width-constrained" role="tablist">
+            <li
+              class="description_tab"
+              id="tab-title-description"
+              [ngClass]="{ active: tab === 'description' }"
+            >
+              <a
+                (click)="setTab('description', $event)"
+                role="tab"
+                aria-controls="tab-description"
+                aria-selected="true"
+                tabindex="0"
+              >
+                Description
+              </a>
+            </li>
+            <li
+              class="additional_information_tab"
+              id="tab-title-additional_information"
+              [ngClass]="{ active: tab === 'additional' }"
+            >
+              <a
+                (click)="setTab('additional', $event)"
+                role="tab"
+                aria-controls="tab-additional_information"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                Additional information
+              </a>
+            </li>
+            <!-- <li class="reviews_tab" id="tab-title-reviews">
+              <a
+                href="#tab-reviews"
+                role="tab"
+                aria-controls="tab-reviews"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                Reviews (0)
+              </a>
+            </li> -->
+          </ul>
+          <article>
+            <div
+              class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab is-layout-constrained"
+              id="tab-description"
+              role="tabpanel"
+              aria-labelledby="tab-title-description"
+              [style]="{ display: tab === 'description' ? 'block' : 'none' }"
+            >
+              <!-- @for (item of product?.long_description.; track $index) {} -->
+              @for (item of devideParagraph(product.long_description, 4); track
+              $index) {
+              <p>{{ item }}@if(!$last) {.}</p>
+              }
+            </div>
+
+            <div
+              class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab is-layout-constrained"
+              id="tab-additional_information"
+              role="tabpanel"
+              aria-labelledby="tab-title-additional_information"
+              [style]="{ display: tab === 'additional' ? 'block' : 'none' }"
+            >
+              <table
+                class="woocommerce-product-attributes shop_attributes"
+                aria-label="Product Details"
+              >
+                <tbody>
+                  @if(product.color.length > 0) {
+                  <tr
+                    class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_color"
+                  >
+                    <th
+                      class="woocommerce-product-attributes-item__label"
+                      scope="row"
+                    >
+                      Color
+                    </th>
+                    <td class="woocommerce-product-attributes-item__value">
+                      <p>{{ product.color.join(", ") }}</p>
+                    </td>
+                  </tr>
+                  }
+                  <tr
+                    class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_material"
+                  >
+                    <th
+                      class="woocommerce-product-attributes-item__label"
+                      scope="row"
+                    >
+                      Material
+                    </th>
+                    <td class="woocommerce-product-attributes-item__value">
+                      <p>{{ product.material.join(", ") }}</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <section
+        class="related products is-layout-slider is-width-constrained ct-hidden-sm ct-hidden-md"
+      >
+        <h2 class="ct-module-title">Related products</h2>
+        <div class="flexy-container" data-autoplay="3">
+          <div class="flexy">
+            <div class="flexy-view" data-flexy-view="boxed">
+              <div
+                class="products flexy-items columns-4"
+                data-products="type-2"
+                data-hover="zoom-in"
+              >
+                @for (item of relatedProducts; track $index) {
+                <div class="flexy-item flexy-item-is-visible">
+                  <div
+                    product
+                    [productData]="item"
+                    class="product type-product post-345 status-publish first instock product_cat-tables has-post-thumbnail sale shipping-taxable purchasable product-type-simple sticky-gallery"
+                  ></div>
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>

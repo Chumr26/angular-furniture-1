@@ -1,0 +1,386 @@
+<div class="woocommerce-product-gallery" style="opacity: 1">
+  <div class="ct-product-gallery-container">
+    <a href="#" class="woocommerce-product-gallery__trigger">🔍</a>
+    <figure
+      class="ct-media-container"
+      [attr.data-src]="img"
+      data-width="1240"
+      data-height="1240"
+      style="position: relative; overflow: hidden"
+    >
+      <img
+        width="800"
+        height="800"
+        src="{{ img }}"
+        loading="lazy"
+        decoding="async"
+        srcset="
+          {{ img }}           1240w
+        "
+        sizes="auto, (max-width: 800px) 100vw, 800px"
+        itemprop="image"
+        class="wp-post-image"
+        style="aspect-ratio: 1/1"
+        title="product-{{ productData.id }}"
+        alt="{{ productData.name }}"
+      /><img
+        role="presentation"
+        alt=""
+        src="imgs/product-{{ productData.id }}.webp"
+        class="zoomImg"
+        style="
+          position: absolute;
+          top: -135.044px;
+          left: -522.66px;
+          opacity: 0;
+          width: 1240px;
+          height: 1240px;
+          border: none;
+          max-width: none;
+          max-height: none;
+        "
+      />
+    </figure>
+  </div>
+</div>
+<div class="summary entry-summary entry-summary-items">
+  <nav
+    breadcrums
+    [breadcrumItems]="breadcrumItems"
+    class="ct-breadcrumbs"
+    data-source="default"
+    itemscope=""
+    itemtype="https://schema.org/BreadcrumbList"
+  ></nav>
+
+  <h1 class="product_title entry-title">{{ productData.name }}</h1>
+  <p class="price">
+    <span class="sale-price">
+      @if(productData.discount_percentage > 0) {
+      <del aria-hidden="true">
+        <span class="woocommerce-Price-amount amount">
+          <bdi>
+            <span class="woocommerce-Price-currencySymbol">$</span
+            >{{ productData.price }}</bdi
+          >
+        </span>
+      </del>
+      <span class="screen-reader-text"
+        >Original price was: ${{ productData.price }}.</span
+      >
+      <ins aria-hidden="true">
+        <span class="woocommerce-Price-amount amount">
+          <bdi>
+            <span class="woocommerce-Price-currencySymbol">$</span
+            >{{
+              productData.price -
+                (productData.price * productData.discount_percentage) / 100
+            }}</bdi
+          >
+        </span>
+      </ins>
+      <span class="screen-reader-text"
+        >Current price is: ${{
+          productData.price - (productData.price * productData.discount_percentage) / 100
+        }}.</span
+      >
+      } @else {
+      <ins aria-hidden="true">
+        <span class="woocommerce-Price-amount amount">
+          <bdi>
+            <span class="woocommerce-Price-currencySymbol">$</span
+            >{{ productData.price }}</bdi
+          >
+        </span>
+      </ins>
+      }
+    </span>
+  </p>
+  <div class="woocommerce-product-details__short-description">
+    @for (item of devideParagraph(productData.short_description, 2); track $index)
+    {
+    <p>{{ item }}@if(!$last) {.}</p>
+    }
+  </div>
+  <span class="ct-product-divider" data-id="divider_1"></span>
+  <div class="ct-product-add-to-cart">
+    <button
+      (click)="addToCart(productData.id)"
+      name="add-to-cart"
+      value="353"
+      class="single_add_to_cart_button button alt"
+    >
+      {{ isInCart(productData.id) ? "View cart " : "Add to cart" }}
+    </button>
+  </div>
+  <div class="ct-product-additional-actions" data-type="link">
+    <button
+      class="ct-wishlist-button-single"
+      aria-label="Add to wishlist"
+      data-button-state=""
+    >
+      <span class="ct-icon-container"
+        ><svg viewBox="0 0 15 15">
+          <path
+            class="ct-heart-fill"
+            d="M12.9,3.8c-0.6-0.5-1.6-0.7-2.5-0.5C9.4,3.5,8.7,4,8.2,4.8L7.5,6.1L6.8,4.8C6.3,4,5.6,3.5,4.6,3.3C4.4,3.2,4.2,3.2,4,3.2c-0.7,0-1.4,0.2-1.9,0.6C1.5,4.3,1.1,5.1,1,5.9c-0.1,1,0.3,1.9,1,2.8c1,1.1,4.2,3.7,5.5,4.6c1.3-1,4.5-3.5,5.5-4.6c0.7-0.8,1.1-1.8,1-2.8C13.9,5.1,13.5,4.3,12.9,3.8z"
+          ></path>
+          <path
+            d="M13.4,3.2c-0.9-0.8-2.3-1-3.5-0.8C8.9,2.6,8.1,3,7.5,3.7C6.9,3,6.1,2.6,5.2,2.4c-1.3-0.2-2.6,0-3.6,0.8C0.7,3.9,0.1,5,0,6.1c-0.1,1.3,0.3,2.6,1.3,3.7c1.2,1.4,5.6,4.7,5.8,4.8L7.5,15L8,14.6c0.2-0.1,4.5-3.5,5.7-4.8c1-1.1,1.4-2.4,1.3-3.7C14.9,5,14.3,3.9,13.4,3.2z M12.6,8.8c-0.9,1-3.9,3.4-5.1,4.3c-1.2-0.9-4.2-3.3-5.1-4.3c-0.7-0.8-1-1.7-0.9-2.6c0.1-0.8,0.4-1.4,1-1.9C3,4,3.6,3.8,4.2,3.8c0.2,0,0.4,0,0.6,0.1c0.9,0.2,1.6,0.7,2,1.4l0.7,1.2l0.7-1.2c0.4-0.8,1.1-1.3,2-1.4c0.8-0.2,1.7,0,2.3,0.5c0.6,0.5,1,1.2,1,1.9C13.6,7.2,13.2,8.1,12.6,8.8z"
+          ></path></svg
+        ><svg
+          class="ct-button-loader"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+            opacity="0.2"
+            fill="none"
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-width="2.5"
+          ></circle>
+
+          <path
+            d="m12,2c5.52,0,10,4.48,10,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            stroke-width="2.5"
+          >
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="0.5s"
+              from="0 12 12"
+              to="360 12 12"
+              repeatCount="indefinite"
+            ></animateTransform>
+          </path></svg></span
+      ><span class="ct-label ct-hidden-sm">Wishlist</span
+      ><span class="ct-tooltip ct-hidden-md ct-hidden-lg"
+        >Wishlist</span
+      ></button
+    ><button
+      class="ct-compare-button-single"
+      aria-label="Add to compare"
+      data-button-state=""
+    >
+      <span class="ct-icon-container"
+        ><svg class="ct-icon" viewBox="0 0 15 15">
+          <path
+            d="M7.5 6c-.1.5-.2 1-.3 1.4 0 .6-.1 1.3-.3 2-.2.7-.5 1.4-1 1.9-.5.6-1.3.9-2.2.9H0v-1.4h3.7c.6 0 .9-.2 1.2-.5.3-.3.5-.7.7-1.3.1-.5.2-1 .3-1.6v-.3c0-.5.1-1 .3-1.5.2-.7.5-1.4 1-1.9.5-.6 1.3-.9 2.2-.9h3l-1.6-1.6 1-1L15 3.5l-3.3 3.3-1-1 1.6-1.6h-3c-.6 0-.9.2-1.2.5-.2.3-.5.7-.6 1.3zM4.9 4.7c.2-.4.4-.9.7-1.3-.5-.4-1.1-.6-1.9-.6H0v1.4h3.7c.6 0 1 .2 1.2.5zm5.8 4.5 1.6 1.6h-3c-.6 0-.9-.2-1.2-.5-.2.4-.4.9-.6 1.3.5.4 1.1.6 1.8.6h3l-1.6 1.6 1 1 3.3-3.3-3.3-3.3-1 1z"
+          ></path></svg
+        ><svg
+          class="ct-button-loader"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+            opacity="0.2"
+            fill="none"
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-width="2.5"
+          ></circle>
+
+          <path
+            d="m12,2c5.52,0,10,4.48,10,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            stroke-width="2.5"
+          >
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="0.5s"
+              from="0 12 12"
+              to="360 12 12"
+              repeatCount="indefinite"
+            ></animateTransform>
+          </path></svg></span
+      ><span class="ct-label ct-hidden-sm">Compare</span
+      ><span class="ct-tooltip ct-hidden-md ct-hidden-lg">Compare</span></button
+    ><button
+      class="ct-size-guide-button-single"
+      aria-label="Size Guide"
+      data-table_id="629"
+      data-button-state=""
+    >
+      <span class="ct-icon-container"
+        ><svg class="ct-icon" viewBox="0 0 15 15">
+          <path
+            d="M3.9,3.9c0-0.3,0.5-0.6,1.2-0.6s1.2,0.3,1.2,0.6S5.8,4.5,5.1,4.5S3.9,4.2,3.9,3.9z M15,6.3v7.2c0,0.4-0.3,0.7-0.7,0.7h-2.6
+h-1.3H8.6H7.2H5.3H4.3H4v0c-0.9,0-1.6-0.2-2.2-0.6c-0.5-0.3-1-0.8-1.3-1.3c-0.3-0.5-0.4-1-0.5-1.3C0,10.7,0,10.6,0,10.5
+c0,0,0-0.1,0-0.1l0-6.3C0,4,0,4,0,4c0,0,0-0.1,0-0.1C0,3,0.5,2.2,1.5,1.7c1.9-1.1,5.2-1.1,7.1,0c1,0.6,1.5,1.4,1.5,2.2v1.8h4.1
+C14.6,5.6,15,5.9,15,6.3z M1.3,3.9c0,0.3,0.3,0.8,0.9,1.1C3.7,5.8,6.5,5.8,8,5c0.6-0.3,0.9-0.7,0.9-1.1S8.5,3.1,8,2.8
+C7.2,2.4,6.2,2.1,5.1,2.1C4,2.1,2.9,2.4,2.2,2.8C1.6,3.1,1.3,3.5,1.3,3.9z M13.7,7H4.3C3,7,2,6.6,1.3,6.2v4.1c0,0.1,0,0.2,0,0.4
+c0,0.2,0.1,0.6,0.3,0.9c0.2,0.4,0.5,0.6,0.8,0.9c0.4,0.2,0.9,0.4,1.5,0.4V9.7h1.3v3.2h1.9v-2h1.3v2h1.9V9.7h1.3v3.2h1.9V7z"
+          ></path></svg
+        ><svg
+          class="ct-button-loader"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+            opacity="0.2"
+            fill="none"
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-width="2.5"
+          ></circle>
+
+          <path
+            d="m12,2c5.52,0,10,4.48,10,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            stroke-width="2.5"
+          >
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              dur="0.5s"
+              from="0 12 12"
+              to="360 12 12"
+              repeatCount="indefinite"
+            ></animateTransform>
+          </path></svg></span
+      ><span class="ct-label ct-hidden-sm">Size Guide</span
+      ><span class="ct-tooltip ct-hidden-md ct-hidden-lg">Size Guide</span>
+    </button>
+  </div>
+  <span class="ct-product-divider" data-id="divider_2"></span>
+  <div class="ct-product-brands-single">
+    <div class="ct-product-brands">
+      <a
+        class="ct-media-container"
+        href="/brand/goldline/"
+        aria-label="Goldline"
+        ><img
+          width="212"
+          height="50"
+          src="icons/brand-{{ productData.brand.toLocaleLowerCase() }}.svg"
+          loading="lazy"
+          decoding="async"
+          itemprop="image"
+          class="wp-post-image"
+          title="brand-goldline"
+          alt="{{ productData.name }}"
+      /></a>
+    </div>
+  </div>
+  <span class="ct-product-divider" data-id="eQ65ya1DcClbk6yg5T4lZ"></span>
+  <div class="product_meta">
+    <span class="posted_in"
+      >Category: <a href="/product-category/tables/" rel="tag">{{productData.category}}</a></span
+    >
+
+    <span class="posted_in"
+      >Brand: <a href="/brand/goldline/" rel="tag">{{productData.brand}}</a></span
+    >
+  </div>
+
+  <div class="ct-share-box ct-hidden-sm" data-type="type-3">
+    <div data-icons-type="simple">
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstartersites.io%2Fblocksy%2Ffurniture%2Fproduct%2Faliquam-blandit%2F"
+        data-network="facebook"
+        aria-label="Facebook"
+        rel="noopener noreferrer nofollow"
+      >
+        <span class="ct-icon-container">
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+          >
+            <path
+              d="M20,10.1c0-5.5-4.5-10-10-10S0,4.5,0,10.1c0,5,3.7,9.1,8.4,9.9v-7H5.9v-2.9h2.5V7.9C8.4,5.4,9.9,4,12.2,4c1.1,0,2.2,0.2,2.2,0.2v2.5h-1.3c-1.2,0-1.6,0.8-1.6,1.6v1.9h2.8L13.9,13h-2.3v7C16.3,19.2,20,15.1,20,10.1z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+
+      <a
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fstartersites.io%2Fblocksy%2Ffurniture%2Fproduct%2Faliquam-blandit%2F&amp;text=Aliquam%20Blandit"
+        data-network="twitter"
+        aria-label="X (Twitter)"
+        rel="noopener noreferrer nofollow"
+      >
+        <span class="ct-icon-container">
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+          >
+            <path
+              d="M2.9 0C1.3 0 0 1.3 0 2.9v14.3C0 18.7 1.3 20 2.9 20h14.3c1.6 0 2.9-1.3 2.9-2.9V2.9C20 1.3 18.7 0 17.1 0H2.9zm13.2 3.8L11.5 9l5.5 7.2h-4.3l-3.3-4.4-3.8 4.4H3.4l5-5.7-5.3-6.7h4.4l3 4 3.5-4h2.1zM14.4 15 6.8 5H5.6l7.7 10h1.1z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+
+      <a
+        href="#"
+        data-network="pinterest"
+        aria-label="Pinterest"
+        rel="noopener noreferrer nofollow"
+      >
+        <span class="ct-icon-container">
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+          >
+            <path
+              d="M10,0C4.5,0,0,4.5,0,10c0,4.1,2.5,7.6,6,9.2c0-0.7,0-1.5,0.2-2.3c0.2-0.8,1.3-5.4,1.3-5.4s-0.3-0.6-0.3-1.6c0-1.5,0.9-2.6,1.9-2.6c0.9,0,1.3,0.7,1.3,1.5c0,0.9-0.6,2.3-0.9,3.5c-0.3,1.1,0.5,1.9,1.6,1.9c1.9,0,3.2-2.4,3.2-5.3c0-2.2-1.5-3.8-4.2-3.8c-3,0-4.9,2.3-4.9,4.8c0,0.9,0.3,1.5,0.7,2C6,12,6.1,12.1,6,12.4c0,0.2-0.2,0.6-0.2,0.8c-0.1,0.3-0.3,0.3-0.5,0.3c-1.4-0.6-2-2.1-2-3.8c0-2.8,2.4-6.2,7.1-6.2c3.8,0,6.3,2.8,6.3,5.7c0,3.9-2.2,6.9-5.4,6.9c-1.1,0-2.1-0.6-2.4-1.2c0,0-0.6,2.3-0.7,2.7c-0.2,0.8-0.6,1.5-1,2.1C8.1,19.9,9,20,10,20c5.5,0,10-4.5,10-10C20,4.5,15.5,0,10,0z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fstartersites.io%2Fblocksy%2Ffurniture%2Fproduct%2Faliquam-blandit%2F&amp;title=Aliquam%20Blandit"
+        data-network="linkedin"
+        aria-label="LinkedIn"
+        rel="noopener noreferrer nofollow"
+      >
+        <span class="ct-icon-container">
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+          >
+            <path
+              d="M18.6,0H1.4C0.6,0,0,0.6,0,1.4v17.1C0,19.4,0.6,20,1.4,20h17.1c0.8,0,1.4-0.6,1.4-1.4V1.4C20,0.6,19.4,0,18.6,0z M6,17.1h-3V7.6h3L6,17.1L6,17.1zM4.6,6.3c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7c0.9,0,1.7,0.8,1.7,1.7C6.3,5.5,5.5,6.3,4.6,6.3z M17.2,17.1h-3v-4.6c0-1.1,0-2.5-1.5-2.5c-1.5,0-1.8,1.2-1.8,2.5v4.7h-3V7.6h2.8v1.3h0c0.4-0.8,1.4-1.5,2.8-1.5c3,0,3.6,2,3.6,4.5V17.1z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>

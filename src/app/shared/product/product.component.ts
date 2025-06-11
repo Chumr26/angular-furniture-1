@@ -32,4 +32,11 @@ export class ProductComponent {
   isInCart(productId: string): boolean {
     return this.cartItems.some((item) => item.productId === productId);
   }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
 }

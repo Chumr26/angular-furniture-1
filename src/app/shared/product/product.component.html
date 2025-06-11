@@ -6,6 +6,7 @@
   <a
     class="ct-media-container has-hover-effect"
     routerLink="/product/{{ slug }}/"
+    (click)="scrollToTop()"
     [attr.aria-label]="productData.name"
     ><img
       decoding="async"
