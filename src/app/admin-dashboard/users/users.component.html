@@ -1,21 +1,57 @@
-<p>users works!</p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.role }}</td>
-      <td>
-        <button (click)="editUser(user)">Edit</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="custom-elevation">
+  <div class="custom-toolbar">
+    <span>Users</span>
+  </div>
+
+  <!-- Form for creating or editing a user -->
+  <form class="user-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="selectedUser.email"
+        name="email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        id="password"
+        type="text"
+        [(ngModel)]="selectedUser.password"
+        name="password"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">
+      {{ selectedUser.id ? "Update" : "Create" }}
+    </button>
+  </form>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.password }}</td>
+        <td>
+          <svg
+            class="icon"
+            width="20"
+            height="20"
+            (click)="deleteUser(user.id)"
+          >
+            <use href="icons/icons.svg#trash-icon"></use>
+          </svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

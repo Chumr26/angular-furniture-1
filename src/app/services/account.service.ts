@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FetcherService } from './fetcher.service';
 import { Router } from '@angular/router';
+import { B } from '@angular/cdk/keycodes';
 
 export interface User {
-  id: number;
+  id: string;
   email: string;
   password: string;
 }
@@ -15,7 +16,7 @@ export interface User {
 export class AccountService {
   private isActiveSubject = new BehaviorSubject<boolean>(false);
   private isSignUp = new BehaviorSubject<boolean>(false);
-  users: User[] = []; // Placeholder for user data, replace with actual user model
+  users: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
   private currentUser = new BehaviorSubject<User | null>(this.getStoredUser()); // Initialize with user from localStorage
   private maxId = 0; // To keep track of the maximum ID for new users
 
@@ -25,14 +26,25 @@ export class AccountService {
 
   private initializeUsers(): void {
     this.fetcher.get<User[]>('accounts').subscribe((users) => {
-      this.users = users;
-      this.maxId = users.reduce((max, user) => Math.max(max, user.id), 0);
+      this.users.next(users);
+      this.maxId = users.reduce(
+        (max, user) => Math.max(max, Number(user.id)),
+        0
+      );
     });
   }
 
   private getStoredUser(): User | null {
     const userJson = localStorage.getItem('currentUser');
     return userJson ? JSON.parse(userJson) : null;
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.users.asObservable();
+  }
+
+  setUsers(users: User[]): void {
+    this.users.next(users);
   }
 
   private storeUser(user: User | null): void {
@@ -66,7 +78,7 @@ export class AccountService {
       return true; // Login successful
     }
 
-    const user = this.users.find(
+    const user = this.users.value.find(
       (user) => user.email === email && user.password === password
     );
     if (user) {
@@ -85,17 +97,17 @@ export class AccountService {
   }
 
   signup(email: string, password: string): boolean {
-    if (this.users.some((user) => user.email === email)) {
+    if (this.users.value.some((user) => user.email === email)) {
       return false; // Email already exists
     }
-    const newUser: User = {
-      id: this.maxId + 1, // Increment maxId for new user
+    const newUser = {
+      id: (this.maxId + 1).toString(), // Increment maxId for new user
       email,
       password,
     };
-    this.fetcher.post('accounts', newUser).subscribe({
+    this.fetcher.post<User>('accounts', newUser).subscribe({
       next: (response) => {
-        this.users.push(response); // Add new user to the local users array
+        this.users.next([...this.users.value, response]);
         this.maxId++; // Update maxId if necessary
         this.storeUser(response); // Store new user in localStorage
         this.currentUser.next(response); // Set current user
