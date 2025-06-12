@@ -68,7 +68,11 @@ export class CartComponent {
   getTotalPrice(): number {
     return this.cartProducts.reduce((total, product, index) => {
       const item = this.cartItems[index];
-      return total + product.price * item.productCount;
+      return (
+        total +
+        (product.price - (product.price * product.discount_percentage) / 100) *
+          item.productCount
+      );
     }, 0);
   }
 }

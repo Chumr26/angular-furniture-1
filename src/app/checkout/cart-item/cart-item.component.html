@@ -1,0 +1,57 @@
+<td class="product-name">
+  <div class="ct-checkout-cart-item">
+    <figure class="ct-media-container">
+      <img
+        width="300"
+        height="300"
+        src="{{ img }}"
+        class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        sizes="auto, (max-width: 300px) 100vw, 300px"
+        itemprop="image"
+        style="aspect-ratio: 1/1"
+      />
+    </figure>
+    <div class="ct-checkout-cart-item-content">
+      <div class="ct-checkout-cart-item-title">
+        {{ product?.name }}
+      </div>
+      <div class="quantity" data-type="type-2">
+        <label class="screen-reader-text" for="quantity_68451010d9ed5"
+          >{{ product?.name }} quantity</label
+        >
+        <input
+          type="number"
+          id="quantity_68451010d9ed5"
+          class="input-text qty text"
+          name="shipping_method_qty_362"
+          value="{{ cartIem?.productCount }}"
+          aria-label="Product quantity"
+          inputmode="numeric"
+          autocomplete="off"
+          disabled
+        />
+      </div>
+      <input
+        type="hidden"
+        name="product_key_362"
+        value="c3e878e27f52e2a57ace4d9a76fd9acf"
+      />
+    </div>
+  </div>
+</td>
+
+<td class="product-total">
+  <span class="woocommerce-Price-amount amount"
+    ><bdi
+      ><span class="woocommerce-Price-currencySymbol">$</span
+      >{{
+        (cartIem?.productCount ?? 0) *
+          ((product?.price ?? 0) -
+            ((product?.price ?? 0) * (product?.discount_percentage ?? 0)) / 100)
+      }}</bdi
+    ></span
+  >
+</td>

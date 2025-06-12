@@ -1442,5 +1442,86 @@
       "email": "admin",
       "password": "admin"
     }
+  ],
+  "orders": [
+    {
+      "id": "5bcd",
+      "firstname": "khoa",
+      "lastname": "nguyen",
+      "street": "le hong phong 92",
+      "town": "long an",
+      "postcode": "4000",
+      "phone": "0359090159",
+      "email": "example@gmail.com",
+      "additionalInfo": "no additional",
+      "cartItems": [
+        {
+          "productId": "8",
+          "productCount": 3
+        },
+        {
+          "productId": "25",
+          "productCount": 1
+        },
+        {
+          "productId": "2",
+          "productCount": 1
+        }
+      ],
+      "totalPrice": 2608,
+      "dateTime": "2025-06-12T01:18:56.953Z",
+      "orderId": "order-1",
+      "userId": "2"
+    },
+    {
+      "id": "1d2c",
+      "firstname": "cu ",
+      "lastname": "chum",
+      "street": "231 Binh Tien",
+      "town": "HCM",
+      "postcode": "5000",
+      "phone": "0373447564",
+      "email": "example1@gmail.com",
+      "additionalInfo": "additional information",
+      "cartItems": [
+        {
+          "productId": "25",
+          "productCount": 4
+        },
+        {
+          "productId": "8",
+          "productCount": 2
+        }
+      ],
+      "totalPrice": 2500,
+      "dateTime": "2025-06-12T01:22:57.408Z",
+      "orderId": "order-1",
+      "userId": "2"
+    },
+    {
+      "id": "cec6",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "street": "address  Street",
+      "town": "Town / City ",
+      "postcode": "ZIP Code",
+      "phone": "Phone ",
+      "email": "Email address",
+      "additionalInfo": "Additional information",
+      "cartItems": [
+        {
+          "productId": "2",
+          "productCount": 2
+        },
+        {
+          "productId": "10",
+          "productCount": 4
+        }
+      ],
+      "totalPrice": 556,
+      "dateTime": "2025-06-12T02:07:43.861Z",
+      "orderId": "order-2",
+      "userId": "2"
+    }
   ]
 }

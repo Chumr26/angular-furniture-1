@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FetcherService } from './fetcher.service';
 import { Router } from '@angular/router';
-import { B } from '@angular/cdk/keycodes';
 
 export interface User {
   id: string;
