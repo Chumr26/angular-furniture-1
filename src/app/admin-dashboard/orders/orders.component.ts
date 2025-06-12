@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrderService, OrderDetails } from '../../services/order.service';
+import { FetcherService } from '../../services/fetcher.service';
 
 @Component({
   selector: 'app-orders',
@@ -31,7 +32,10 @@ export class OrdersComponent implements OnInit {
       return { productId, productCount: Number(productCount) }; // Convert productCount to a number
     });
   }
-  constructor(private orderService: OrderService) {}
+  constructor(
+    private orderService: OrderService,
+    private fetcher: FetcherService
+  ) {}
 
   ngOnInit(): void {
     // Fetch orders
@@ -46,20 +50,36 @@ export class OrdersComponent implements OnInit {
     });
   }
 
+  getProductsString(order: OrderDetails): string {
+    const products: string[] = [];
+    order.cartItems?.forEach((item) => {
+      products.push(`${item.productId}:${item.productCount}`);
+    });
+    return products.join(', ');
+  }
+
   loadOrderDetails(order: OrderDetails): void {
     this.selectedOrder = { ...order };
   }
 
-  deleteOrder(orderId: string): void {
-    this.orders = this.orders.filter((order) => order.orderId !== orderId);
-    console.log('Order deleted successfully');
+  deleteOrder(id: string): void {
+    // this.orderService.deleteOrder(id)
+    this.fetcher.delete(`orders/${id}`).subscribe({
+      next: () => {
+        console.log(`Order ${id} deleted successfully`);
+        this.orders = this.orders.filter((order) => order.id !== id);
+      },
+      error: (error) => {
+        console.error(`Error deleting order ${id}:`, error);
+      },
+    });
   }
 
   onSubmit(): void {
-    if (this.selectedOrder.orderId) {
+    if (this.selectedOrder.id) {
       // Update order
       const index = this.orders.findIndex(
-        (o) => o.orderId === this.selectedOrder.orderId
+        (o) => o.id === this.selectedOrder.id
       );
       if (index !== -1) {
         this.orders[index] = { ...this.selectedOrder };
@@ -69,7 +89,7 @@ export class OrdersComponent implements OnInit {
       // Create new order
       const newOrder = {
         ...this.selectedOrder,
-        orderId: `order-${this.orders.length + 1}`,
+        id: `${this.orders.length + 1}`, // Simple ID generation
         dateTime: new Date().toISOString(),
       };
       this.orders.push(newOrder);
@@ -95,7 +115,7 @@ export class OrdersComponent implements OnInit {
       cartItems: [],
       totalPrice: 0,
       dateTime: '',
-      orderId: '',
+      id: '',
       userId: '',
     };
   }

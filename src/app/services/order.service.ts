@@ -16,7 +16,7 @@ export interface OrderDetails {
   cartItems?: CartItem[];
   totalPrice?: number;
   dateTime?: string;
-  orderId?: string;
+  id?: string;
   userId?: string; // Optional user ID if the order is linked to a user
 }
 
@@ -27,7 +27,7 @@ export class OrderService {
   private orderDetails = new BehaviorSubject<OrderDetails[]>([]);
   //   get max ID from the order details
   private maxId = this.orderDetails.value.reduce(
-    (max, order) => Math.max(max, Number(order.orderId?.split('-')[1] || 0)),
+    (max, order) => Math.max(max, Number(order.id)),
     0
   );
   private currentUser: User | undefined;
@@ -44,8 +44,7 @@ export class OrderService {
         this.orderDetails.next(orders);
         // Update maxId based on fetched orders
         this.maxId = orders.reduce(
-          (max, order) =>
-            Math.max(max, Number(order.orderId?.split('-')[1] || 0)),
+          (max, order) => Math.max(max, Number(order.id)),
           0
         );
         console.log('Orders fetched successfully:', orders);
@@ -65,7 +64,7 @@ export class OrderService {
     const newOrder = {
       ...details,
       dateTime: new Date().toISOString(),
-      orderId: this.generateOrderId(),
+      id: `${++this.maxId}`, // Increment maxId for new order
       userId: this.currentUser?.id || undefined, // Link order to current user if available
     };
     this.fetcher.post('orders', newOrder).subscribe({
@@ -79,8 +78,18 @@ export class OrderService {
     });
   }
 
-  private generateOrderId(): string {
-    this.maxId++;
-    return `order-${this.maxId}`;
+  deleteOrder(id: string) {
+    const currentOrders = this.orderDetails.value;
+    this.fetcher.delete(`orders/${id}`).subscribe({
+      next: () => {
+        console.log(`Order ${id} deleted successfully`);
+        this.orderDetails.next(
+          currentOrders.filter((order) => order.id !== id)
+        );
+      },
+      error: (error) => {
+        console.error(`Error deleting order ${id}:`, error);
+      },
+    });
   }
 }

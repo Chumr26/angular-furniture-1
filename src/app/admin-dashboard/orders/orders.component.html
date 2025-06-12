@@ -4,7 +4,7 @@
   </div>
 
   <!-- Form for creating or editing an order -->
-  <form class="order-form" (ngSubmit)="onSubmit()">
+  <!-- <form class="order-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="firstname">First Name:</label>
       <input
@@ -87,11 +87,12 @@
     </div>
     <div class="form-group">
       <label for="additionalInfo">Additional Info:</label>
-      <textarea
+      <input
+        type="text"
         id="additionalInfo"
         [(ngModel)]="selectedOrder.additionalInfo"
         name="additionalInfo"
-      ></textarea>
+      />
     </div>
     <div class="form-group">
       <label for="totalPrice">Total Price:</label>
@@ -106,30 +107,45 @@
     <button type="submit" class="btn btn-primary">
       {{ selectedOrder.orderId ? "Update Order" : "Create Order" }}
     </button>
-  </form>
+  </form> -->
 
   <table class="custom-table">
     <thead>
       <tr>
-        <th>Order ID</th>
+        <!-- <th>Order ID</th> -->
         <th>Customer</th>
+        <th>Address</th>
         <th>Email</th>
+        <th>Phone</th>
+        <th>Products</th>
         <th>Total Price</th>
+        <th>Additional Info</th>
         <th>Date</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let order of orders">
-        <td>{{ order.orderId }}</td>
+      <tr *ngFor="let order of orders" (click)="loadOrderDetails(order)">
+        <!-- <td>{{ order.orderId }}</td> -->
         <td>{{ order.firstname }} {{ order.lastname }}</td>
+        <td>
+          {{ order.street }}, {{ order.town }}, {{ order.postcode }}
         <td>{{ order.email }}</td>
+        <td>{{ order.phone }}</td>
+        <td>{{ getProductsString(order) }}</td>
         <td>{{ order.totalPrice }}</td>
+        <td>{{ order.additionalInfo }}</td>
         <td>{{ order.dateTime }}</td>
         <td>
-          <button (click)="loadOrderDetails(order)">Edit</button>
-          <button (click)="deleteOrder(order.orderId ?? '')">Delete</button>
-        </td>
+            <svg
+              class="icon"
+              width="20"
+              height="20"
+              (click)="deleteOrder(order.id!)"
+            >
+              <use href="icons/icons.svg#trash-icon"></use>
+            </svg>
+          </td>
       </tr>
     </tbody>
   </table>

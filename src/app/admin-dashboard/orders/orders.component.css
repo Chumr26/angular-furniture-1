@@ -9,10 +9,10 @@
     font-weight: bold;
     border-radius: 8px 8px 0 0;
     text-align: center;
-  }
-  
-  /* Elevation styling */
-  .custom-elevation {
+}
+
+/* Elevation styling */
+.custom-elevation {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -20,35 +20,35 @@
     margin: 20px;
     padding: 20px;
     background-color: #fff;
-  }
-  
-  /* Form styling */
-  .order-form {
+}
+
+/* Form styling */
+.order-form {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 20px;
-  }
-  
-  .order-form .form-group {
+}
+
+.order-form .form-group {
     flex: 1 1 calc(50% - 15px);
     display: flex;
     flex-direction: column;
-  }
-  
-  .order-form label {
+}
+
+.order-form label {
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
-  .order-form input {
+}
+
+.order-form input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-  }
-  
-  .order-form .btn {
+}
+
+.order-form .btn {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #274c4f;
@@ -56,31 +56,42 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .order-form .btn:hover {
+}
+
+.order-form .btn:hover {
     background-color: #1e3a3d;
-  }
-  
-  /* Table styling */
-  .custom-table {
+}
+
+/* Table styling */
+.custom-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-  }
-  
-  .custom-table th,
-  .custom-table td {
+}
+
+.custom-table th,
+.custom-table td {
     text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
-  }
-  
-  .custom-table th {
+}
+
+.custom-table th {
     background-color: #f5f5f5;
     font-weight: bold;
-  }
-  
-  .custom-table tr:hover {
+}
+
+.custom-table tr:hover {
     background-color: #f0f0f0;
-  }
+}
+
+svg {
+    cursor: pointer;
+    transition: fill 0.3s ease;
+    /* Smooth transition for color change */
+}
+
+svg:hover {
+    fill: red;
+    /* Change the color to red on hover */
+}
