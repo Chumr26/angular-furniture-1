@@ -48,6 +48,7 @@ export class CartService {
 
   // Increment product count in the cart
   incrementProduct(index: number) {
+    console.log(this.cartItems);
     this.cartItems[index].productCount += 1;
     this.saveCartItemsToStorage(); // Persist changes
     this.cartItemsSubject.next([...this.cartItems]);
@@ -61,9 +62,11 @@ export class CartService {
   }
 
   updateProduct(index: number, quantity: number) {
-    this.cartItems[index].productCount = quantity;
-    this.saveCartItemsToStorage(); // Persist changes
-    this.cartItemsSubject.next([...this.cartItems]); // Notify subscribers
+    this.cartItems = this.cartItems.map((item, i) =>
+      i === index ? { ...item, productCount: quantity } : item
+    );
+    this.saveCartItemsToStorage();
+    this.cartItemsSubject.next([...this.cartItems]);
   }
 
   // Remove a product from the cart

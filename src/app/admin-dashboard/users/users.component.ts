@@ -12,10 +12,11 @@ import { AccountService, User } from '../../services/account.service';
 })
 export class UsersComponent implements OnInit {
   users: User[] = [];
-  selectedUser = {
+  selectedUser: User = {
     id: '',
     email: '',
     password: '',
+    role: 'user',
   };
 
   constructor(
@@ -74,7 +75,8 @@ export class UsersComponent implements OnInit {
       // Create new user
       const signupSuccess = this.accountService.signup(
         this.selectedUser.email,
-        this.selectedUser.password
+        this.selectedUser.password,
+        this.selectedUser.role
       );
       if (signupSuccess) {
         console.log('User signed up successfully');
@@ -90,6 +92,7 @@ export class UsersComponent implements OnInit {
       id: '',
       email: '',
       password: '',
+      role: 'user',
     };
   }
 }

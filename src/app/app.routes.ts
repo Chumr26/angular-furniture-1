@@ -11,6 +11,7 @@ import { UsersComponent } from './admin-dashboard/users/users.component';
 import { OrdersComponent } from './admin-dashboard/orders/orders.component';
 import { ProductsComponent } from './admin-dashboard/products/products.component';
 import { ProductDetailComponent } from './product/product-detail.component';
+import { AdminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home Page' },
@@ -28,11 +29,11 @@ export const routes: Routes = [
     component: ContactUsComponent,
     title: 'Contact Us Page',
   },
-  {
-    path: 'cart',
-    component: CartComponent,
-    title: 'Cart Page',
-  },
+//   {
+//     path: 'cart',
+//     component: CartComponent,
+//     title: 'Cart Page',
+//   },
   {
     path: 'checkout',
     component: CheckoutComponent,
@@ -42,6 +43,8 @@ export const routes: Routes = [
     path: 'dashboard',
     component: AdminDashboardComponent,
     title: 'Admin Dashboard',
+    canActivate: [AdminGuard], // Protect the route with the guard
+
     children: [
       { path: 'users', component: UsersComponent, title: 'Users Page' },
       { path: 'orders', component: OrdersComponent, title: 'Orders Page' },

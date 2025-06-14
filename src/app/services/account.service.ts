@@ -7,6 +7,7 @@ export interface User {
   id: string;
   email: string;
   password: string;
+  role: 'user' | 'admin';
 }
 
 @Injectable({
@@ -95,14 +96,19 @@ export class AccountService {
     this.isActiveSubject.next(false);
   }
 
-  signup(email: string, password: string): boolean {
-    if (this.users.value.some((user) => user.email === email)) {
+  signup(
+    email: string,
+    password: string,
+    role: 'user' | 'admin' = 'user'
+  ): boolean {
+    if (this.users.value.some((u) => u.email === email)) {
       return false; // Email already exists
     }
-    const newUser = {
+    const newUser: User = {
       id: (this.maxId + 1).toString(), // Increment maxId for new user
       email,
       password,
+      role,
     };
     this.fetcher.post<User>('accounts', newUser).subscribe({
       next: (response) => {

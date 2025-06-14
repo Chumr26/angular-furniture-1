@@ -1433,15 +1433,66 @@
   ],
   "accounts": [
     {
-      "id": "1",
-      "email": "user1",
-      "password": "user1"
-    },
-    {
       "id": "2",
       "email": "admin",
-      "password": "admin"
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "3",
+      "email": "user1",
+      "password": "user1",
+      "role": "admin"
+    },
+    {
+      "id": "4",
+      "email": "admin2",
+      "password": "admin2",
+      "role": "admin"
+    },
+    {
+      "id": "5",
+      "email": "user2",
+      "password": "user2",
+      "role": "admin"
+    },
+    {
+      "id": "6",
+      "email": "user3",
+      "password": "user3",
+      "role": "admin"
+    },
+    {
+      "id": "7",
+      "email": "user4",
+      "password": "user4",
+      "role": "user"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "1",
+      "firstname": "First name *",
+      "lastname": "Last name *",
+      "street": "Street address * Street address *",
+      "town": "Town / City *",
+      "postcode": "ZIP Code *",
+      "phone": "Phone *",
+      "email": "Email address *",
+      "additionalInfo": "Additional information\n",
+      "cartItems": [
+        {
+          "productId": "2",
+          "productCount": 3
+        },
+        {
+          "productId": "10",
+          "productCount": 1
+        }
+      ],
+      "totalPrice": 409,
+      "dateTime": "2025-06-14T13:25:59.145Z",
+      "userId": "3"
+    }
+  ]
 }

@@ -118,8 +118,13 @@
         >
       </p>
       <p class="woocommerce-mini-cart__buttons buttons">
-        <a href="cart/" class="button wc-forward">View cart</a
-        ><a href="checkout/" class="button checkout wc-forward">Checkout</a>
+        <!-- <a href="cart/" class="button wc-forward">View cart</a> -->
+        <a
+          routerLink="checkout/"
+          (click)="toggleCart()"
+          class="button checkout wc-forward"
+          >Checkout</a
+        >
       </p>
     </div>
   </div>

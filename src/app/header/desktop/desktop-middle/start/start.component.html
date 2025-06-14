@@ -26,7 +26,7 @@
       data-form-controls="inside"
       data-taxonomy-filter="false"
       data-submit-button="icon"
-      action="https://startersites.io/blocksy/furniture/"
+      action=""
       aria-haspopup="listbox"
       data-live-results="thumbs:product_price"
     >
@@ -38,6 +38,7 @@
         autocomplete="off"
         title="Search for..."
         aria-label="Search for..."
+        (input)="onSearchInputChange($event)"
       />
 
       <div class="ct-search-form-controls">
@@ -68,9 +69,73 @@
         <input type="hidden" value="f4121827d8" class="ct-live-results-nonce" />
       </div>
 
-      <div class="screen-reader-text" aria-live="polite" role="status">
-        No results
+      @if (searchedProduct.length > 0 && searchValue) {
+      <div
+        class="ct-search-results ct-fade-leave"
+        role="listbox"
+        aria-label="Search results"
+      >
+        @for (item of searchedProduct; track $index) {
+        <a
+          class="ct-search-item"
+          role="option"
+          [routerLink]="'product/' + formatProductName(item.name) + '/'"
+        >
+          <span class="ct-media-container">
+            <img [src]="item.image" style="aspect-ratio: 1 / 1"
+          /></span>
+          <span
+            >{{ item.name
+            }}<span class="product-search-meta">
+              <small class="price">
+                <span class="sale-price">
+                  @if(item.discount_percentage > 0) {
+                  <del aria-hidden="true">
+                    <span class="woocommerce-Price-amount amount">
+                      <bdi>
+                        <span class="woocommerce-Price-currencySymbol">$</span
+                        >{{ item.price }}</bdi
+                      >
+                    </span>
+                  </del>
+                  <span class="screen-reader-text"
+                    >Original price was: ${{ item.price }}.</span
+                  >
+                  <ins aria-hidden="true">
+                    <span class="woocommerce-Price-amount amount">
+                      <bdi>
+                        <span class="woocommerce-Price-currencySymbol">$</span
+                        >{{
+                          item.price -
+                            (item.price * item.discount_percentage) / 100
+                        }}</bdi
+                      >
+                    </span>
+                  </ins>
+                  <span class="screen-reader-text"
+                    >Current price is: ${{
+                      item.price -
+                        (item.price * item.discount_percentage) / 100
+                    }}.</span
+                  >
+                  } @else {
+                  <ins aria-hidden="true">
+                    <span class="woocommerce-Price-amount amount">
+                      <bdi>
+                        <span class="woocommerce-Price-currencySymbol">$</span
+                        >{{ item.price }}</bdi
+                      >
+                    </span>
+                  </ins>
+                  }
+                </span>
+              </small>
+            </span>
+          </span>
+        </a>
+        }
       </div>
+      }
     </form>
   </div>
 </div>

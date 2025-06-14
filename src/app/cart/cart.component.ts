@@ -4,10 +4,11 @@ import { Product } from '../models/app.model';
 import { ProductService } from '../services/product.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: '[cart]',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, CommonModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
   encapsulation: ViewEncapsulation.None,
@@ -20,7 +21,6 @@ export class CartComponent {
     private productService: ProductService
   ) {}
   ngOnInit() {
-    console.log('object');
     this.cartService.getCartItems().subscribe((items) => {
       this.cartItems = items;
       this.cartProducts = this.cartItems.map(
@@ -30,6 +30,7 @@ export class CartComponent {
   }
 
   incrementProduct(index: number) {
+    console.log(index);
     this.cartService.incrementProduct(index);
   }
 
@@ -75,4 +76,9 @@ export class CartComponent {
       );
     }, 0);
   }
+
+//   onProductCountChange(index: number, event: Event): void {
+//     const inputElement = event.target as HTMLInputElement;
+//     this.cartService.updateProduct(index, parseInt(inputElement.value, 10));
+//   }
 }
